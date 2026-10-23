@@ -37,6 +37,26 @@ sub("wattprint v1.0 · dark mode = menos energía en OLED ·",
     'wattprint v1.0 · hecho por <a href="https://neocortech-kohl.vercel.app/" style="text-decoration:underline;text-underline-offset:2px">Carlos Gallego Galán</a> · '
     f'<a href="{REPO_URL}" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px">código en GitHub</a> ·')
 
+# 4 · Envío como formulario normal a un iframe oculto (el mismo método que ya funciona en /newsletter)
+sub('<form id="nlForm" style="display:flex', '<form id="nlForm" method="post" target="kit-sink-wp" style="display:flex')
+sub('<input id="nlEmail" name="email" type="email"', '<input id="nlEmail" name="email_address" type="email"')
+sub('<button id="nlBtn" class="btn btn-primary" type="submit">Suscribirme</button>\n      </form>',
+    '<button id="nlBtn" class="btn btn-primary" type="submit">Suscribirme</button>\n      </form>\n      <iframe name="kit-sink-wp" title="kit" hidden></iframe>')
+_a = s.find("$('nlForm').addEventListener('submit', async e=>{")
+if _a != -1:
+    _b = s.find("\n});", _a) + 4
+    s = s[:_a] + """$('nlForm').addEventListener('submit', e=>{
+  const form=$('nlForm'), email=$('nlEmail').value.trim(), msg=$('nlMsg'), btn=$('nlBtn');
+  if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)){ e.preventDefault(); $('nlEmail').focus(); return; }
+  if(!CONFIG.newsletter.endpoint){ e.preventDefault(); msg.textContent='Formulario sin configurar.'; return; }
+  form.action=CONFIG.newsletter.endpoint; // el navegador envía el formulario al iframe oculto
+  setTimeout(()=>{
+    btn.disabled=true; btn.textContent='✓';
+    msg.textContent='✓ Casi está: confirma la suscripción en el correo que te acaba de llegar (mira también en spam).';
+    msg.style.color='var(--carbon)';
+  },50);
+});""" + s[_b:]
+
 open(SRC, 'w', encoding='utf-8').write(s)
 print('src wattprint ok')
 
