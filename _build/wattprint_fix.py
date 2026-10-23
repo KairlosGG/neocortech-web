@@ -24,7 +24,7 @@ sub("{method:'POST',body,mode:'cors'}", "{method:'POST',body,mode:'no-cors'}")
 sub("✓ Apuntado. Bienvenido a IA Sostenible — revisa tu correo.",
     "✓ Casi está: confirma la suscripción en el correo que te acaba de llegar (mira también en spam).")
 sub("Cada semana: cómo reducir la huella de carbono, energía y agua de la IA. Directo, técnico, sin humo.",
-    "Suscríbete a Neocortech, mi newsletter: cómo medir y reducir la huella de carbono, energía y agua de la IA.")
+    "Suscríbete a Neocortech, mi newsletter sobre gobernanza de IA: agentes, IA generativa, ética, riesgos y sostenibilidad.")
 
 sub("const body=new FormData();", "const body=new URLSearchParams(); // urlencoded, como un formulario normal")
 
