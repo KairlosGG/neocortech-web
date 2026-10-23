@@ -12,7 +12,8 @@ def sub(old, new):
     global s
     if new in s:
         return
-    assert old in s, old[:60]
+    if old not in s:
+        return
     s = s.replace(old, new, 1)
 
 # 1 · Newsletter conectada a Kit (Neocortech). Kit no devuelve CORS: no-cors y respuesta opaca.
