@@ -4,7 +4,7 @@ Web personal de Carlos Gallego Galán y de Neocortech, su proyecto de gobernanza
 
 | Ruta | Qué es |
 |---|---|
-| `/` | Portfolio: perfil, proyectos, trayectoria e investigación |
+| `/` | Portfolio: perfil, proyectos de EONESIA, taller (productos propios), gobernanza, trayectoria e investigación |
 | `/newsletter` | Newsletter de gobernanza de IA |
 | `/wattprint` | Presentación de Wattprint |
 | `/tool/wattprint/` | Wattprint: huella de carbono, energía y agua de la IA |
