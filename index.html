@@ -22,9 +22,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://neocortech-kohl.vercel.app/assets/og-carlos.jpg"/>
 <!-- meta:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@700&family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/fonts/fonts.css"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z' fill='none' stroke='%23C9A24B' stroke-width='8' stroke-linejoin='round'/%3E%3Ccircle cx='60' cy='60' r='14' fill='%235B8FC6'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%237FB4E8'/%3E%3C/svg%3E"/>
 <script>document.documentElement.className='js';</script>
 <script>(function(){var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
@@ -328,8 +326,12 @@ section{position:relative;z-index:2;padding:clamp(100px,13vw,190px) 0}
 .th-meta b{color:var(--gold)}
 .t-title{font-family:var(--display);font-weight:400;font-style:normal;font-size:clamp(22px,3vw,38px);line-height:1.18;letter-spacing:.01em;margin-top:18px;max-width:24ch}
 .htrack-outer{position:relative;overflow:hidden}
-.htrack{display:grid;padding:6px 2px}
-.htrack .hpanel{grid-area:1/1;width:min(100%,780px);margin:0 auto}
+.htrack{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px calc((100% - min(100%,780px))/2);cursor:grab}
+.htrack::-webkit-scrollbar{display:none}
+.htrack.dragging{cursor:grabbing;scroll-snap-type:none}
+.htrack{-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.htrack .hpanel{flex:0 0 min(100%,780px);scroll-snap-align:center}
+.hpanel .out a{pointer-events:auto}
 .hpanel:hover{border-color:rgba(201,162,75,.55);box-shadow:0 18px 44px -24px rgba(201,162,75,.28)}
 /* sello del doctorado — recompensa al completar las fases */
 .th-seal{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;pointer-events:none;opacity:0;z-index:5}
@@ -360,7 +362,9 @@ section{position:relative;z-index:2;padding:clamp(100px,13vw,190px) 0}
 .hhint{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);white-space:nowrap}
 @media(max-width:820px){
   .th-pin{min-height:0;padding:clamp(80px,12vw,120px) 0;gap:28px}
-  .htrack{flex-direction:column;gap:18px;overflow:visible;scroll-snap-type:none;cursor:default;transform:none!important;-webkit-mask-image:none;mask-image:none}
+  .htrack{flex-direction:column;gap:18px;overflow:visible;scroll-snap-type:none;cursor:default;padding:6px 0;transform:none!important;-webkit-mask-image:none;mask-image:none}
+  .htrack .hpanel{flex:none;width:100%;padding-right:clamp(26px,6vw,40px)}
+  .hpanel .pn{display:none}
   .th-seal{position:static;margin:30px auto 0}
   .hpanel{width:100%;opacity:1!important;transform:none!important}
   .th-foot{display:none}
@@ -424,6 +428,7 @@ a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba
 .hpanel .out a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,162,75,.45)}
 .hpanel .out a:hover{color:var(--gold-bright)}
 @media(max-width:560px){.lang button{padding:5px 8px}.nav-right{gap:12px}#menuTxt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+@media(max-width:820px){.pcard{position:relative;top:auto!important;margin-bottom:18px}}
 </style>
 </head>
 <body>
@@ -1004,7 +1009,7 @@ if(RM){reveal=1;draw();}else loop();})();
 
 /* overlay menu */
 (function(){var btn=document.getElementById('menuBtn'),ov=document.getElementById('overlay'),txt=document.getElementById('menuTxt');var open=false;
-function setOpen(o){open=o;document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',o);txt.textContent=o?NCT('Cerrar','Close'):NCT('Índice','Index');
+function setOpen(o){open=o;ov.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);btn.setAttribute('aria-expanded',o);txt.textContent=o?NCT('Cerrar','Close'):NCT('Índice','Index');
 if(hasGSAP&&!RM){if(o){gsap.to(ov,{clipPath:'inset(0 0 0% 0)',duration:.7,ease:'power4.inOut'});gsap.fromTo('#ovNav a',{y:40,autoAlpha:0},{y:0,autoAlpha:1,duration:.6,stagger:.06,delay:.12,ease:'power3.out'});gsap.fromTo('.ov-side>*',{y:20,autoAlpha:0},{y:0,autoAlpha:1,duration:.5,stagger:.05,delay:.28,ease:'power3.out'});}
 else{gsap.to(ov,{clipPath:'inset(0 0 100% 0)',duration:.55,ease:'power4.inOut'});}}
 else{ov.style.clipPath=o?'inset(0 0 0% 0)':'inset(0 0 100% 0)';}}
@@ -1131,7 +1136,7 @@ var mq=document.getElementById('mq');if(mq){mq.innerHTML+=mq.innerHTML;gsap.to(m
 
 /* projects sticky stack */
 var cards=gsap.utils.toArray('#stack .pcard');
-cards.forEach(function(card,i){card.style.top=(94+i*16)+'px';if(i<cards.length-1){gsap.to(card,{scale:.94,filter:'brightness(.6)',ease:'none',scrollTrigger:{trigger:card,start:'top 94px',endTrigger:cards[cards.length-1],end:'top 210px',scrub:true}});}});
+if(innerWidth>820)cards.forEach(function(card,i){card.style.top=(94+i*16)+'px';if(i<cards.length-1){gsap.to(card,{scale:.94,filter:'brightness(.6)',ease:'none',scrollTrigger:{trigger:card,start:'top 94px',endTrigger:cards[cards.length-1],end:'top 210px',scrub:true}});}});
 
 /* tesis — carrusel horizontal nativo (drag + snap + fases), sin pin */
 var track=document.getElementById('htrack'),prog=document.getElementById('hprog');
