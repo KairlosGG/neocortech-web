@@ -24,7 +24,7 @@ El banner del perfil reproduce `assets/carlos_portrait.webm` o `assets/carlos_po
 
 ## Newsletter
 
-El formulario envía el correo a un formulario de [Kit](https://kit.com) (plan gratuito). La URL de Kit se configura en `KIT_ACTION`, dentro del script de `newsletter.html`. Si está vacía, el botón abre un correo de alta.
+El formulario envía el correo a un formulario de [Kit](https://kit.com) (plan gratuito). La URL de Kit se configura en `KIT_ACTION`, dentro del script de `newsletter.html`. Si se deja vacía, el botón abre un correo de alta.
 
 ## Autoría
 
