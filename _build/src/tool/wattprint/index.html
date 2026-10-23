@@ -446,7 +446,7 @@ section{ padding:64px 0; }
     <!-- Newsletter -->
     <div id="newsletter" class="card" style="border-color:color-mix(in srgb,var(--carbon) 60%,transparent);padding:28px;margin-top:40px">
       <h3 class="h2" style="font-size:20px">Esto es solo la foto de hoy.</h3>
-      <p class="muted" style="margin-top:8px">Cada semana: cómo reducir la huella de carbono, energía y agua de la IA. Directo, técnico, sin humo.</p>
+      <p class="muted" style="margin-top:8px">Suscríbete a Neocortech, mi newsletter: cómo medir y reducir la huella de carbono, energía y agua de la IA.</p>
       <form id="nlForm" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
         <input id="nlEmail" name="email" type="email" required placeholder="tu@email.com" class="field" style="flex:1;min-width:220px" autocomplete="email" />
         <button id="nlBtn" class="btn btn-primary" type="submit">Suscribirme</button>
@@ -459,7 +459,7 @@ section{ padding:64px 0; }
 <!-- Footer -->
 <footer class="bt" style="padding:32px 0;text-align:center">
   <p class="mono muted" style="font-size:12px">
-    wattprint v1.0 · dark mode = menos energía en OLED ·
+    wattprint v1.0 · hecho por <a href="https://neocortech-kohl.vercel.app/" style="text-decoration:underline;text-underline-offset:2px">Carlos Gallego Galán</a> · <a href="https://github.com/KairlosGG/wattprint" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:2px">código en GitHub</a> ·
     <button data-open-method style="text-decoration:underline;text-underline-offset:2px">metodología y fuentes</button>
   </p>
 </footer>
@@ -500,11 +500,11 @@ section{ padding:64px 0; }
 ============================================================ */
 const CONFIG = {
   newsletter: {
-    endpoint: '',            // ← pega aquí tu URL
-    fieldName: 'email',      // nombre del campo que espera tu proveedor
+    endpoint: 'https://app.kit.com/forms/10085804/subscriptions', // Kit · Neocortech
+    fieldName: 'email_address', // campo que espera Kit
     extraFields: {},         // p. ej. { tag: 'wattprint' }
   },
-  shareUrl: 'wattprint.app', // URL impresa en la tarjeta PNG
+  shareUrl: 'neocortech-kohl.vercel.app/tool/wattprint/', // URL impresa en la tarjeta PNG
 };
 
 /* ============================================================
@@ -998,12 +998,12 @@ $('nlForm').addEventListener('submit', async e=>{
   }
   btn.disabled=true; btn.textContent='Enviando…';
   try{
-    const body=new FormData();
+    const body=new URLSearchParams(); // urlencoded, como un formulario normal
     body.append(CONFIG.newsletter.fieldName,email);
     Object.entries(CONFIG.newsletter.extraFields).forEach(([k,v])=>body.append(k,v));
-    const res=await fetch(CONFIG.newsletter.endpoint,{method:'POST',body,mode:'cors'});
+    const res=await fetch(CONFIG.newsletter.endpoint,{method:'POST',body,mode:'no-cors'});
     if(res.ok || res.type==='opaque'){
-      msg.textContent='✓ Apuntado. Bienvenido a IA Sostenible — revisa tu correo.';
+      msg.textContent='✓ Casi está: confirma la suscripción en el correo que te acaba de llegar (mira también en spam).';
       msg.style.color='var(--carbon)'; $('nlEmail').value='';
     }else{ throw new Error(res.status); }
   }catch(err){

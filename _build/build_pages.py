@@ -176,9 +176,14 @@ for old, key, en_ in W:
     m = re.match(r'(<(\w+)[^>]*?)(>)(.*)(</\2>)$', old, re.S)
     assert m, old
     s = rep(s, old, m.group(1) + ' data-i18n="%s"' % key + '>' + m.group(4) + m.group(5))
+_n = '<p class="wpnote" data-i18n="wp_note">'
+assert _n in s
+s = s.replace(_n, '<p class="wpcode"><a href="https://github.com/KairlosGG/wattprint" target="_blank" rel="noopener" data-c data-i18n="wp_code">Código abierto en GitHub ↗</a></p>\n    ' + _n, 1)
+s = s.replace('</style>', '.wpcode{margin-top:16px;text-align:center;font-size:14px;font-family:var(--f-body)}.wpcode a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}.wpcode a:hover{color:var(--green)}\n</style>', 1)
 s = rep(s, 'Metodología SCI (ISO 21031).', 'Metodología SCI (ISO/IEC 21031).', 2)
 en = dict(COMMON_EN)
 en.update({k: v for _, k, v in W if k})
+en['wp_code'] = 'Open source on GitHub ↗'
 en.update({
     '_title': 'Wattprint — Your AI\'s footprint in 60 seconds · Neocortech',
     '_desc': 'Calculate how much carbon, energy and water your AI uses: training and inference with the SCI methodology (ISO/IEC 21031) and data from Ember and Uptime Institute.',
