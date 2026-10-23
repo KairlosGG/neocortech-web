@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Neocortech — Newsletter · La capa que gobierna la IA</title>
+<meta name="description" content="Newsletter de gobernanza de IA: agentes, IA generativa, ética, riesgos y sostenibilidad, con criterio auditable. Pensado en voz alta por alguien que lo implementa de verdad."/>
+<meta name="theme-color" content="#0A141F"/>
+<meta property="og:title" content="Neocortech — Newsletter · La capa que gobierna la IA"/>
+<meta property="og:description" content="Gobernanza de IA con criterio auditable. Sin resúmenes de novedades: criterio de practitioner."/>
+<!-- meta:begin -->
+<link rel="canonical" href="https://neocortech.vercel.app/newsletter"/>
+<link rel="alternate" hreflang="es" href="https://neocortech.vercel.app/newsletter"/>
+<link rel="alternate" hreflang="en" href="https://neocortech.vercel.app/newsletter?lang=en"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://neocortech.vercel.app/newsletter"/>
+<meta property="og:image" content="https://neocortech.vercel.app/assets/og-newsletter.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:locale:alternate" content="en_GB"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://neocortech.vercel.app/assets/og-newsletter.jpg"/>
+<!-- meta:end -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z' fill='none' stroke='%23C9A24B' stroke-width='8' stroke-linejoin='round'/%3E%3Ccircle cx='60' cy='60' r='14' fill='%235B8FC6'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%237FB4E8'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@700&family=Marcellus&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<script>(function(){var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
+var l=(q==='en'||q==='es')?q:null;try{if(l)localStorage.setItem('nc_lang',l);else l=localStorage.getItem('nc_lang');}catch(e){}
+if(l!=='en')l='es';window.NC_LANG=l;document.documentElement.lang=l;
+window.NCT=function(es,en){return l==='en'?en:es;};})();</script>
+<style>
+:root{
+  --night:#0A141F; --night2:#0D1B29; --slate:#13273B;
+  --gold:#C9A24B; --gold-bright:#F0D896; --gold-deep:#7D5F26;
+  --arcane:#5B8FC6; --arcane-glow:#7FB4E8;
+  --bone:#ECE7DA; --muted:#7E92A6; --green:#4ADE80;
+  --line:rgba(201,162,75,.24); --line-soft:rgba(201,162,75,.10);
+  --f-epic:"Cinzel Decorative",serif; --f-display:"Cinzel",serif;
+  --f-sub:"Marcellus",serif; --f-body:"Inter",system-ui,sans-serif;
+  --metal:linear-gradient(160deg,var(--gold-deep) 0%,var(--gold-bright) 38%,var(--gold) 62%,var(--gold-deep) 100%);
+  --w:1160px; --e:cubic-bezier(.19,1,.22,1); --e2:cubic-bezier(.76,0,.24,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--slate) var(--night)}
+::selection{background:var(--gold);color:var(--night)}
+body{
+  background:var(--night);color:var(--bone);font-family:var(--f-body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97'%3E%3Cpolygon points='28,2 54,17 54,47 28,62 2,47 2,17' fill='none' stroke='%23C9A24B' stroke-opacity='.045' stroke-width='1'/%3E%3Cpolygon points='28,66 54,81 54,111 28,126 2,111 2,81' fill='none' stroke='%23C9A24B' stroke-opacity='.045' stroke-width='1'/%3E%3C/svg%3E"),
+    radial-gradient(1100px 640px at 50% -8%, #17324d 0%, transparent 62%),
+    radial-gradient(760px 520px at 12% 40%, rgba(91,143,198,.06) 0%, transparent 60%),
+    radial-gradient(900px 760px at 50% 120%, #0d2033 0%, transparent 60%);
+  background-attachment:fixed;
+}
+a{color:var(--arcane-glow);text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+img{display:block;max-width:100%}
+
+/* ---- perimeter engraving frame ---- */
+.frame{position:fixed;inset:11px;border:1px solid rgba(201,162,75,.30);pointer-events:none;z-index:80}
+.frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,75,.11)}
+.frame b{position:absolute;width:16px;height:16px;border:1.5px solid var(--gold)}
+.frame b.tl{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.frame b.tr{top:-1px;right:-1px;border-left:0;border-bottom:0}
+.frame b.bl{bottom:-1px;left:-1px;border-right:0;border-top:0}
+.frame b.br{bottom:-1px;right:-1px;border-left:0;border-top:0}
+@media(max-width:640px){.frame{inset:7px}}
+
+#field{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 300px 44px rgba(0,0,0,.55)}
+
+/* ---- custom cursor ---- */
+#cur{position:fixed;z-index:200;top:0;left:0;width:9px;height:9px;border-radius:50%;
+  background:var(--gold);pointer-events:none;transform:translate(-50%,-50%);
+  mix-blend-mode:screen;will-change:transform;transition:width .3s var(--e),height .3s var(--e),background .3s,opacity .3s;opacity:0;
+  box-shadow:0 0 12px rgba(201,162,75,.7)}
+#cur.on{opacity:1}
+#cur.big{width:58px;height:58px;background:rgba(201,162,75,.12);box-shadow:0 0 0 1px rgba(201,162,75,.4)}
+@media(pointer:coarse){#cur{display:none}}
+
+/* ---- loader (completo solo en primera visita) + cortina ---- */
+#loader{position:fixed;inset:0;z-index:300;background:var(--night);display:none;align-items:center;justify-content:center;flex-direction:column}
+.js #loader{display:flex}
+#loader .lfox{width:104px;height:104px;filter:drop-shadow(0 0 26px rgba(201,162,75,.5))}
+#loader .lword{margin-top:26px;font-family:var(--f-epic);font-weight:700;letter-spacing:.34em;font-size:13px;color:var(--muted);text-transform:uppercase}
+#loader .lnum{position:absolute;right:max(28px,4vw);bottom:26px;font-family:var(--f-display);font-weight:600;
+  font-size:clamp(48px,10vw,120px);line-height:.8;color:var(--gold);letter-spacing:-.02em}
+#loader .lnum .pc{color:var(--gold-deep);font-size:.36em;vertical-align:super;margin-left:2px}
+#loader .ltag{position:absolute;left:max(28px,4vw);bottom:30px;font-family:var(--f-sub);font-size:12px;letter-spacing:.2em;color:var(--gold-deep);text-transform:uppercase}
+.curtain{position:fixed;inset:0;z-index:290;pointer-events:none;display:none}
+.js .curtain{display:flex}
+.curtain i{flex:1;background:var(--night);border-right:1px solid rgba(201,162,75,.05)}
+
+#prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--metal);z-index:120;transform:scaleX(0);transform-origin:left}
+
+/* ---- top nav (header compartido) ---- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;transition:transform .5s var(--e)}
+header.nav.hide{transform:translateY(-112%)}
+.nav-in{max-width:var(--w);margin:0 auto;padding:16px max(22px,4vw);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(10,20,31,.82),transparent);
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);-webkit-mask:linear-gradient(#000,transparent);mask:linear-gradient(#000,transparent);z-index:-1}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .m{width:34px;height:34px;filter:drop-shadow(0 1px 8px rgba(201,162,75,.5));flex:none}
+.brand .wm{font-family:var(--f-epic);font-weight:700;font-size:16px;letter-spacing:.10em;color:var(--bone);line-height:1}
+.brand .wm .neo{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .sub{font-family:var(--f-sub);font-size:10px;letter-spacing:.24em;color:var(--gold-deep);text-transform:uppercase;margin-top:3px}
+.switch{display:flex;align-items:center;gap:4px;padding:5px;border:1px solid var(--line-soft);border-radius:40px;background:rgba(19,39,59,.5)}
+.switch a{padding:8px 18px;border-radius:40px;font-family:var(--f-sub);font-size:13px;letter-spacing:.03em;color:var(--muted);transition:color .3s,background .3s;white-space:nowrap}
+.switch a .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;margin-right:7px;vertical-align:middle;opacity:.55}
+.switch a:hover{color:var(--bone)}
+.switch a.on{color:var(--night);background:var(--metal);box-shadow:0 4px 18px rgba(201,162,75,.28)}
+.switch a.on .dot{opacity:1;background:var(--night)}
+.switch a.wp{color:var(--green)}
+.switch a.wp.on{color:var(--night)}
+@media(max-width:860px){.nav-in{flex-wrap:wrap}.switch{order:3;width:100%;justify-content:space-between}.switch a{flex:1;text-align:center;padding:9px 6px;font-size:12px}.switch a .dot{display:none}}
+
+/* ---- layout ---- */
+main{position:relative;z-index:2}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 max(22px,4vw);position:relative}
+section{padding:clamp(64px,9vw,120px) 0}
+.eyebrow{font-family:var(--f-display);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.1}
+h1,h2{text-wrap:balance}
+h2{font-size:clamp(28px,4.4vw,46px);letter-spacing:.01em}
+h3{font-family:var(--f-sub);font-size:22px;letter-spacing:.02em}
+p{color:#cdd6df}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--bone);max-width:60ch;line-height:1.55}
+strong{color:var(--bone);font-weight:600}
+
+.rune{display:flex;align-items:center;gap:12px;margin:6px 0 22px}
+.rune .l{height:1px;width:120px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rune .l.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.rune .d{width:9px;height:9px;background:var(--metal);transform:rotate(45deg);box-shadow:0 0 12px rgba(201,162,75,.5)}
+
+/* reveal */
+.rvx{opacity:0;transform:translateY(28px);transition:opacity .9s var(--e),transform .9s var(--e)}
+.rvx.in{opacity:1;transform:none}
+
+/* ---- HERO ---- */
+.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center;overflow:hidden;padding-top:120px}
+.sunburst{position:absolute;top:-8%;left:50%;transform:translateX(-50%);width:min(1100px,168vw);aspect-ratio:1;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(201,162,75,.13) 0deg .5deg,transparent .5deg 6.6deg);
+  -webkit-mask:radial-gradient(closest-side,#000 0,#000 16%,transparent 66%);mask:radial-gradient(closest-side,#000 0,#000 16%,transparent 66%)}
+.hero .halo{position:absolute;top:8%;left:50%;transform:translateX(-50%);width:440px;height:440px;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle,rgba(240,216,150,.20) 0,rgba(201,162,75,.06) 44%,transparent 70%);filter:blur(6px)}
+.hero-in{position:relative;z-index:3;min-width:0}
+.foxwrap{position:relative;width:168px;height:168px;margin:0 auto 30px}
+.foxwrap .ring{position:absolute;inset:-16px;pointer-events:none}
+.foxwrap .fox{width:168px;height:168px;filter:drop-shadow(0 0 30px rgba(201,162,75,.4)) drop-shadow(0 10px 26px rgba(0,0,0,.55))}
+.wordmark{font-family:var(--f-epic);font-weight:700;font-size:clamp(33px,9vw,88px);letter-spacing:.06em;line-height:1;color:var(--bone);text-shadow:0 0 40px rgba(201,162,75,.22)}
+.wordmark .neo{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tagline{font-family:var(--f-sub);font-size:clamp(19px,3vw,29px);color:var(--gold-bright);margin-top:20px;letter-spacing:.05em}
+.hero .lead{margin:26px auto 0;text-align:center}
+.pron{margin-top:20px;font-family:var(--f-body);font-size:11px;letter-spacing:.32em;color:var(--muted);text-transform:uppercase}
+.cta-row{margin-top:38px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:2px;font-family:var(--f-sub);font-size:15px;letter-spacing:.04em;position:relative;transition:transform .3s var(--e)}
+.btn.primary{background:var(--metal);color:var(--night);box-shadow:0 8px 26px rgba(201,162,75,.28);font-weight:600}
+.btn.ghost{border:1px solid var(--line);color:var(--bone)}
+.btn.ghost:hover{border-color:var(--gold);background:rgba(201,162,75,.06)}
+.btn:hover{transform:translateY(-2px)}
+.btn .ar{transition:transform .3s var(--e)}.btn:hover .ar{transform:translate(4px,-2px)}
+.scrollcue{margin-top:52px;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--gold-deep);font-family:var(--f-display);font-size:10px;letter-spacing:.3em;text-transform:uppercase}
+.scrollcue .bar{width:1px;height:42px;background:linear-gradient(var(--gold),transparent);position:relative;overflow:hidden}
+.scrollcue .bar::after{content:"";position:absolute;top:-40%;left:0;width:100%;height:40%;background:var(--gold-bright);animation:cue 1.9s var(--e) infinite}
+@keyframes cue{0%{top:-40%}70%,100%{top:110%}}
+
+/* panels */
+.panel{background:var(--slate);border:1px solid var(--gold-deep);position:relative}
+.corner{position:absolute;width:18px;height:18px;border:1.5px solid var(--gold)}
+.c-tl{top:-1px;left:-1px;border-right:0;border-bottom:0}.c-tr{top:-1px;right:-1px;border-left:0;border-bottom:0}
+.c-bl{bottom:-1px;left:-1px;border-right:0;border-top:0}.c-br{bottom:-1px;right:-1px;border-left:0;border-top:0}
+
+/* manifesto */
+.manifesto{text-align:center}
+.manifesto .big{font-family:var(--f-display);font-weight:600;font-size:clamp(26px,4vw,42px);line-height:1.3;max-width:20ch;margin:0 auto;color:var(--bone)}
+.manifesto .big em{font-style:normal;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.arche{max-width:660px;margin:44px auto 0;padding:34px 38px;text-align:center}
+.arche h3{color:var(--gold-bright);margin-bottom:8px}
+
+/* perfil */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:34px}}
+.creds{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.creds li{display:flex;gap:14px;font-size:15px;color:#cdd6df;align-items:flex-start}
+.creds li::before{content:"";flex:none;width:9px;height:9px;margin-top:7px;background:var(--metal);transform:rotate(45deg)}
+.creds b{color:var(--bone)}
+.card-quote{padding:40px;text-align:left}
+.card-quote .q{font-family:var(--f-sub);font-size:clamp(20px,2.6vw,26px);line-height:1.4;color:var(--bone)}
+.card-quote .q .g{color:var(--gold-bright)}
+.card-quote .attr{margin-top:22px;font-family:var(--f-display);font-size:11px;letter-spacing:.24em;color:var(--muted);text-transform:uppercase}
+
+/* newsletter */
+.news{text-align:center}
+.news .box{max-width:560px;margin:34px auto 0;padding:38px 34px}
+.field-row{display:flex;gap:10px;margin-top:22px}
+@media(max-width:520px){.field-row{flex-direction:column}}
+.field-row input{flex:1;padding:15px 18px;background:rgba(10,20,31,.6);border:1px solid var(--line);color:var(--bone);border-radius:2px}
+.field-row input::placeholder{color:var(--muted)}
+.field-row input:focus{border-color:var(--gold);outline:none}
+.microcopy{margin-top:16px;font-size:13px;color:var(--muted)}
+.ok{margin-top:18px;color:var(--gold-bright);font-family:var(--f-sub);font-size:16px;display:none}
+.ok.show{display:block}
+
+/* footer */
+footer{border-top:1px solid var(--line-soft);margin-top:20px;position:relative;z-index:2}
+.foot-in{max-width:var(--w);margin:0 auto;padding:44px max(22px,4vw);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot-in .fm{display:flex;align-items:center;gap:12px}
+.foot-in .fm svg{width:26px;height:26px}
+.foot-in .fm span{font-family:var(--f-epic);font-weight:700;letter-spacing:.1em;font-size:13px;color:var(--bone)}
+.foot-in .meta{font-size:12px;color:var(--muted);text-align:right;line-height:1.7}
+.tolinks{display:flex;gap:22px;font-family:var(--f-display);font-size:11px;letter-spacing:.16em;text-transform:uppercase;flex-wrap:wrap}
+.tolinks a{color:var(--muted);transition:color .3s}
+.tolinks a:hover{color:var(--gold)}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+  .rvx{opacity:1;transform:none}
+  #loader,.curtain{display:none!important}
+}
+
+/* selector de idioma */
+.lang{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(201,162,75,.18);border-radius:40px;background:rgba(19,39,59,.5)}
+.lang button{font-family:var(--ui,Inter,system-ui,sans-serif);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--muted);background:none;border:0;padding:6px 10px;border-radius:40px;cursor:pointer;transition:color .2s,background .2s}
+.lang button:hover{color:var(--bone)}
+.lang button[aria-pressed="true"]{background:var(--metal);color:var(--night)}
+.lang button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
+
+.nav-in{gap:16px}
+@media(max-width:640px){.nav-in .lang{order:2}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+</style>
+</head>
+<body>
+
+<div class="frame"><b class="tl"></b><b class="tr"></b><b class="bl"></b><b class="br"></b></div>
+<canvas id="field"></canvas>
+<div class="vig"></div>
+<div id="cur"></div>
+<div id="prog"></div>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <svg class="lfox" viewBox="0 0 120 120" aria-hidden="true">
+    <defs>
+      <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7D5F26"/><stop offset=".4" stop-color="#F0D896"/><stop offset=".7" stop-color="#C9A24B"/><stop offset="1" stop-color="#7D5F26"/>
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" class="lstroke">
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(60 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(120 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(180 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(240 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(300 60 60)"/>
+      <circle cx="60" cy="60" r="22"/>
+      <circle cx="60" cy="60" r="10"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(60 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(120 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(180 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(240 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(300 60 60)"/>
+    </g>
+  </svg>
+  <div class="lword">Neocortech</div>
+  <div class="ltag" data-i18n="ltag">La capa que gobierna la IA</div>
+  <div class="lnum"><span id="lnum">0</span><span class="pc">%</span></div>
+</div>
+<div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ============ NAV (header compartido) ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="/" data-c>
+      <svg class="m" viewBox="0 0 120 120" aria-label="Neocortech">
+        <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7D5F26"/><stop offset=".4" stop-color="#F0D896"/><stop offset=".7" stop-color="#C9A24B"/><stop offset="1" stop-color="#7D5F26"/></linearGradient>
+          <radialGradient id="bmc" cx=".5" cy=".42" r=".65">
+          <stop offset="0" stop-color="#EAF4FF"/><stop offset=".45" stop-color="#7FB4E8"/><stop offset="1" stop-color="#2E5E96"/></radialGradient></defs>
+        <circle cx="60" cy="60" r="18" fill="#5B8FC6" opacity=".24"/>
+        <circle cx="60" cy="60" r="18.5" fill="none" stroke="url(#bm)" stroke-width=".8" opacity=".35"/>
+        <circle cx="60" cy="60" r="22" fill="none" stroke="url(#bm)" stroke-width="1.4" stroke-dasharray="2.5 5"/>
+        <circle cx="60" cy="60" r="10" fill="url(#bmc)"/>
+        <g fill="none" stroke="url(#bm)" stroke-width="1.2" opacity=".55">
+          <path d="M60 25 Q55.5 31.5 60 37.5"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(60 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(120 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(180 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(240 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(300 60 60)"/>
+        </g>
+        <g fill="none" stroke="url(#bm)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(60 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(120 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(180 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(240 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(300 60 60)"/>
+        </g>
+        <circle cx="60" cy="22" r="3" fill="#F0D896"/><circle cx="92.9" cy="41" r="3" fill="#C9A24B"/><circle cx="92.9" cy="79" r="3" fill="#F0D896"/><circle cx="60" cy="98" r="3" fill="#C9A24B"/><circle cx="27.1" cy="79" r="3" fill="#F0D896"/><circle cx="27.1" cy="41" r="3" fill="#C9A24B"/>
+      </svg>
+      <div>
+        <div class="wm"><span class="neo">NEO</span>CORTECH</div>
+        <div class="sub" data-i18n="brand_sub">Gobernanza de IA</div>
+      </div>
+    </a>
+    <nav class="switch" aria-label="Páginas del ecosistema" data-i18n-attr="aria-label:a_nav">
+      <a href="/" data-c><span class="dot"></span>Carlos</a>
+      <a class="on" href="/newsletter" aria-current="page" data-c><span class="dot"></span>Newsletter</a>
+      <a class="wp" href="/wattprint" data-c><span class="dot"></span>Wattprint</a>
+    </nav>
+    <div class="lang " role="group" aria-label="Idioma" data-i18n-attr="aria-label:a_lang"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" style="padding-top:140px">
+  <div class="sunburst"></div><div class="halo"></div>
+  <div class="wrap hero-in">
+    <div class="foxwrap">
+      <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(201,162,75,.28)" stroke-width="1" stroke-dasharray="2 9"/>
+        <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(91,143,198,.22)" stroke-width="1"/>
+      </svg>
+      <svg class="fox" viewBox="0 0 120 120" aria-label="Neocortech">
+        <defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7D5F26"/><stop offset=".38" stop-color="#F0D896"/><stop offset=".7" stop-color="#C9A24B"/><stop offset="1" stop-color="#7D5F26"/></linearGradient>
+          <radialGradient id="hgc" cx=".5" cy=".42" r=".65">
+          <stop offset="0" stop-color="#EAF4FF"/><stop offset=".45" stop-color="#7FB4E8"/><stop offset="1" stop-color="#2E5E96"/></radialGradient></defs>
+        <circle cx="60" cy="60" r="18" fill="#5B8FC6" opacity=".24"/>
+        <circle cx="60" cy="60" r="18.5" fill="none" stroke="url(#hg)" stroke-width=".8" opacity=".35"/>
+        <circle cx="60" cy="60" r="22" fill="none" stroke="url(#hg)" stroke-width="1.4" stroke-dasharray="2.5 5"/>
+        <circle cx="60" cy="60" r="10" fill="url(#hgc)"/>
+        <g fill="none" stroke="url(#hg)" stroke-width="1.2" opacity=".55">
+          <path d="M60 25 Q55.5 31.5 60 37.5"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(60 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(120 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(180 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(240 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(300 60 60)"/>
+        </g>
+        <g fill="none" stroke="url(#hg)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(60 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(120 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(180 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(240 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(300 60 60)"/>
+        </g>
+        <circle cx="60" cy="22" r="3" fill="#F0D896"/><circle cx="92.9" cy="41" r="3" fill="#C9A24B"/><circle cx="92.9" cy="79" r="3" fill="#F0D896"/><circle cx="60" cy="98" r="3" fill="#C9A24B"/><circle cx="27.1" cy="79" r="3" fill="#F0D896"/><circle cx="27.1" cy="41" r="3" fill="#C9A24B"/>
+      </svg>
+    </div>
+    <div class="eyebrow" style="justify-content:center" data-i18n="nl_eb">Newsletter · Gobernanza de IA</div>
+    <div class="wordmark" style="margin-top:16px"><span class="neo">NEO</span>CORTECH</div>
+    <div class="tagline" data-i18n="nl_tag">La capa que gobierna la IA</div>
+    <p class="lead" data-i18n="nl_lead">Cómo gobernar el poder de la IA —agentes, IA generativa, ética, riesgos y sostenibilidad— <strong>antes de que se te vaya de las manos</strong>. Criterio auditable, pensado en voz alta por alguien que lo está implementando de verdad. No resúmenes de novedades.</p>
+    <div class="pron">/ˈni.oʊ.kɔːr.tɛk/ · neo·cor·tech</div>
+    <div class="cta-row">
+      <button class="btn primary" data-scroll="news-neo" data-c data-i18n="nl_cta">Suscríbete <span class="ar">↗</span></button>
+    </div>
+    <div class="scrollcue"><span data-i18n="nl_down">Baja</span><span class="bar"></span></div>
+  </div>
+</section>
+
+<!-- ============ MANIFIESTO ============ -->
+<section class="manifesto">
+  <div class="wrap">
+    <div class="eyebrow rvx" style="justify-content:center" data-i18n="nl_ess">Esencia</div>
+    <div class="rune rvx" style="justify-content:center"><span class="l"></span><span class="d"></span><span class="l r"></span></div>
+    <p class="big rvx" data-i18n="nl_big">La gobernanza no llega tarde por falta de normas. Llega tarde porque <em>nadie la construye mientras se construye la IA</em>.</p>
+    <div class="arche panel rvx">
+      <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+      <h3 data-i18n="nl_arch_h">El guardián-constructor</h3>
+      <p data-i18n="nl_arch_p">Neocortech no vende miedo regulatorio. Da la capa de criterio que convierte un sistema de IA en algo que se puede desplegar, defender y auditar. Orden y energía: el oro que estructura, el zafiro que corre por dentro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERFIL ============ -->
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow rvx" data-i18n="nl_behind">Detrás de Neocortech</div>
+      <h2 class="rvx" style="margin:14px 0 10px">Carlos Gallego Galán</h2>
+      <p class="lead rvx" data-i18n="nl_me">Implementador, no auditor. Dirijo producto y adopción de IA, y ahora escribo en voz alta el criterio que aplico cuando toca hacer que un sistema de IA sea gobernable de verdad.</p>
+      <ul class="creds">
+        <li class="rvx"><span data-i18n="nl_c1"><b>ISO/IEC 42001 Lead Implementer</b> — PECB, examen superado (ago. 2026).</span></li>
+        <li class="rvx"><span data-i18n="nl_c2"><b>Máster en Metaverso, VR y AR</b> (Complutense, Matrícula de Honor), Máster de Negocios 360º e Ingeniería Civil.</span></li>
+        <li class="rvx"><span data-i18n="nl_c3"><b>Experto en Inteligencia Artificial</b> (150 h · 6 ECTS) y Google Generative AI Leader.</span></li>
+        <li class="rvx"><span data-i18n="nl_c4">Sin humo: cada credencial, tal cual es. Ni una inflada.</span></li>
+      </ul>
+    </div>
+    <div class="card-quote panel rvx">
+      <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+      <p class="q" data-i18n="nl_q">"No audito la IA. <span class="g">La construyo para que se pueda auditar.</span>"</p>
+      <div class="attr" data-i18n="nl_attr">— El principio de la marca</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUSCRIPCIÓN ============ -->
+<section class="news" id="news-neo">
+  <div class="wrap">
+    <div class="eyebrow rvx" style="justify-content:center" data-i18n="nl_first">La edición inaugural</div>
+    <h2 class="rvx" style="margin-top:14px" data-i18n="nl_join_h">Entra antes de la Edición 0</h2>
+    <p class="lead rvx" style="margin:14px auto 0;text-align:center" data-i18n="nl_join_p">El post fundacional usa una historia que media generación tech ya conoce para explicar qué es la gobernanza de IA y por qué llega tarde casi siempre.</p>
+    <div class="box panel rvx">
+      <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+      <h3 style="color:var(--gold-bright)" data-i18n="nl_list">Únete a la lista</h3>
+      <form class="field-row" id="form-neo" method="post" target="kit-sink" novalidate>
+        <label class="sr" for="email-neo" data-i18n="nl_lbl">Tu correo</label>
+        <input id="email-neo" name="email_address" type="email" placeholder="tu@correo.com" autocomplete="email" required data-i18n-attr="placeholder:nl_ph"/>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"/>
+        <button class="btn primary" id="sub-neo" type="submit" data-c data-i18n="nl_btn">Quiero entrar</button>
+      </form>
+      <iframe name="kit-sink" title="kit" hidden></iframe>
+      <div class="microcopy" data-i18n="nl_micro">Tuteo, sin humo, voz de practitioner. Sin spam. Te das de baja con un clic.</div>
+      <div class="ok" id="ok-neo" role="status" data-i18n="nl_ok">Anotado. Revisa tu correo y confirma la suscripción. ✦</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="fm">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <path d="M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z" fill="none" stroke="#C9A24B" stroke-width="5" stroke-linejoin="round"/>
+        <circle cx="60" cy="60" r="12" fill="#5B8FC6"/><circle cx="60" cy="60" r="6" fill="#7FB4E8"/>
+      </svg>
+      <span><span style="color:var(--gold)">NEO</span>CORTECH</span>
+    </div>
+    <div class="tolinks">
+      <a href="/" data-c>Carlos</a>
+      <a href="/newsletter" data-c>Newsletter</a>
+      <a href="/wattprint" data-c>Wattprint</a>
+    </div>
+    <div class="meta" data-i18n="foot_meta">La capa que gobierna la IA · Córdoba, ES<br>© <span id="yr"></span> Neocortech — por Carlos Gallego Galán</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>window.NC_EN={"a_nav": "Ecosystem pages", "a_lang": "Language", "brand_sub": "AI governance", "ltag": "The layer that governs AI", "foot_meta": "The layer that governs AI · Córdoba, Spain<br>© <span id=\"yr\"></span> Neocortech — by Carlos Gallego Galán", "nl_eb": "Newsletter · AI governance", "nl_tag": "The layer that governs AI", "nl_lead": "How to govern the power of AI — agents, generative AI, ethics, risk and sustainability — <strong>before it gets out of hand</strong>. Auditable judgement, thought out loud by someone actually implementing it. Not news round-ups.", "nl_cta": "Subscribe <span class=\"ar\">↗</span>", "nl_ess": "Essence", "nl_big": "Governance isn't late for lack of rules. It's late because <em>nobody builds it while the AI is being built</em>.", "nl_arch_h": "The guardian-builder", "nl_arch_p": "Neocortech doesn't sell regulatory fear. It provides the layer of judgement that turns an AI system into something you can deploy, defend and audit. Order and energy: the gold that gives structure, the sapphire that runs inside.", "nl_behind": "Behind Neocortech", "nl_me": "Implementer, not auditor. I lead AI products and adoption, and now I write out loud the judgement I apply when an AI system has to become truly governable.", "nl_c1": "<b>ISO/IEC 42001 Lead Implementer</b> — PECB, exam passed (Aug 2026).", "nl_c2": "<b>MSc in Metaverse, VR and AR</b> (Complutense, Highest Distinction), 360º Business Master and Civil Engineering.", "nl_c3": "<b>AI Expert Programme</b> (150 h · 6 ECTS) and Google Generative AI Leader.", "nl_c4": "No smoke: every credential exactly as it is. Not one inflated.", "nl_q": "“I don't audit AI. <span class=\"g\">I build it so it can be audited.</span>”", "nl_attr": "— The brand's principle", "nl_first": "The first issue", "nl_join_h": "Get in before Issue 0", "nl_join_p": "The founding post uses a story half a tech generation already knows to explain what AI governance is and why it almost always arrives late. <em>Written in Spanish.</em>", "nl_list": "Join the list", "nl_micro": "Plain talk, no smoke, a practitioner's voice. No spam. Unsubscribe in one click.", "_title": "Neocortech — Newsletter · The layer that governs AI", "_desc": "An AI governance newsletter: agents, generative AI, ethics, risk and sustainability, with auditable judgement. Written in Spanish by someone implementing it.", "nl_down": "Scroll", "nl_lbl": "Your email", "nl_ph": "you@email.com", "nl_btn": "Count me in", "nl_ok": "Done. Check your inbox and confirm your subscription. ✦"};</script>
+<script>(function(){
+var D=window.NC_EN||{};
+if(window.NC_LANG==='en'){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(D[k]!=null)el.innerHTML=D[k];});
+  document.querySelectorAll('[data-i18n-attr]').forEach(function(el){el.getAttribute('data-i18n-attr').split(';').forEach(function(p){var kv=p.split(':');if(D[kv[1]]!=null)el.setAttribute(kv[0],D[kv[1]]);});});
+  if(D._title)document.title=D._title;
+  var m=document.querySelector('meta[name="description"]');if(m&&D._desc)m.setAttribute('content',D._desc);
+}
+document.querySelectorAll('.lang [data-lang]').forEach(function(b){
+  b.setAttribute('aria-pressed',String(b.getAttribute('data-lang')===window.NC_LANG));
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-lang');if(t===window.NC_LANG)return;
+    try{localStorage.setItem('nc_lang',t);}catch(e){}
+    var url=location.pathname+'?lang='+t;
+    var ps=document.querySelectorAll('.curtain i');
+    var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(window.gsap&&ps.length&&!rm){gsap.set(ps,{yPercent:100});gsap.to(ps,{yPercent:0,duration:.9,ease:'power4.inOut',stagger:.07,onComplete:function(){location.href=url;}});}
+    else location.href=url;
+  });
+});
+})();</script>
+<script>
+(function(){
+"use strict";
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var FINE=matchMedia('(pointer:fine)').matches;
+var hasGSAP=!!window.gsap;
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- particle field (gold + arcane embers rising) ---------- */
+(function(){var c=document.getElementById('field');if(!c)return;var x=c.getContext('2d'),W,H,DPR,parts=[],mouse={x:-999,y:-999};
+function size(){DPR=Math.min(devicePixelRatio||1,1.5);W=c.width=innerWidth*DPR;H=c.height=innerHeight*DPR;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';}
+size();addEventListener('resize',size);
+function sprite(c0,c1,c2){var s=document.createElement('canvas');s.width=s.height=64;var g2=s.getContext('2d');var g=g2.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,c0);g.addColorStop(.5,c1);g.addColorStop(1,c2);g2.fillStyle=g;g2.fillRect(0,0,64,64);return s;}
+var SPR_G=sprite('rgba(240,216,150,1)','rgba(201,162,75,.5)','rgba(125,95,38,0)');
+var SPR_S=sprite('rgba(127,180,232,1)','rgba(91,143,198,.5)','rgba(91,143,198,0)');
+var N=RM?0:Math.min(84,Math.floor(innerWidth/17));
+for(var i=0;i<N;i++)parts.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.5+.5)*DPR,vx:(Math.random()-.5)*.10*DPR,vy:(-Math.random()*.30-.05)*DPR,a:Math.random()*.5+.15,ph:Math.random()*6.28,sp:Math.random()*.02+.005,arc:Math.random()<.28});
+if(FINE)addEventListener('pointermove',function(e){mouse.x=e.clientX*DPR;mouse.y=e.clientY*DPR;},{passive:true});
+var sv=0,ls=0;addEventListener('scroll',function(){sv=Math.min(Math.abs(scrollY-ls),60);ls=scrollY;},{passive:true});
+function f(){x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';
+for(var i=0;i<parts.length;i++){var p=parts[i];p.ph+=p.sp;p.x+=p.vx+Math.sin(p.ph)*.16*DPR;p.y+=p.vy-(sv*.004*DPR);
+var dx=p.x-mouse.x,dy=p.y-mouse.y,d2=dx*dx+dy*dy,rad=120*DPR;if(d2<rad*rad){var d=Math.sqrt(d2)||1,fo=(1-d/rad)*1.3;p.x+=dx/d*fo;p.y+=dy/d*fo;}
+if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;
+var tw=p.a*(.6+.4*Math.sin(p.ph*2));var R4=p.r*4;
+x.globalAlpha=tw<0?0:tw>1?1:tw;x.drawImage(p.arc?SPR_S:SPR_G,p.x-R4,p.y-R4,R4*2,R4*2);}
+x.globalAlpha=1;sv*=.9;x.globalCompositeOperation='source-over';requestAnimationFrame(f);}
+if(!RM)f();})();
+
+/* ---------- custom cursor ---------- */
+if(FINE&&!RM){var cur=document.getElementById('cur'),cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
+addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY;cur.classList.add('on');},{passive:true});
+(function l(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(l);})();
+document.querySelectorAll('[data-c]').forEach(function(el){
+  el.addEventListener('pointerenter',function(){cur.classList.add('big');});
+  el.addEventListener('pointerleave',function(){cur.classList.remove('big');});});}
+
+/* ---------- reveal on scroll ---------- */
+var io=null;
+if('IntersectionObserver' in window && !RM){
+  io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rvx').forEach(function(el){io.observe(el);});
+}else{document.querySelectorAll('.rvx').forEach(function(el){el.classList.add('in');});}
+
+/* ---------- suscripción (confirmación inline) ---------- */
+(function(){
+  var KIT_ACTION="";
+  var form=document.getElementById('form-neo'),inp=document.getElementById('email-neo'),btn=document.getElementById('sub-neo'),ok=document.getElementById('ok-neo');
+  if(!form)return;
+  form.addEventListener('submit',function(e){
+    var v=(inp.value||'').trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){e.preventDefault();inp.style.borderColor='#F87171';inp.focus();return;}
+    inp.style.borderColor='';
+    var bot=form.querySelector('.hp').value;
+    if(bot||!KIT_ACTION){e.preventDefault();
+      if(!bot){ok.textContent=NCT('Se ha abierto tu correo con el alta preparada: envíalo y te apunto. ✦','Your email app opened with the sign-up ready: send it and I will add you. ✦');location.href='mailto:carlosgallegogalan@gmail.com?subject='+encodeURIComponent(NCT('Alta en la newsletter de Neocortech','Neocortech newsletter sign-up'))+'&body='+encodeURIComponent(NCT('Quiero apuntarme con este correo: ','Please add this email: ')+v);}
+    }else{form.action=KIT_ACTION;}
+    setTimeout(function(){inp.disabled=true;btn.disabled=true;btn.textContent='✓';ok.classList.add('show');},50);
+  });
+})();
+
+/* smooth scroll interno */
+document.querySelectorAll('[data-scroll]').forEach(function(b){b.addEventListener('click',function(){
+  var el=document.getElementById(b.dataset.scroll);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});});});
+
+/* nav hide on scroll down + progress */
+var nav=document.getElementById('nav'),last=0;
+addEventListener('scroll',function(){var y=scrollY;if(y>140&&y>last)nav.classList.add('hide');else nav.classList.remove('hide');last=y;
+  var h=document.documentElement,max=h.scrollHeight-h.clientHeight;document.getElementById('prog').style.transform='scaleX('+(max>0?y/max:0)+')';},{passive:true});
+
+/* ---------- entrada del hero ---------- */
+function entrance(){
+  if(!hasGSAP||RM)return;
+  gsap.fromTo('.foxwrap',{scale:.85,autoAlpha:0},{scale:1,autoAlpha:1,duration:.9,ease:'power3.out'});
+  gsap.fromTo('.wordmark',{y:30,autoAlpha:0},{y:0,autoAlpha:1,duration:.9,ease:'power4.out',delay:.15});
+  gsap.fromTo('.tagline,.hero .lead,.pron,.cta-row,.scrollcue,.hero .eyebrow',{y:22,autoAlpha:0},{y:0,autoAlpha:1,duration:.7,stagger:.08,ease:'power3.out',delay:.28});
+  gsap.to('.foxwrap .ring',{rotation:360,duration:60,ease:'none',repeat:-1,transformOrigin:'50% 50%'});
+  gsap.to('.fox',{y:-6,duration:3.4,ease:'sine.inOut',yoyo:true,repeat:-1});
+}
+
+/* ---------- loader (completo solo en primera visita) → cortina ---------- */
+(function(){
+  var ld=document.getElementById('loader'),num=document.getElementById('lnum');
+  var seen=false;try{seen=sessionStorage.getItem('nc_seen')==='1';sessionStorage.setItem('nc_seen','1');}catch(e){}
+  var strokes=document.querySelectorAll('.lstroke path,.lstroke circle');
+  function fillFox(){strokes.forEach(function(s){var len=s.getTotalLength?s.getTotalLength():200;s.style.strokeDasharray=len;s.style.strokeDashoffset=len;});}
+  function drawFox(t){strokes.forEach(function(s){var len=s.getTotalLength?s.getTotalLength():200;s.style.strokeDashoffset=len*(1-t);});}
+  function lift(){document.querySelectorAll('.curtain i').forEach(function(p,i){gsap.to(p,{yPercent:-100,duration:1,ease:'power4.inOut',delay:i*.07});});}
+  function start(){lift();gsap.to(ld,{autoAlpha:0,duration:.5,onComplete:function(){ld.style.display='none';}});entrance();}
+  if(RM||!hasGSAP){if(ld)ld.style.display='none';var c=document.querySelector('.curtain');if(c)c.style.display='none';return;}
+  if(seen){ld.style.display='none';lift();entrance();return;}
+  fillFox();
+  var p={v:0};
+  gsap.to(p,{v:100,duration:1.7,ease:'power2.inOut',onUpdate:function(){num.textContent=Math.floor(p.v);drawFox(p.v/100);},onComplete:function(){setTimeout(start,200);}});
+})();
+
+/* ---------- cortina de navegación — la salida cubre subiendo; bfcache; prefetch ---------- */
+(function(){
+var cover=false;
+function internal(a){
+  if(!a||a.target==='_blank'||a.hasAttribute('download'))return null;
+  var href=a.getAttribute('href');if(!href)return null;
+  var u;try{u=new URL(a.href,location.href);}catch(e){return null;}
+  if(u.origin!==location.origin)return null;
+  if(u.protocol!=='http:'&&u.protocol!=='https:')return null;
+  if(u.pathname===location.pathname&&u.hash)return null;
+  return u;
+}
+addEventListener('pageshow',function(e){if(e.persisted){cover=false;var ld=document.getElementById('loader');if(ld)ld.style.display='none';
+  if(window.gsap){gsap.set('.curtain i',{yPercent:-100});}else{document.querySelectorAll('.curtain i').forEach(function(p){p.style.transform='translateY(-100%)';});}}});
+if(RM||!hasGSAP)return;
+document.addEventListener('click',function(e){
+  if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;
+  var u=internal(a);if(!u||cover)return;
+  if(u.pathname===location.pathname&&!u.hash){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});return;}
+  e.preventDefault();cover=true;
+  var ps=document.querySelectorAll('.curtain i');
+  gsap.set(ps,{yPercent:100});
+  gsap.to(ps,{yPercent:0,duration:1,ease:'power4.inOut',stagger:.07,onComplete:function(){location.href=u.href;}});
+});
+document.addEventListener('pointerenter',function(e){
+  var t=e.target;if(!t||!t.closest)return;
+  var u=internal(t.closest('a[href]'));if(!u)return;
+  if(u.pathname===location.pathname)return;
+  if(document.querySelector('link[rel="prefetch"][href="'+u.href+'"]'))return;
+  var l=document.createElement('link');l.rel='prefetch';l.href=u.href;document.head.appendChild(l);
+},true);
+})();
+})();
+</script>
+</body>
+</html>

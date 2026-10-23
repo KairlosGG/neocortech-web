@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Wattprint — La huella de tu IA en 60 segundos · Neocortech</title>
+<meta name="description" content="Calcula cuánto carbono, energía y agua consume tu IA: entrenamientos e inferencias con metodología SCI (ISO/IEC 21031) y datos de Ember y Uptime Institute. Gratis y sin registro."/>
+<meta name="theme-color" content="#0A141F"/>
+<meta property="og:title" content="Wattprint — La huella de tu IA en 60 segundos · Neocortech"/>
+<meta property="og:description" content="CO₂e, kWh y litros de tus entrenamientos e inferencias. Metodología SCI (ISO/IEC 21031). Gratis y sin registro."/>
+<!-- meta:begin -->
+<link rel="canonical" href="https://neocortech.vercel.app/wattprint"/>
+<link rel="alternate" hreflang="es" href="https://neocortech.vercel.app/wattprint"/>
+<link rel="alternate" hreflang="en" href="https://neocortech.vercel.app/wattprint?lang=en"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://neocortech.vercel.app/wattprint"/>
+<meta property="og:image" content="https://neocortech.vercel.app/assets/og-wattprint.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:locale:alternate" content="en_GB"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://neocortech.vercel.app/assets/og-wattprint.jpg"/>
+<!-- meta:end -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z' fill='none' stroke='%23C9A24B' stroke-width='8' stroke-linejoin='round'/%3E%3Ccircle cx='60' cy='60' r='14' fill='%235B8FC6'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%237FB4E8'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@700&family=Marcellus&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Wattprint conserva su propia tipografía: vive dentro, pero no se funde con la marca -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<script>(function(){var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
+var l=(q==='en'||q==='es')?q:null;try{if(l)localStorage.setItem('nc_lang',l);else l=localStorage.getItem('nc_lang');}catch(e){}
+if(l!=='en')l='es';window.NC_LANG=l;document.documentElement.lang=l;
+window.NCT=function(es,en){return l==='en'?en:es;};})();</script>
+<style>
+:root{
+  --night:#0A141F; --night2:#0D1B29; --slate:#13273B;
+  --gold:#C9A24B; --gold-bright:#F0D896; --gold-deep:#7D5F26;
+  --arcane:#5B8FC6; --arcane-glow:#7FB4E8;
+  --bone:#ECE7DA; --muted:#7E92A6; --green:#4ADE80;
+  --line:rgba(201,162,75,.24); --line-soft:rgba(201,162,75,.10);
+  --f-epic:"Cinzel Decorative",serif; --f-display:"Cinzel",serif;
+  --f-sub:"Marcellus",serif; --f-body:"Inter",system-ui,sans-serif;
+  --metal:linear-gradient(160deg,var(--gold-deep) 0%,var(--gold-bright) 38%,var(--gold) 62%,var(--gold-deep) 100%);
+  --w:1160px; --e:cubic-bezier(.19,1,.22,1); --e2:cubic-bezier(.76,0,.24,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scrollbar-color:var(--slate) var(--night)}
+::selection{background:var(--gold);color:var(--night)}
+body{
+  background:var(--night);color:var(--bone);font-family:var(--f-body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97'%3E%3Cpolygon points='28,2 54,17 54,47 28,62 2,47 2,17' fill='none' stroke='%23C9A24B' stroke-opacity='.045' stroke-width='1'/%3E%3Cpolygon points='28,66 54,81 54,111 28,126 2,111 2,81' fill='none' stroke='%23C9A24B' stroke-opacity='.045' stroke-width='1'/%3E%3C/svg%3E"),
+    radial-gradient(1100px 640px at 50% -8%, #17324d 0%, transparent 62%),
+    radial-gradient(760px 520px at 12% 40%, rgba(91,143,198,.06) 0%, transparent 60%),
+    radial-gradient(900px 760px at 50% 120%, #0d2033 0%, transparent 60%);
+  background-attachment:fixed;
+}
+a{color:var(--arcane-glow);text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+img{display:block;max-width:100%}
+
+/* ---- perimeter engraving frame ---- */
+.frame{position:fixed;inset:11px;border:1px solid rgba(201,162,75,.30);pointer-events:none;z-index:80}
+.frame::before{content:"";position:absolute;inset:5px;border:1px solid rgba(201,162,75,.11)}
+.frame b{position:absolute;width:16px;height:16px;border:1.5px solid var(--gold)}
+.frame b.tl{top:-1px;left:-1px;border-right:0;border-bottom:0}
+.frame b.tr{top:-1px;right:-1px;border-left:0;border-bottom:0}
+.frame b.bl{bottom:-1px;left:-1px;border-right:0;border-top:0}
+.frame b.br{bottom:-1px;right:-1px;border-left:0;border-top:0}
+@media(max-width:640px){.frame{inset:7px}}
+
+#field{position:fixed;inset:0;z-index:0;pointer-events:none}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 300px 44px rgba(0,0,0,.55)}
+
+/* ---- custom cursor ---- */
+#cur{position:fixed;z-index:200;top:0;left:0;width:9px;height:9px;border-radius:50%;
+  background:var(--gold);pointer-events:none;transform:translate(-50%,-50%);
+  mix-blend-mode:screen;will-change:transform;transition:width .3s var(--e),height .3s var(--e),background .3s,opacity .3s;opacity:0;
+  box-shadow:0 0 12px rgba(201,162,75,.7)}
+#cur.on{opacity:1}
+#cur.big{width:58px;height:58px;background:rgba(201,162,75,.12);box-shadow:0 0 0 1px rgba(201,162,75,.4)}
+@media(pointer:coarse){#cur{display:none}}
+
+/* ---- loader (completo solo en primera visita) + cortina ---- */
+#loader{position:fixed;inset:0;z-index:300;background:var(--night);display:none;align-items:center;justify-content:center;flex-direction:column}
+.js #loader{display:flex}
+#loader .lfox{width:104px;height:104px;filter:drop-shadow(0 0 26px rgba(201,162,75,.5))}
+#loader .lword{margin-top:26px;font-family:var(--f-epic);font-weight:700;letter-spacing:.34em;font-size:13px;color:var(--muted);text-transform:uppercase}
+#loader .lnum{position:absolute;right:max(28px,4vw);bottom:26px;font-family:var(--f-display);font-weight:600;
+  font-size:clamp(48px,10vw,120px);line-height:.8;color:var(--gold);letter-spacing:-.02em}
+#loader .lnum .pc{color:var(--gold-deep);font-size:.36em;vertical-align:super;margin-left:2px}
+#loader .ltag{position:absolute;left:max(28px,4vw);bottom:30px;font-family:var(--f-sub);font-size:12px;letter-spacing:.2em;color:var(--gold-deep);text-transform:uppercase}
+.curtain{position:fixed;inset:0;z-index:290;pointer-events:none;display:none}
+.js .curtain{display:flex}
+.curtain i{flex:1;background:var(--night);border-right:1px solid rgba(201,162,75,.05)}
+
+#prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--metal);z-index:120;transform:scaleX(0);transform-origin:left}
+
+/* ---- top nav (header compartido) ---- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;transition:transform .5s var(--e)}
+header.nav.hide{transform:translateY(-112%)}
+.nav-in{max-width:var(--w);margin:0 auto;padding:16px max(22px,4vw);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(10,20,31,.82),transparent);
+  backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px);-webkit-mask:linear-gradient(#000,transparent);mask:linear-gradient(#000,transparent);z-index:-1}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .m{width:34px;height:34px;filter:drop-shadow(0 1px 8px rgba(201,162,75,.5));flex:none}
+.brand .wm{font-family:var(--f-epic);font-weight:700;font-size:16px;letter-spacing:.10em;color:var(--bone);line-height:1}
+.brand .wm .neo{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .sub{font-family:var(--f-sub);font-size:10px;letter-spacing:.24em;color:var(--gold-deep);text-transform:uppercase;margin-top:3px}
+.switch{display:flex;align-items:center;gap:4px;padding:5px;border:1px solid var(--line-soft);border-radius:40px;background:rgba(19,39,59,.5)}
+.switch a{padding:8px 18px;border-radius:40px;font-family:var(--f-sub);font-size:13px;letter-spacing:.03em;color:var(--muted);transition:color .3s,background .3s;white-space:nowrap}
+.switch a .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;margin-right:7px;vertical-align:middle;opacity:.55}
+.switch a:hover{color:var(--bone)}
+.switch a.on{color:var(--night);background:var(--metal);box-shadow:0 4px 18px rgba(201,162,75,.28)}
+.switch a.on .dot{opacity:1;background:var(--night)}
+.switch a.wp{color:var(--green)}
+.switch a.wp.on{color:var(--night)}
+@media(max-width:860px){.nav-in{flex-wrap:wrap}.switch{order:3;width:100%;justify-content:space-between}.switch a{flex:1;text-align:center;padding:9px 6px;font-size:12px}.switch a .dot{display:none}}
+
+/* ---- layout ---- */
+main{position:relative;z-index:2}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 max(22px,4vw);position:relative}
+section{padding:clamp(64px,9vw,120px) 0}
+.eyebrow{font-family:var(--f-display);font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:34px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;line-height:1.1}
+h1,h2{text-wrap:balance}
+h2{font-size:clamp(28px,4.4vw,46px);letter-spacing:.01em}
+h3{font-family:var(--f-sub);font-size:22px;letter-spacing:.02em}
+p{color:#cdd6df}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--bone);max-width:60ch;line-height:1.55}
+strong{color:var(--bone);font-weight:600}
+.gold{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.rune{display:flex;align-items:center;gap:12px;margin:6px 0 22px}
+.rune .l{height:1px;width:120px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rune .l.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.rune .d{width:9px;height:9px;background:var(--metal);transform:rotate(45deg);box-shadow:0 0 12px rgba(201,162,75,.5)}
+
+/* reveal */
+.rvx{opacity:0;transform:translateY(28px);transition:opacity .9s var(--e),transform .9s var(--e)}
+.rvx.in{opacity:1;transform:none}
+
+/* feats (qué mide · fuentes) */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+@media(max-width:760px){.feat-grid{grid-template-columns:1fr}}
+.feat-grid.two{grid-template-columns:repeat(2,1fr)}
+@media(max-width:640px){.feat-grid.two{grid-template-columns:1fr}}
+.feat{padding:24px;border:1px solid var(--line-soft);background:rgba(19,39,59,.4);position:relative}
+.feat h4{font-family:var(--f-sub);font-size:16px;color:var(--gold-bright);margin-bottom:6px}
+.feat p{font-size:14px}
+.feat .n{position:absolute;top:16px;right:18px;font-family:var(--f-display);font-size:12px;color:var(--gold-deep);letter-spacing:.1em}
+.feat .wpk{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;display:block}
+.feat .wpk.c{color:#4ADE80}.feat .wpk.e{color:#FACC15}.feat .wpk.w{color:#38BDF8}
+
+/* panels */
+.panel{background:var(--slate);border:1px solid var(--gold-deep);position:relative}
+.corner{position:absolute;width:18px;height:18px;border:1.5px solid var(--gold)}
+.c-tl{top:-1px;left:-1px;border-right:0;border-bottom:0}.c-tr{top:-1px;right:-1px;border-left:0;border-bottom:0}
+.c-bl{bottom:-1px;left:-1px;border-right:0;border-top:0}.c-br{bottom:-1px;right:-1px;border-left:0;border-top:0}
+
+/* fórmula SCI */
+.sci{max-width:660px;margin:34px auto 0;padding:34px 38px;text-align:center}
+.sci .formula{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:clamp(15px,2.4vw,20px);color:var(--gold-bright);letter-spacing:.04em;margin:18px 0 10px}
+.sci .formula .op{color:var(--muted)}
+.sci .legend{font-size:13px;color:var(--muted);line-height:1.8}
+.sci .legend b{color:var(--bone);font-weight:600}
+
+/* ---- Wattprint · tarjeta verde (piel propia, intacta) ---- */
+.wpview-top{padding-top:132px;text-align:center}
+.wpcard{position:relative;max-width:900px;margin:34px auto 0;padding:0;border-radius:14px;overflow:hidden;
+  background:#0B1210;border:1px solid #1E2B26;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.wpcard .top{padding:12px 20px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #1E2B26;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;color:#8BA69B;letter-spacing:.08em}
+.wpcard .top .b{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 10px #4ADE80}
+.wpcard .body{padding:clamp(34px,5vw,60px);text-align:center}
+.wpcard .glyph{width:66px;height:66px;margin:0 auto 22px}
+.wpcard .kick{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.24em;color:#4ADE80;text-transform:uppercase}
+.wpcard h2{font-family:"Space Grotesk","Marcellus",sans-serif;color:#E8F0EC;font-size:clamp(24px,3.6vw,38px);margin:14px auto;max-width:16ch;line-height:1.15;letter-spacing:0}
+.wpcard p{color:#8BA69B;max-width:52ch;margin:0 auto;font-size:16px}
+.wpmetrics{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px 0 8px}
+.wpm{padding:12px 20px;border:1px solid #1E2B26;border-radius:10px;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px}
+.wpm.c{color:#4ADE80}.wpm.e{color:#FACC15}.wpm.w{color:#38BDF8}
+.wpbtn{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:16px 32px;border-radius:8px;
+  background:#4ADE80;color:#07120C;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:15px;letter-spacing:.02em;
+  box-shadow:0 10px 30px rgba(74,222,128,.25);transition:transform .3s var(--e),box-shadow .3s var(--e)}
+.wpbtn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(74,222,128,.35)}
+.wpnote{margin-top:34px;text-align:center;font-size:13px;color:var(--muted);font-family:var(--f-body)}
+.wpnote .dot{color:var(--green)}
+
+/* footer */
+footer{border-top:1px solid var(--line-soft);margin-top:20px;position:relative;z-index:2}
+.foot-in{max-width:var(--w);margin:0 auto;padding:44px max(22px,4vw);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot-in .fm{display:flex;align-items:center;gap:12px}
+.foot-in .fm svg{width:26px;height:26px}
+.foot-in .fm span{font-family:var(--f-epic);font-weight:700;letter-spacing:.1em;font-size:13px;color:var(--bone)}
+.foot-in .meta{font-size:12px;color:var(--muted);text-align:right;line-height:1.7}
+.tolinks{display:flex;gap:22px;font-family:var(--f-display);font-size:11px;letter-spacing:.16em;text-transform:uppercase;flex-wrap:wrap}
+.tolinks a{color:var(--muted);transition:color .3s}
+.tolinks a:hover{color:var(--gold)}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none!important;transition:none!important}
+  .rvx{opacity:1;transform:none}
+  #loader,.curtain{display:none!important}
+}
+
+/* selector de idioma */
+.lang{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(201,162,75,.18);border-radius:40px;background:rgba(19,39,59,.5)}
+.lang button{font-family:var(--ui,Inter,system-ui,sans-serif);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--muted);background:none;border:0;padding:6px 10px;border-radius:40px;cursor:pointer;transition:color .2s,background .2s}
+.lang button:hover{color:var(--bone)}
+.lang button[aria-pressed="true"]{background:var(--metal);color:var(--night)}
+.lang button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
+
+.nav-in{gap:16px}
+@media(max-width:640px){.nav-in .lang{order:2}}
+</style>
+</head>
+<body>
+
+<div class="frame"><b class="tl"></b><b class="tr"></b><b class="bl"></b><b class="br"></b></div>
+<canvas id="field"></canvas>
+<div class="vig"></div>
+<div id="cur"></div>
+<div id="prog"></div>
+
+<!-- ============ LOADER ============ -->
+<div id="loader" aria-hidden="true">
+  <svg class="lfox" viewBox="0 0 120 120" aria-hidden="true">
+    <defs>
+      <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7D5F26"/><stop offset=".4" stop-color="#F0D896"/><stop offset=".7" stop-color="#C9A24B"/><stop offset="1" stop-color="#7D5F26"/>
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" class="lstroke">
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(60 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(120 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(180 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(240 60 60)"/>
+      <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(300 60 60)"/>
+      <circle cx="60" cy="60" r="22"/>
+      <circle cx="60" cy="60" r="10"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(60 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(120 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(180 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(240 60 60)"/>
+      <path d="M60 25 Q55.5 31.5 60 37.5" stroke-width="1.2" transform="rotate(300 60 60)"/>
+    </g>
+  </svg>
+  <div class="lword">Neocortech</div>
+  <div class="ltag" data-i18n="ltag">La capa que gobierna la IA</div>
+  <div class="lnum"><span id="lnum">0</span><span class="pc">%</span></div>
+</div>
+<div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<!-- ============ NAV (header compartido) ============ -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a class="brand" href="/" data-c>
+      <svg class="m" viewBox="0 0 120 120" aria-label="Neocortech">
+        <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7D5F26"/><stop offset=".4" stop-color="#F0D896"/><stop offset=".7" stop-color="#C9A24B"/><stop offset="1" stop-color="#7D5F26"/></linearGradient>
+          <radialGradient id="bmc" cx=".5" cy=".42" r=".65">
+          <stop offset="0" stop-color="#EAF4FF"/><stop offset=".45" stop-color="#7FB4E8"/><stop offset="1" stop-color="#2E5E96"/></radialGradient></defs>
+        <circle cx="60" cy="60" r="18" fill="#5B8FC6" opacity=".24"/>
+        <circle cx="60" cy="60" r="18.5" fill="none" stroke="url(#bm)" stroke-width=".8" opacity=".35"/>
+        <circle cx="60" cy="60" r="22" fill="none" stroke="url(#bm)" stroke-width="1.4" stroke-dasharray="2.5 5"/>
+        <circle cx="60" cy="60" r="10" fill="url(#bmc)"/>
+        <g fill="none" stroke="url(#bm)" stroke-width="1.2" opacity=".55">
+          <path d="M60 25 Q55.5 31.5 60 37.5"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(60 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(120 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(180 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(240 60 60)"/>
+          <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(300 60 60)"/>
+        </g>
+        <g fill="none" stroke="url(#bm)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(60 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(120 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(180 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(240 60 60)"/>
+          <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(300 60 60)"/>
+        </g>
+        <circle cx="60" cy="22" r="3" fill="#F0D896"/><circle cx="92.9" cy="41" r="3" fill="#C9A24B"/><circle cx="92.9" cy="79" r="3" fill="#F0D896"/><circle cx="60" cy="98" r="3" fill="#C9A24B"/><circle cx="27.1" cy="79" r="3" fill="#F0D896"/><circle cx="27.1" cy="41" r="3" fill="#C9A24B"/>
+      </svg>
+      <div>
+        <div class="wm"><span class="neo">NEO</span>CORTECH</div>
+        <div class="sub" data-i18n="brand_sub">Gobernanza de IA</div>
+      </div>
+    </a>
+    <nav class="switch" aria-label="Páginas del ecosistema" data-i18n-attr="aria-label:a_nav">
+      <a href="/" data-c><span class="dot"></span>Carlos</a>
+      <a href="/newsletter" data-c><span class="dot"></span>Newsletter</a>
+      <a class="wp on" href="/wattprint" aria-current="page" data-c><span class="dot"></span>Wattprint</a>
+    </nav>
+    <div class="lang " role="group" aria-label="Idioma" data-i18n-attr="aria-label:a_lang"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
+  </div>
+</header>
+
+<main>
+<!-- ============ INTRO + TARJETA VERDE ============ -->
+<section class="wpview-top" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="eyebrow rvx" style="justify-content:center" data-i18n="wp_eb">Herramienta · Sostenibilidad</div>
+    <h2 class="rvx gold" style="margin:14px 0 8px" data-i18n="wp_h">Un mundo aparte, con su propia piel</h2>
+    <p class="lead rvx" style="margin:0 auto;text-align:center" data-i18n="wp_lead">Wattprint tiene identidad propia y vive fuera de la marca. Pero se abre desde aquí, con un botón.</p>
+
+    <div class="wpcard rvx">
+      <div class="top" data-i18n="wp_top"><span class="b"></span>/tool/wattprint · sin registro · datos Ember + Uptime Institute</div>
+      <div class="body">
+        <svg class="glyph" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0F1B16"/><path d="M17.5 4 8 18h6l-1.5 10L22 13h-6l1.5-9z" fill="#4ADE80"/></svg>
+        <div class="kick">Wattprint · v1</div>
+        <h2 data-i18n="wp_card_h">¿Cuánto carbono, energía y agua consume tu IA?</h2>
+        <p data-i18n="wp_card_p">Calcula la huella de tus entrenamientos e inferencias en 60 segundos. Metodología SCI (ISO/IEC 21031). Gratis y sin registro.</p>
+        <div class="wpmetrics">
+          <div class="wpm c">CO₂e · kg</div>
+          <div class="wpm e" data-i18n="wp_m_e">Energía · kWh</div>
+          <div class="wpm w" data-i18n="wp_m_w">Agua · litros</div>
+        </div>
+        <a class="wpbtn" href="/tool/wattprint/" data-c data-i18n="wp_btn">Abrir Wattprint <span>→</span></a>
+      </div>
+    </div>
+    <p class="wpnote" data-i18n="wp_note"><span class="dot">◆</span> Identidad verde propia · convive con Neocortech sin fundirse con ella</p>
+  </div>
+</section>
+
+<!-- ============ QUÉ MIDE ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow rvx" data-i18n="wp_what">Qué mide</div>
+    <div class="rune rvx"><span class="l"></span><span class="d"></span><span class="l r"></span></div>
+    <h2 class="rvx" style="margin-bottom:10px" data-i18n="wp_three">Tres huellas, un cálculo</h2>
+    <p class="lead rvx" data-i18n="wp_three_p">Entrenar y servir modelos no consume "nube": consume electricidad, emite carbono y evapora agua en centros de datos concretos. Wattprint pone número a las tres cosas.</p>
+    <div class="feat-grid">
+      <div class="feat rvx" data-i18n="wp_f1"><span class="n">01</span><span class="wpk c">CO₂e · kg</span><h4>Carbono</h4><p>Emisiones de entrenamiento e inferencia según la intensidad de carbono de la red eléctrica que alimenta el centro de datos. No es igual entrenar en Francia que en Polonia.</p></div>
+      <div class="feat rvx" data-i18n="wp_f2"><span class="n">02</span><span class="wpk e">Energía · kWh</span><h4>Electricidad</h4><p>Consumo del hardware (GPU/TPU) durante el trabajo, corregido por el PUE del centro de datos: la energía que gasta el edificio, no solo el chip.</p></div>
+      <div class="feat rvx" data-i18n="wp_f3"><span class="n">03</span><span class="wpk w">Agua · litros</span><h4>Agua</h4><p>El coste hídrico de la refrigeración, estimado con el WUE. La huella de la que casi nadie habla y que ya condiciona dónde se pueden construir centros de datos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METODOLOGÍA SCI ============ -->
+<section style="padding-top:0">
+  <div class="wrap" style="text-align:center">
+    <div class="eyebrow rvx" style="justify-content:center" data-i18n="wp_meth">Metodología</div>
+    <h2 class="rvx" style="margin-top:14px">SCI — Software Carbon Intensity</h2>
+    <p class="lead rvx" style="margin:14px auto 0;text-align:center" data-i18n="wp_meth_p">Wattprint no estima a ojo: aplica la especificación <strong>SCI (ISO/IEC 21031)</strong> de la Green Software Foundation, el estándar internacional para medir el carbono del software.</p>
+    <div class="sci panel rvx">
+      <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+      <div class="formula">SCI <span class="op">=</span> ( E <span class="op">×</span> I <span class="op">+</span> M ) <span class="op">/</span> R</div>
+      <div class="legend" data-i18n="wp_legend">
+        <b>E</b> — energía consumida por el software (kWh) · <b>I</b> — intensidad de carbono de la red (gCO₂e/kWh)<br>
+        <b>M</b> — carbono embebido del hardware amortizado · <b>R</b> — unidad funcional (p. ej., por inferencia)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUENTES ============ -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow rvx" data-i18n="wp_src">Fuentes de datos</div>
+    <div class="rune rvx"><span class="l"></span><span class="d"></span><span class="l r"></span></div>
+    <div class="feat-grid two">
+      <div class="feat rvx" data-i18n="wp_a"><span class="n">A</span><h4>Ember</h4><p>Intensidad de carbono de la electricidad por país y por red, con datos abiertos y actualizados. Es lo que convierte tus kWh en kg de CO₂e según dónde corre tu IA.</p></div>
+      <div class="feat rvx" data-i18n="wp_b"><span class="n">B</span><h4>Uptime Institute</h4><p>Medias de eficiencia de la industria de centros de datos: PUE (energía) y WUE (agua). Es lo que convierte el consumo del chip en el consumo real del edificio.</p></div>
+    </div>
+    <p class="wpnote rvx" data-i18n="wp_note2"><span class="dot">◆</span> Sin humo también aquí: cada número sale de una fuente citable, no de un multiplicador inventado</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="fm">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <path d="M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z" fill="none" stroke="#C9A24B" stroke-width="5" stroke-linejoin="round"/>
+        <circle cx="60" cy="60" r="12" fill="#5B8FC6"/><circle cx="60" cy="60" r="6" fill="#7FB4E8"/>
+      </svg>
+      <span><span style="color:var(--gold)">NEO</span>CORTECH</span>
+    </div>
+    <div class="tolinks">
+      <a href="/" data-c>Carlos</a>
+      <a href="/newsletter" data-c>Newsletter</a>
+      <a href="/wattprint" data-c>Wattprint</a>
+    </div>
+    <div class="meta" data-i18n="foot_meta">La capa que gobierna la IA · Córdoba, ES<br>© <span id="yr"></span> Neocortech — por Carlos Gallego Galán</div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>window.NC_EN={"a_nav": "Ecosystem pages", "a_lang": "Language", "brand_sub": "AI governance", "ltag": "The layer that governs AI", "foot_meta": "The layer that governs AI · Córdoba, Spain<br>© <span id=\"yr\"></span> Neocortech — by Carlos Gallego Galán", "wp_eb": "Tool · Sustainability", "wp_h": "A world apart, with its own skin", "wp_lead": "Wattprint has its own identity and lives outside the brand. But it opens from here, with one button.", "wp_top": "<span class=\"b\"></span>/tool/wattprint · no sign-up · Ember + Uptime Institute data", "wp_card_h": "How much carbon, energy and water does your AI use?", "wp_card_p": "Calculate the footprint of your training runs and inference in 60 seconds. SCI methodology (ISO/IEC 21031). Free, no sign-up. The tool is in Spanish.", "wp_m_e": "Energy · kWh", "wp_m_w": "Water · litres", "wp_btn": "Open Wattprint <span>→</span>", "wp_note": "<span class=\"dot\">◆</span> Its own green identity · lives alongside Neocortech without merging into it", "wp_what": "What it measures", "wp_three": "Three footprints, one calculation", "wp_three_p": "Training and serving models doesn't consume “cloud”: it consumes electricity, emits carbon and evaporates water in specific data centres. Wattprint puts a number on all three.", "wp_f1": "<span class=\"n\">01</span><span class=\"wpk c\">CO₂e · kg</span><h4>Carbon</h4><p>Training and inference emissions based on the carbon intensity of the grid that powers the data centre. Training in France is not the same as training in Poland.</p>", "wp_f2": "<span class=\"n\">02</span><span class=\"wpk e\">Energy · kWh</span><h4>Electricity</h4><p>Hardware consumption (GPU/TPU) during the job, adjusted by the data centre's PUE: the energy the building uses, not just the chip.</p>", "wp_f3": "<span class=\"n\">03</span><span class=\"wpk w\">Water · litres</span><h4>Water</h4><p>The water cost of cooling, estimated with WUE. The footprint almost nobody talks about, and one that already limits where data centres can be built.</p>", "wp_meth": "Methodology", "wp_meth_p": "Wattprint doesn't guess: it applies the Green Software Foundation's <strong>SCI (ISO/IEC 21031)</strong> specification, the international standard for measuring software carbon.", "wp_legend": "<b>E</b> — energy consumed by the software (kWh) · <b>I</b> — grid carbon intensity (gCO₂e/kWh)<br><b>M</b> — amortised embodied carbon of the hardware · <b>R</b> — functional unit (e.g. per inference)", "wp_src": "Data sources", "wp_a": "<span class=\"n\">A</span><h4>Ember</h4><p>Carbon intensity of electricity by country and grid, with open, up-to-date data. It turns your kWh into kg of CO₂e depending on where your AI runs.</p>", "wp_b": "<span class=\"n\">B</span><h4>Uptime Institute</h4><p>Industry averages for data centre efficiency: PUE (energy) and WUE (water). It turns chip consumption into the building's real consumption.</p>", "wp_note2": "<span class=\"dot\">◆</span> No smoke here either: every number comes from a citable source, not a made-up multiplier", "_title": "Wattprint — Your AI's footprint in 60 seconds · Neocortech", "_desc": "Calculate how much carbon, energy and water your AI uses: training and inference with the SCI methodology (ISO/IEC 21031) and data from Ember and Uptime Institute."};</script>
+<script>(function(){
+var D=window.NC_EN||{};
+if(window.NC_LANG==='en'){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');if(D[k]!=null)el.innerHTML=D[k];});
+  document.querySelectorAll('[data-i18n-attr]').forEach(function(el){el.getAttribute('data-i18n-attr').split(';').forEach(function(p){var kv=p.split(':');if(D[kv[1]]!=null)el.setAttribute(kv[0],D[kv[1]]);});});
+  if(D._title)document.title=D._title;
+  var m=document.querySelector('meta[name="description"]');if(m&&D._desc)m.setAttribute('content',D._desc);
+}
+document.querySelectorAll('.lang [data-lang]').forEach(function(b){
+  b.setAttribute('aria-pressed',String(b.getAttribute('data-lang')===window.NC_LANG));
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-lang');if(t===window.NC_LANG)return;
+    try{localStorage.setItem('nc_lang',t);}catch(e){}
+    var url=location.pathname+'?lang='+t;
+    var ps=document.querySelectorAll('.curtain i');
+    var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(window.gsap&&ps.length&&!rm){gsap.set(ps,{yPercent:100});gsap.to(ps,{yPercent:0,duration:.9,ease:'power4.inOut',stagger:.07,onComplete:function(){location.href=url;}});}
+    else location.href=url;
+  });
+});
+})();</script>
+<script>
+(function(){
+"use strict";
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var FINE=matchMedia('(pointer:fine)').matches;
+var hasGSAP=!!window.gsap;
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ---------- particle field (gold + arcane embers rising) ---------- */
+(function(){var c=document.getElementById('field');if(!c)return;var x=c.getContext('2d'),W,H,DPR,parts=[],mouse={x:-999,y:-999};
+function size(){DPR=Math.min(devicePixelRatio||1,1.5);W=c.width=innerWidth*DPR;H=c.height=innerHeight*DPR;c.style.width=innerWidth+'px';c.style.height=innerHeight+'px';}
+size();addEventListener('resize',size);
+function sprite(c0,c1,c2){var s=document.createElement('canvas');s.width=s.height=64;var g2=s.getContext('2d');var g=g2.createRadialGradient(32,32,0,32,32,32);g.addColorStop(0,c0);g.addColorStop(.5,c1);g.addColorStop(1,c2);g2.fillStyle=g;g2.fillRect(0,0,64,64);return s;}
+var SPR_G=sprite('rgba(240,216,150,1)','rgba(201,162,75,.5)','rgba(125,95,38,0)');
+var SPR_S=sprite('rgba(127,180,232,1)','rgba(91,143,198,.5)','rgba(91,143,198,0)');
+var N=RM?0:Math.min(84,Math.floor(innerWidth/17));
+for(var i=0;i<N;i++)parts.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.5+.5)*DPR,vx:(Math.random()-.5)*.10*DPR,vy:(-Math.random()*.30-.05)*DPR,a:Math.random()*.5+.15,ph:Math.random()*6.28,sp:Math.random()*.02+.005,arc:Math.random()<.28});
+if(FINE)addEventListener('pointermove',function(e){mouse.x=e.clientX*DPR;mouse.y=e.clientY*DPR;},{passive:true});
+var sv=0,ls=0;addEventListener('scroll',function(){sv=Math.min(Math.abs(scrollY-ls),60);ls=scrollY;},{passive:true});
+function f(){x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';
+for(var i=0;i<parts.length;i++){var p=parts[i];p.ph+=p.sp;p.x+=p.vx+Math.sin(p.ph)*.16*DPR;p.y+=p.vy-(sv*.004*DPR);
+var dx=p.x-mouse.x,dy=p.y-mouse.y,d2=dx*dx+dy*dy,rad=120*DPR;if(d2<rad*rad){var d=Math.sqrt(d2)||1,fo=(1-d/rad)*1.3;p.x+=dx/d*fo;p.y+=dy/d*fo;}
+if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;
+var tw=p.a*(.6+.4*Math.sin(p.ph*2));var R4=p.r*4;
+x.globalAlpha=tw<0?0:tw>1?1:tw;x.drawImage(p.arc?SPR_S:SPR_G,p.x-R4,p.y-R4,R4*2,R4*2);}
+x.globalAlpha=1;sv*=.9;x.globalCompositeOperation='source-over';requestAnimationFrame(f);}
+if(!RM)f();})();
+
+/* ---------- custom cursor ---------- */
+if(FINE&&!RM){var cur=document.getElementById('cur'),cx=innerWidth/2,cy=innerHeight/2,tx=cx,ty=cy;
+addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY;cur.classList.add('on');},{passive:true});
+(function l(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(l);})();
+document.querySelectorAll('[data-c]').forEach(function(el){
+  el.addEventListener('pointerenter',function(){cur.classList.add('big');});
+  el.addEventListener('pointerleave',function(){cur.classList.remove('big');});});}
+
+/* ---------- reveal on scroll ---------- */
+var io=null;
+if('IntersectionObserver' in window && !RM){
+  io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rvx').forEach(function(el){io.observe(el);});
+}else{document.querySelectorAll('.rvx').forEach(function(el){el.classList.add('in');});}
+
+/* nav hide on scroll down + progress */
+var nav=document.getElementById('nav'),last=0;
+addEventListener('scroll',function(){var y=scrollY;if(y>140&&y>last)nav.classList.add('hide');else nav.classList.remove('hide');last=y;
+  var h=document.documentElement,max=h.scrollHeight-h.clientHeight;document.getElementById('prog').style.transform='scaleX('+(max>0?y/max:0)+')';},{passive:true});
+
+/* ---------- entrada ---------- */
+function entrance(){
+  if(!hasGSAP||RM)return;
+  gsap.fromTo('.wpview-top .wrap > *',{y:26,autoAlpha:0},{y:0,autoAlpha:1,duration:.8,stagger:.06,ease:'power3.out',clearProps:'all',onComplete:function(){
+    document.querySelectorAll('.wpview-top .rvx').forEach(function(e){e.classList.add('in');});}});
+}
+
+/* ---------- loader (completo solo en primera visita) → cortina ---------- */
+(function(){
+  var ld=document.getElementById('loader'),num=document.getElementById('lnum');
+  var seen=false;try{seen=sessionStorage.getItem('nc_seen')==='1';sessionStorage.setItem('nc_seen','1');}catch(e){}
+  var strokes=document.querySelectorAll('.lstroke path,.lstroke circle');
+  function fillFox(){strokes.forEach(function(s){var len=s.getTotalLength?s.getTotalLength():200;s.style.strokeDasharray=len;s.style.strokeDashoffset=len;});}
+  function drawFox(t){strokes.forEach(function(s){var len=s.getTotalLength?s.getTotalLength():200;s.style.strokeDashoffset=len*(1-t);});}
+  function lift(){document.querySelectorAll('.curtain i').forEach(function(p,i){gsap.to(p,{yPercent:-100,duration:1,ease:'power4.inOut',delay:i*.07});});}
+  function start(){lift();gsap.to(ld,{autoAlpha:0,duration:.5,onComplete:function(){ld.style.display='none';}});entrance();}
+  if(RM||!hasGSAP){if(ld)ld.style.display='none';var c=document.querySelector('.curtain');if(c)c.style.display='none';return;}
+  if(seen){ld.style.display='none';lift();entrance();return;}
+  fillFox();
+  var p={v:0};
+  gsap.to(p,{v:100,duration:1.7,ease:'power2.inOut',onUpdate:function(){num.textContent=Math.floor(p.v);drawFox(p.v/100);},onComplete:function(){setTimeout(start,200);}});
+})();
+
+/* ---------- cortina de navegación — la salida cubre subiendo; bfcache; prefetch ---------- */
+(function(){
+var cover=false;
+function internal(a){
+  if(!a||a.target==='_blank'||a.hasAttribute('download'))return null;
+  var href=a.getAttribute('href');if(!href)return null;
+  var u;try{u=new URL(a.href,location.href);}catch(e){return null;}
+  if(u.origin!==location.origin)return null;
+  if(u.protocol!=='http:'&&u.protocol!=='https:')return null;
+  if(u.pathname===location.pathname&&u.hash)return null;
+  return u;
+}
+addEventListener('pageshow',function(e){if(e.persisted){cover=false;var ld=document.getElementById('loader');if(ld)ld.style.display='none';
+  if(window.gsap){gsap.set('.curtain i',{yPercent:-100});}else{document.querySelectorAll('.curtain i').forEach(function(p){p.style.transform='translateY(-100%)';});}}});
+if(RM||!hasGSAP)return;
+document.addEventListener('click',function(e){
+  if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;
+  var u=internal(a);if(!u||cover)return;
+  if(u.pathname===location.pathname&&!u.hash){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});return;}
+  e.preventDefault();cover=true;
+  var ps=document.querySelectorAll('.curtain i');
+  gsap.set(ps,{yPercent:100});
+  gsap.to(ps,{yPercent:0,duration:1,ease:'power4.inOut',stagger:.07,onComplete:function(){location.href=u.href;}});
+});
+document.addEventListener('pointerenter',function(e){
+  var t=e.target;if(!t||!t.closest)return;
+  var u=internal(t.closest('a[href]'));if(!u)return;
+  if(u.pathname===location.pathname)return;
+  if(document.querySelector('link[rel="prefetch"][href="'+u.href+'"]'))return;
+  var l=document.createElement('link');l.rel='prefetch';l.href=u.href;document.head.appendChild(l);
+},true);
+})();
+})();
+</script>
+</body>
+</html>
