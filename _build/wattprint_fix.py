@@ -58,6 +58,10 @@ if _a != -1:
   },50);
 });""" + s[_b:]
 
+# 5 · Niveles sin comparaciones que no se pueden respaldar
+sub("Impacto mínimo. Nivel eficiencia máxima: comparte cómo lo haces.", "Menos de 1 kg CO₂e: impacto muy bajo.")
+sub("Buen trabajo. Estás por debajo de la mayoría de cargas equivalentes.", "Menos de 20 kg CO₂e: huella baja. Los retos pueden bajarla aún más.")
+
 s = s.replace('metodología SCI (ISO 21031)', 'metodología SCI (ISO/IEC 21031)')
 open(SRC, 'w', encoding='utf-8').write(s)
 print('src wattprint ok')
