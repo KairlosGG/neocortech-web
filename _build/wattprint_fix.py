@@ -57,6 +57,7 @@ if _a != -1:
   },50);
 });""" + s[_b:]
 
+s = s.replace('metodología SCI (ISO 21031)', 'metodología SCI (ISO/IEC 21031)')
 open(SRC, 'w', encoding='utf-8').write(s)
 print('src wattprint ok')
 
