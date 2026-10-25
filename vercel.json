@@ -1,6 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/tool/wattprint",
+      "destination": "https://wattprint-kappa.vercel.app/",
+      "permanent": true
+    },
+    {
+      "source": "/tool/wattprint/(.*)",
+      "destination": "https://wattprint-kappa.vercel.app/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

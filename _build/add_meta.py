@@ -30,11 +30,14 @@ for f, (path, img) in PAGES.items():
     open(OUT + f, 'w', encoding='utf-8').write(s)
 
 open(OUT + 'robots.txt', 'w').write(f'User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n')
-urls = ''.join(f'  <url><loc>{SITE}{p}</loc></url>\n' for p in ['/', '/newsletter', '/wattprint', '/tool/wattprint/'])
+urls = ''.join(f'  <url><loc>{SITE}{p}</loc></url>\n' for p in ['/', '/newsletter', '/wattprint'])
 open(OUT + 'sitemap.xml', 'w').write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 json.dump({
     "cleanUrls": True,
     "trailingSlash": False,
+    "redirects": [
+        {"source": "/tool/wattprint", "destination": "https://wattprint-kappa.vercel.app/", "permanent": True},
+        {"source": "/tool/wattprint/(.*)", "destination": "https://wattprint-kappa.vercel.app/", "permanent": True}],
     "headers": [{"source": "/(.*)", "headers": [
         {"key": "X-Content-Type-Options", "value": "nosniff"},
         {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},

@@ -3,15 +3,13 @@ import re, json
 OUT = '/home/claude/neocortech/out/'
 REPO = '/home/claude/wattprint/index.html'
 
-t = open(REPO, encoding='utf-8').read().replace('href="fonts/fonts.css"', 'href="/assets/fonts/fonts.css"')
-open(OUT + 'tool/wattprint/index.html', 'w', encoding='utf-8').write(t)
-open('/home/claude/neocortech/src/tool/wattprint/index.html', 'w', encoding='utf-8').write(t)
+URL = 'https://wattprint-kappa.vercel.app/'  # la herramienta vive en su propio proyecto de Vercel
 
 p = OUT + 'wattprint.html'
 s = open(p, encoding='utf-8').read()
 R = [
- ('/tool/wattprint · sin registro · datos Ember + Uptime Institute', '/tool/wattprint · sin registro · ES/EN · datos Ember, Uptime Institute y WRI'),
- ('/tool/wattprint · no sign-up · Ember + Uptime Institute data', '/tool/wattprint · no sign-up · ES/EN · Ember, Uptime Institute and WRI data'),
+ ('/tool/wattprint · sin registro · datos Ember + Uptime Institute', 'wattprint-kappa.vercel.app · sin registro · ES/EN · datos Ember, Uptime Institute y WRI'),
+ ('/tool/wattprint · no sign-up · Ember + Uptime Institute data', 'wattprint-kappa.vercel.app · no sign-up · ES/EN · Ember, Uptime Institute and WRI data'),
  ('Calcula la huella de tus entrenamientos e inferencias en 60 segundos. Metodología SCI (ISO/IEC 21031). Gratis y sin registro.',
   'Calcula la huella de tus entrenamientos e inferencias, también por petición, y descarga el informe en PDF o CSV. Metodología SCI (ISO/IEC 21031). Gratis y sin registro.'),
  ('Calculate the footprint of your training runs and inference in 60 seconds. SCI methodology (ISO/IEC 21031). Free, no sign-up. The tool is in Spanish.',
@@ -22,7 +20,8 @@ R = [
   'Cooling water (WUE) and the water used to generate the electricity (WRI factors). The footprint'),
  ('PUE (energía) y WUE (agua). Es lo que', 'el PUE. Es lo que'),
  ('PUE (energy) and WUE (water). It turns', 'PUE. It turns'),
- ('en 60 segundos', 'en un minuto'), ('in 60 seconds', 'in a minute'),
+ ('en 60 segundos', 'en un minuto'),
+ ('href="/tool/wattprint/"', 'href="' + URL + '"'), ('in 60 seconds', 'in a minute'),
 ]
 for a, b in R:
     n = s.count(a)
