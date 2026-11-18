@@ -72,6 +72,7 @@ a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba
 .hpanel .out a:hover{color:var(--gold-bright)}
 @media(max-width:560px){.lang button{padding:5px 8px}.nav-right{gap:12px}#menuTxt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
 """
+extra_css += open('/home/claude/neocortech/build/projects.css', encoding='utf-8').read()
 s = rep(s, '</style>\n</head>', extra_css + '</style>\n</head>') if '</style>\n</head>' in s else s.replace('</head>', '<style>' + extra_css + '</style>\n</head>', 1)
 first_script = s.index('<script>/*!', s.index('</footer>'))
 s = s[:first_script] + '<script>' + en + '</script>\n' + APPLY + '\n' + s[first_script:]
@@ -100,6 +101,7 @@ s = rep(s, "  .htrack{flex-direction:column;gap:18px;overflow:visible;scroll-sna
 s = rep(s, "cards.forEach(function(card,i){card.style.top=(94+i*16)+'px';", "if(innerWidth>820)cards.forEach(function(card,i){card.style.top=(94+i*16)+'px';")
 s = s.replace('</style>\n</head>', '@media(max-width:820px){.pcard{position:relative;top:auto!important;margin-bottom:18px}}\n</style>\n</head>', 1)
 
+s = s.replace('</body>', '<script>' + open('/home/claude/neocortech/build/projects.js', encoding='utf-8').read() + '</script>\n</body>', 1)
 open('/home/claude/neocortech/out/index.html', 'w', encoding='utf-8').write(s)
 
 # comprobaciones

@@ -47,6 +47,9 @@ EN = {
  "posit": "74% of companies plan to deploy agentic AI within the next two years, but only 21% have a mature governance model for autonomous agents (Deloitte, <i>State of AI in the Enterprise</i>, 2026).",
  "e07": "07 · Contact",
 }
+import sys; sys.path.insert(0, '/home/claude/neocortech/build')
+from projects import en_keys
+EN.update(en_keys())
 s = open('index_en.js', encoding='utf-8').read().rstrip().rstrip(';')
 assert s.endswith('}')
 add = ''.join(f'window.NC_EN[{json.dumps(k)}]={json.dumps(v, ensure_ascii=False)};\n' for k, v in EN.items())

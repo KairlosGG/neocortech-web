@@ -8,9 +8,21 @@
 <meta name="theme-color" content="#0A141F"/>
 <meta property="og:title" content="Carlos Gallego Galán — Hago productos que funcionan."/>
 <meta property="og:description" content="Technical Product Manager. Realidad virtual, Web360, serious games y agentes de IA, de la idea a la entrega."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@700&family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<!-- meta:begin -->
+<link rel="canonical" href="https://neocortech-kohl.vercel.app/"/>
+<link rel="alternate" hreflang="es" href="https://neocortech-kohl.vercel.app/"/>
+<link rel="alternate" hreflang="en" href="https://neocortech-kohl.vercel.app/?lang=en"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://neocortech-kohl.vercel.app/"/>
+<meta property="og:image" content="https://neocortech-kohl.vercel.app/assets/og-carlos.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:locale:alternate" content="en_GB"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://neocortech-kohl.vercel.app/assets/og-carlos.jpg"/>
+<!-- meta:end -->
+<link rel="stylesheet" href="/assets/fonts/fonts.css"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z' fill='none' stroke='%23C9A24B' stroke-width='8' stroke-linejoin='round'/%3E%3Ccircle cx='60' cy='60' r='14' fill='%235B8FC6'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%237FB4E8'/%3E%3C/svg%3E"/>
 <script>document.documentElement.className='js';</script>
 <script>(function(){var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
@@ -447,6 +459,74 @@ a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba
 .hpanel .out a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,162,75,.45)}
 .hpanel .out a:hover{color:var(--gold-bright)}
 @media(max-width:560px){.lang button{padding:5px 8px}.nav-right{gap:12px}#menuTxt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+
+/* ---------- Proyectos: índice interactivo ---------- */
+.ixf-bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.ixf{font:500 13.5px/1 var(--ui,Inter),system-ui,sans-serif;color:var(--muted);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:10px 16px;cursor:pointer;transition:color .25s,border-color .25s,background-color .25s}
+.ixf:hover{color:var(--bone);border-color:rgba(201,162,75,.45)}
+.ixf[aria-pressed="true"]{color:var(--bone);border-color:var(--gold);background:rgba(201,162,75,.09)}
+.ixf-n{color:var(--gold);font-variant-numeric:tabular-nums;margin-left:4px}
+.ixf:focus-visible,.ix-row:focus-visible,.ix-dots button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+
+.ix{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:repeat(var(--n),auto) 1fr;column-gap:clamp(32px,5vw,84px);--n:16}
+.ix-it{display:contents}
+.ix-it.off{display:none}
+.ix-row{grid-column:1;position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:18px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line2);padding:17px 0 15px;cursor:pointer;color:inherit;font:inherit}
+.ix-row::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:0;background:linear-gradient(90deg,var(--gold-bright),var(--gold));transition:width .55s cubic-bezier(.2,.7,.2,1)}
+.ix-name{font-family:var(--display);font-weight:400;font-size:clamp(19px,1.75vw,26px);line-height:1.18;letter-spacing:.01em;color:rgba(236,231,218,.46);transition:color .3s}
+.ix-ctx{flex-shrink:0;max-width:44%;text-align:right;font-size:12.5px;line-height:1.4;color:var(--muted2);transition:color .3s}
+.ix-row:hover .ix-name{color:var(--bone)}
+.ix-row[aria-expanded="true"] .ix-name{color:var(--gold-bright)}
+.ix-row[aria-expanded="true"] .ix-ctx{color:var(--muted)}
+.ix-row[aria-expanded="true"]::before{width:100%}
+
+.ix-panel{grid-column:2;grid-row:1/-1;align-self:start;position:sticky;top:96px;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s linear .4s}
+.ix-panel.on{opacity:1;visibility:visible;transition:opacity .45s ease}
+.ix-media{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#0A1522;border:1px solid var(--line2);box-shadow:0 40px 80px -50px rgba(0,0,0,.9)}
+.ix-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.045);transition:opacity .6s ease,transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.ix-panel.on .ix-media img.on{opacity:1;transform:none}
+.ix-dots{position:absolute;right:14px;bottom:10px;display:flex;gap:4px;z-index:2}
+.ix-dots button{width:34px;height:22px;padding:0;border:0;background:none;cursor:pointer;position:relative}
+.ix-dots button::after{content:"";position:absolute;left:3px;right:3px;top:9px;height:3px;border-radius:2px;background:rgba(236,231,218,.45);transition:background-color .25s}
+.ix-dots button[aria-current="true"]::after{background:var(--gold-bright)}
+.ix-body{padding:22px 2px 0;gap:12px}
+.ix-body h3{display:none}
+.ix-body .ptags{font-family:inherit;text-transform:none;letter-spacing:.01em;font-size:13px;color:var(--gold)}
+.ix-body p{font-size:16px;line-height:1.66;max-width:62ch}
+.ix-body .prole{font-size:14px}
+.ix-body .plink{margin-top:4px}
+.plinks2{display:flex;flex-wrap:wrap;gap:6px 22px}
+.ix::after{content:"";grid-column:1;align-self:start;border-top:1px solid var(--line2)}
+
+@media (max-width:900px){
+  .ix{display:block}
+  .ix-it{display:block;border-top:1px solid var(--line2)}
+  .ix-it:last-child{border-bottom:1px solid var(--line2)}
+  .ix::after{display:none}
+  .ix-row{border-top:0;padding:16px 34px 14px 0;flex-direction:column;gap:4px}
+  .ix-row::after{content:"";position:absolute;right:6px;top:24px;width:9px;height:9px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);transition:transform .3s}
+  .ix-row[aria-expanded="true"]::after{transform:rotate(-135deg);top:28px}
+  .ix-ctx{text-align:left;max-width:none}
+  .ix-panel{position:static;display:none;opacity:1;visibility:visible;transition:none;padding-bottom:26px}
+  .ix-panel.on{display:block}
+  .ix-panel.on .ix-media img.on{transform:none}
+}
+
+/* ---------- Taller: filas con captura ---------- */
+.trs{display:grid;gap:clamp(48px,7vw,96px);margin-top:52px}
+.tr{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,64px);align-items:center}
+.tr:nth-child(even) .tr-img{order:2}
+.tr-img{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line2);background:#0A1522;box-shadow:0 40px 80px -50px rgba(0,0,0,.9)}
+.tr-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.tr .tc{background:none;border:0;border-radius:0;padding:0}
+.tr .tc h3{font-size:clamp(26px,2.6vw,36px)}
+.tr .tc p{font-size:16px;line-height:1.66}
+@media (max-width:900px){.tr{grid-template-columns:1fr}.tr:nth-child(even) .tr-img{order:0}}
+
+@media (prefers-reduced-motion:reduce){
+  .ix-panel,.ix-panel.on,.ix-media img,.ix-row::before,.ix-name{transition:none}
+  .ix-media img{transform:none}
+}
 @media(max-width:820px){.pcard{position:relative;top:auto!important;margin-bottom:18px}}
 </style>
 </head>
@@ -585,87 +665,14 @@ a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba
 
 <div class="rule"></div>
 
-<!-- PROYECTOS (galería XR) -->
+<!-- PROYECTOS (índice interactivo) -->
 <section id="proyectos">
   <div class="wrap">
-    <span class="eyebrow rvx" data-i18n="e02p"><span class="n">02</span> Proyectos · EONESIA 2022–2026</span>
+    <span class="eyebrow rvx" data-i18n="e02p"><span class="n">02</span> Proyectos</span>
     <h2 class="sec rvx" data-i18n="h_proy">Cosas que existen <em>porque las hice realidad.</em></h2>
-    <p class="plead rvx" data-i18n="proy_lead">Productos inmersivos que creé, dirigí o diseñé como cofundador y responsable de producto e innovación de EONESIA, para gafas de realidad virtual, web y móvil.</p>
-    <div class="pgrid">
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/sol672.jpg" alt="SOL 672" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj1">
-        <div class="ptags">VR · Juego educativo · STEM</div><h3>SOL 672</h3>
-        <p>Un astronauta varado en Marte tiene que restablecer la energía, producir oxígeno y mantener la base en marcha con ciencia y lógica.</p>
-        <div class="paward">★ Finalista · Premios Indie Games Málaga 2024</div>
-        <div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI, game design y narrativa.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/sol672-experiencia-ciencia-vr/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/biovoyager.jpg" alt="BioVoyager VR" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj2">
-        <div class="ptags">VR · Juego educativo · Biología</div><h3>BioVoyager VR</h3>
-        <p>Un viaje microscópico por el cuerpo humano a bordo de una cápsula de exploración, recorriendo órganos, tejidos y sistemas vitales a escala celular.</p>
-        <div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI, game design y narrativa.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/bioyager-vr/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/cronos.jpg" alt="Cronos Adventure" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj3">
-        <div class="ptags">VR · Multijugador · Educación y salud</div><h3>Cronos Adventure</h3>
-        <p>Un viaje en barco multijugador por distintas épocas de la historia, pensado para niños hospitalizados en unidades de oncología.</p>
-        <div class="prole"><b>Mi papel:</b> dirección del producto y diseño UX/UI.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-cronos-adventure-historia-vr/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/superinspector.jpg" alt="Superinspector de alimentos" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj4">
-        <div class="ptags">PC · Serious game en primera persona (demo)</div><h3>Superinspector</h3>
-        <p>El jugador es un inspector de alimentos que escanea productos del supermercado, lee etiquetas nutricionales y se enfrenta a dilemas éticos que cambian el desenlace.</p>
-        <div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI, game design y narrativa.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/superinspector/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/olympia.jpg" alt="Olympia XR" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj5">
-        <div class="ptags">VR · AR · Web3D · XR social</div><h3>Olympia XR</h3>
-        <p>Experiencia social multiplataforma para comunidades futbolísticas, publicada en SideQuest y desarrollada con la Universidad Complutense de Madrid.</p>
-        <div class="prole"><b>Mi papel:</b> diseño de producto, modelo de negocio y game design; ejecución del proyecto.</div></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/livre.jpg" alt="LiVRe" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj6">
-        <div class="ptags">VR · Formación inclusiva · Cliente: Fundación Magtel</div><h3>LiVRe</h3>
-        <p>Escenarios cotidianos en realidad virtual donde personas con discapacidad intelectual practican habilidades de la vida diaria con seguridad y a su ritmo. Proyecto de más de 100.000 €.</p>
-        <div class="prole"><b>Mi papel:</b> dirección del proyecto y pruebas con usuarios en los centros.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-realidad-virtual-inclusiva-livre/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/inhabit.jpg" alt="In-Habit · CongreSkills" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj7">
-        <div class="ptags">Web360 · Plataforma de formación</div><h3>In-Habit · CongreSkills</h3>
-        <p>Plataforma inmersiva que forma a personas con síndrome de Down para cinco puestos del sector de eventos con simulaciones prácticas.</p>
-        <div class="prole"><b>Mi papel:</b> menú de avatares 3D para elegir la ropa de cada puesto, diseño de la interfaz y apoyo en la UX y la lógica.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-in-habit-formacion-inclusiva/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/josecuervo.jpg" alt="José Cuervo 360º" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj8">
-        <div class="ptags">Web360 · Formación corporativa · Cliente: Próximo Spain</div><h3>José Cuervo 360º</h3>
-        <p>Recorrido 360º en el navegador por la sede de la marca para bartenders, con la historia de la casa y formación gamificada en coctelería.</p>
-        <div class="prole"><b>Mi papel:</b> responsable del proyecto con el cliente.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-corporativo-cuervo/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/metropolitan.jpg" alt="Metropolitan" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj9">
-        <div class="ptags">VR · Tour 360º · Cliente: Metrovacesa</div><h3>Metropolitan</h3>
-        <p>Los futuros compradores recorren las viviendas y la comunidad antes de construirse y opinan sobre los servicios previstos para la promoción.</p>
-        <div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI y narrativa.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-inmobiliario-metropolitan/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/coec.jpg" alt="Tour virtual del Colegio Oficial de Enfermería de Córdoba" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj10">
-        <div class="ptags">Web360 · Tour virtual · Cliente: Colegio Oficial de Enfermería de Córdoba</div><h3>Tour virtual COEC</h3>
-        <p>Recorrido en el navegador por las instalaciones del Colegio, para que estudiantes, profesionales y ciudadanía conozcan cada espacio antes de ir.</p>
-        <div class="prole"><b>Mi papel:</b> diseño de producto UX/UI.</div>
-        <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-centro-coec/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/juegaterapia.jpg" alt="Vídeo de Navidad 360º" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj11">
-        <div class="ptags">Vídeo 360º · IA generativa · Cliente: Juegaterapia</div><h3>Navidad 360º</h3>
-        <p>Vídeo de Navidad para la sala inmersiva 360º que Juegaterapia tiene en Madrid.</p>
-        <div class="prole"><b>Mi papel:</b> creación del vídeo con ComfyUI, After Effects, Premiere y ElevenLabs.</div></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/invitacion-ar.jpg" alt="Invitación en realidad aumentada" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj12">
-        <div class="ptags">Realidad aumentada · Móvil · Eventos</div><h3>Invitación en realidad aumentada</h3>
-        <p>La invitación a un congreso se abre en el móvil como una tarjeta 3D flotante en la que el asistente responde preguntas.</p>
-        <div class="prole"><b>Mi papel:</b> modelado y animación 3D en Blender y montaje de la experiencia en Onirix.</div></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/ejercito.jpg" alt="Maqueta 3D de la base logística" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj13">
-        <div class="ptags">3D · Eventos · Cliente: Ejército de Tierra</div><h3>Maqueta 3D de la base logística</h3>
-        <p>Maqueta 3D de la base logística de Córdoba para que el Ejército de Tierra la presentara en sus eventos. Fue el primer cliente de EONESIA.</p></div></article>
-    </div>
-    <h3 class="psub rvx" data-i18n="psub">Antes de EONESIA <em>· 2015–2021</em></h3>
-    <div class="pgrid">
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/carboneras.jpg" alt="Calidad del aire en Carboneras" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj14">
-        <div class="ptags">Datos geoespaciales · Medio ambiente · SGS · 2021</div><h3>Calidad del aire en Carboneras</h3>
-        <p>Los datos horarios de los sensores de SGS, en un mapa con código de colores que muestra dónde se acercan o superan los límites europeos y españoles, para que el cliente actúe antes de incumplirlos. Fue una de las dos líneas de negocio nuevas que lancé en SGS.</p>
-        <div class="prole"><b>Mi papel:</b> diseño del producto, tratamiento de los datos con Excel y R y visualización.</div></div></article>
-      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/empollo.jpg" alt="Empollo App" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj15">
-        <div class="ptags">App móvil · EdTech · Proyecto propio · 2015</div><h3>Empollo App</h3>
-        <p>MVP de EdTech gamificado. En las primeras 24 horas consiguió más de 500 usuarios activos.</p>
-        <div class="paward">★ 1.er premio · Startup Weekend Córdoba 2015</div>
-        <div class="prole"><b>Mi papel:</b> cofundador y CEO.</div></div></article>
-    </div>
+    <p class="plead rvx" data-i18n="proy_lead">Lo que he creado, dirigido o diseñado desde 2015, en EONESIA y fuera de ella. Elige uno para ver qué era y qué hice yo.</p>
+    <div class="ixf-bar rvx" role="group" aria-label="Filtrar proyectos" data-i18n-attr="aria-label:a_ixf"><button type="button" class="ixf" data-f="all" aria-pressed="true"><span data-i18n="ixf_all">Todos</span> <span class="ixf-n">16</span></button><button type="button" class="ixf" data-f="vr" aria-pressed="false"><span data-i18n="ixf_vr">Realidad virtual</span> <span class="ixf-n">7</span></button><button type="button" class="ixf" data-f="w3d" aria-pressed="false"><span data-i18n="ixf_w3d">Web360 y 3D</span> <span class="ixf-n">7</span></button><button type="button" class="ixf" data-f="game" aria-pressed="false"><span data-i18n="ixf_game">Juegos</span> <span class="ixf-n">4</span></button><button type="button" class="ixf" data-f="mob" aria-pressed="false"><span data-i18n="ixf_mob">Móvil y AR</span> <span class="ixf-n">3</span></button></div>
+    <ul class="ix rvx" id="ix"><li class="ix-it" data-cats="vr"><button type="button" class="ix-row" id="ix-pj6-b" aria-expanded="true" aria-controls="ix-pj6"><span class="ix-name" data-i18n="ixn_pj6">LiVRe</span><span class="ix-ctx" data-i18n="ixc_pj6">Fundación Magtel</span></button><div class="ix-panel on" id="ix-pj6" role="region" aria-labelledby="ix-pj6-b"><div class="ix-media"><img src="/assets/projects/livre.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj6"><div class="ptags">VR · Formación inclusiva · Cliente: Fundación Magtel</div><h3>LiVRe</h3><p>Escenarios cotidianos en realidad virtual donde personas con discapacidad intelectual practican habilidades de la vida diaria con seguridad y a su ritmo. Proyecto de más de 100.000 €.</p><div class="prole"><b>Mi papel:</b> dirección del proyecto y pruebas con usuarios en los centros.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-realidad-virtual-inclusiva-livre/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="vr w3d"><button type="button" class="ix-row" id="ix-pj16-b" aria-expanded="false" aria-controls="ix-pj16"><span class="ix-name" data-i18n="ixn_pj16">Cerco Industrial · Fase III</span><span class="ix-ctx" data-i18n="ixc_pj16">Con un socio</span></button><div class="ix-panel" id="ix-pj16" role="region" aria-labelledby="ix-pj16-b"><div class="ix-media"><img src="/assets/projects/cerco-render.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/><img src="/assets/projects/cerco-tour.webp" alt="" loading="lazy" decoding="async" width="1600" height="900"/><img src="/assets/projects/cerco-modelo.webp" alt="" loading="lazy" decoding="async" width="1600" height="900"/><div class="ix-dots" role="group" aria-label="Imágenes" data-i18n-attr="aria-label:a_ixdots"><button type="button" aria-label="1" aria-current=true></button><button type="button" aria-label="2"></button><button type="button" aria-label="3"></button></div></div><div class="pbody ix-body" data-i18n="pj16"><div class="ptags">Web360 · Realidad virtual · Patrimonio industrial</div><h3>Cerco Industrial · Fase III</h3><p>Tour virtual del Cerco Industrial de Peñarroya-Pueblonuevo. Modelos 3D de los edificios históricos a partir de unas 13.900 fotografías aéreas y terrestres, panorámicas 360º con fichas de cada edificio y locuciones en español e inglés, y un puesto de realidad virtual en el mirador con seis visores. Proyecto fuera de EONESIA, financiado con ayudas LEADER.</p><div class="prole"><b>Mi papel:</b> diseño y dirección de parte del proyecto, junto a otro socio.</div><div class="plinks2"><a class="plink" href="https://www.cercoindustrialtourvirtual.com/fase3/index.htm" target="_blank" rel="noopener" data-c>Entrar en el tour ↗</a><a class="plink" href="https://www.cercoindustrialvirtual.com/faseiii" target="_blank" rel="noopener" data-c>Ver el proyecto ↗</a></div></div></div></li><li class="ix-it" data-cats="vr game"><button type="button" class="ix-row" id="ix-pj1-b" aria-expanded="false" aria-controls="ix-pj1"><span class="ix-name" data-i18n="ixn_pj1">SOL 672</span><span class="ix-ctx" data-i18n="ixc_pj1">Juego educativo VR</span></button><div class="ix-panel" id="ix-pj1" role="region" aria-labelledby="ix-pj1-b"><div class="ix-media"><img src="/assets/projects/sol672.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj1"><div class="ptags">VR · Juego educativo · STEM</div><h3>SOL 672</h3><p>Un astronauta varado en Marte tiene que restablecer la energía, producir oxígeno y mantener la base en marcha con ciencia y lógica.</p><div class="paward">★ Finalista · Premios Indie Games Málaga 2024</div><div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI, game design y narrativa.</div><a class="plink" href="https://www.eonesia.com/portfolios/sol672-experiencia-ciencia-vr/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="w3d"><button type="button" class="ix-row" id="ix-pj7-b" aria-expanded="false" aria-controls="ix-pj7"><span class="ix-name" data-i18n="ixn_pj7">In-Habit · CongreSkills</span><span class="ix-ctx" data-i18n="ixc_pj7">Formación inclusiva</span></button><div class="ix-panel" id="ix-pj7" role="region" aria-labelledby="ix-pj7-b"><div class="ix-media"><img src="/assets/projects/inhabit.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj7"><div class="ptags">Web360 · Plataforma de formación</div><h3>In-Habit · CongreSkills</h3><p>Plataforma inmersiva que forma a personas con síndrome de Down para cinco puestos del sector de eventos con simulaciones prácticas.</p><div class="prole"><b>Mi papel:</b> menú de avatares 3D para elegir la ropa de cada puesto, diseño de la interfaz y apoyo en la UX y la lógica.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-in-habit-formacion-inclusiva/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="vr game"><button type="button" class="ix-row" id="ix-pj3-b" aria-expanded="false" aria-controls="ix-pj3"><span class="ix-name" data-i18n="ixn_pj3">Cronos Adventure</span><span class="ix-ctx" data-i18n="ixc_pj3">VR multijugador</span></button><div class="ix-panel" id="ix-pj3" role="region" aria-labelledby="ix-pj3-b"><div class="ix-media"><img src="/assets/projects/cronos.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj3"><div class="ptags">VR · Multijugador · Educación y salud</div><h3>Cronos Adventure</h3><p>Un viaje en barco multijugador por distintas épocas de la historia, pensado para niños hospitalizados en unidades de oncología.</p><div class="prole"><b>Mi papel:</b> dirección del producto y diseño UX/UI.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-cronos-adventure-historia-vr/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="vr w3d"><button type="button" class="ix-row" id="ix-pj9-b" aria-expanded="false" aria-controls="ix-pj9"><span class="ix-name" data-i18n="ixn_pj9">Metropolitan</span><span class="ix-ctx" data-i18n="ixc_pj9">Metrovacesa</span></button><div class="ix-panel" id="ix-pj9" role="region" aria-labelledby="ix-pj9-b"><div class="ix-media"><img src="/assets/projects/metropolitan.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj9"><div class="ptags">VR · Tour 360º · Cliente: Metrovacesa</div><h3>Metropolitan</h3><p>Los futuros compradores recorren las viviendas y la comunidad antes de construirse y opinan sobre los servicios previstos para la promoción.</p><div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI y narrativa.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-inmobiliario-metropolitan/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="w3d"><button type="button" class="ix-row" id="ix-pj10-b" aria-expanded="false" aria-controls="ix-pj10"><span class="ix-name" data-i18n="ixn_pj10">Tour virtual COEC</span><span class="ix-ctx" data-i18n="ixc_pj10">Colegio de Enfermería de Córdoba</span></button><div class="ix-panel" id="ix-pj10" role="region" aria-labelledby="ix-pj10-b"><div class="ix-media"><img src="/assets/projects/coec.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj10"><div class="ptags">Web360 · Tour virtual · Cliente: Colegio Oficial de Enfermería de Córdoba</div><h3>Tour virtual COEC</h3><p>Recorrido en el navegador por las instalaciones del Colegio, para que estudiantes, profesionales y ciudadanía conozcan cada espacio antes de ir.</p><div class="prole"><b>Mi papel:</b> diseño de producto UX/UI.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-centro-coec/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="vr game"><button type="button" class="ix-row" id="ix-pj2-b" aria-expanded="false" aria-controls="ix-pj2"><span class="ix-name" data-i18n="ixn_pj2">BioVoyager VR</span><span class="ix-ctx" data-i18n="ixc_pj2">Juego educativo VR</span></button><div class="ix-panel" id="ix-pj2" role="region" aria-labelledby="ix-pj2-b"><div class="ix-media"><img src="/assets/projects/biovoyager.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj2"><div class="ptags">VR · Juego educativo · Biología</div><h3>BioVoyager VR</h3><p>Un viaje microscópico por el cuerpo humano a bordo de una cápsula de exploración, recorriendo órganos, tejidos y sistemas vitales a escala celular.</p><div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI, game design y narrativa.</div><a class="plink" href="https://www.eonesia.com/portfolios/bioyager-vr/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="game"><button type="button" class="ix-row" id="ix-pj4-b" aria-expanded="false" aria-controls="ix-pj4"><span class="ix-name" data-i18n="ixn_pj4">Superinspector</span><span class="ix-ctx" data-i18n="ixc_pj4">Serious game</span></button><div class="ix-panel" id="ix-pj4" role="region" aria-labelledby="ix-pj4-b"><div class="ix-media"><img src="/assets/projects/superinspector.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj4"><div class="ptags">PC · Serious game en primera persona (demo)</div><h3>Superinspector</h3><p>El jugador es un inspector de alimentos que escanea productos del supermercado, lee etiquetas nutricionales y se enfrenta a dilemas éticos que cambian el desenlace.</p><div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI, game design y narrativa.</div><a class="plink" href="https://www.eonesia.com/portfolios/superinspector/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats="vr w3d mob"><button type="button" class="ix-row" id="ix-pj5-b" aria-expanded="false" aria-controls="ix-pj5"><span class="ix-name" data-i18n="ixn_pj5">Olympia XR</span><span class="ix-ctx" data-i18n="ixc_pj5">Con la Universidad Complutense</span></button><div class="ix-panel" id="ix-pj5" role="region" aria-labelledby="ix-pj5-b"><div class="ix-media"><img src="/assets/projects/olympia.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj5"><div class="ptags">VR · AR · Web3D · XR social</div><h3>Olympia XR</h3><p>Experiencia social multiplataforma para comunidades futbolísticas, publicada en SideQuest y desarrollada con la Universidad Complutense de Madrid.</p><div class="prole"><b>Mi papel:</b> diseño de producto, modelo de negocio y game design; ejecución del proyecto.</div></div></div></li><li class="ix-it" data-cats="w3d"><button type="button" class="ix-row" id="ix-pj8-b" aria-expanded="false" aria-controls="ix-pj8"><span class="ix-name" data-i18n="ixn_pj8">José Cuervo 360º</span><span class="ix-ctx" data-i18n="ixc_pj8">Próximo Spain</span></button><div class="ix-panel" id="ix-pj8" role="region" aria-labelledby="ix-pj8-b"><div class="ix-media"><img src="/assets/projects/josecuervo.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj8"><div class="ptags">Web360 · Formación corporativa · Cliente: Próximo Spain</div><h3>José Cuervo 360º</h3><p>Recorrido 360º en el navegador por la sede de la marca para bartenders, con la historia de la casa y formación gamificada en coctelería.</p><div class="prole"><b>Mi papel:</b> responsable del proyecto con el cliente.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-corporativo-cuervo/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></div></li><li class="ix-it" data-cats=""><button type="button" class="ix-row" id="ix-pj11-b" aria-expanded="false" aria-controls="ix-pj11"><span class="ix-name" data-i18n="ixn_pj11">Navidad 360º</span><span class="ix-ctx" data-i18n="ixc_pj11">Juegaterapia</span></button><div class="ix-panel" id="ix-pj11" role="region" aria-labelledby="ix-pj11-b"><div class="ix-media"><img src="/assets/projects/juegaterapia.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj11"><div class="ptags">Vídeo 360º · IA generativa · Cliente: Juegaterapia</div><h3>Navidad 360º</h3><p>Vídeo de Navidad para la sala inmersiva 360º que Juegaterapia tiene en Madrid.</p><div class="prole"><b>Mi papel:</b> creación del vídeo con ComfyUI, After Effects, Premiere y ElevenLabs.</div></div></div></li><li class="ix-it" data-cats="mob"><button type="button" class="ix-row" id="ix-pj12-b" aria-expanded="false" aria-controls="ix-pj12"><span class="ix-name" data-i18n="ixn_pj12">Invitación en realidad aumentada</span><span class="ix-ctx" data-i18n="ixc_pj12">Congreso</span></button><div class="ix-panel" id="ix-pj12" role="region" aria-labelledby="ix-pj12-b"><div class="ix-media"><img src="/assets/projects/invitacion-ar.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj12"><div class="ptags">Realidad aumentada · Móvil · Eventos</div><h3>Invitación en realidad aumentada</h3><p>La invitación a un congreso se abre en el móvil como una tarjeta 3D flotante en la que el asistente responde preguntas.</p><div class="prole"><b>Mi papel:</b> modelado y animación 3D en Blender y montaje de la experiencia en Onirix.</div></div></div></li><li class="ix-it" data-cats="w3d"><button type="button" class="ix-row" id="ix-pj13-b" aria-expanded="false" aria-controls="ix-pj13"><span class="ix-name" data-i18n="ixn_pj13">Maqueta 3D de la base logística</span><span class="ix-ctx" data-i18n="ixc_pj13">Ejército de Tierra</span></button><div class="ix-panel" id="ix-pj13" role="region" aria-labelledby="ix-pj13-b"><div class="ix-media"><img src="/assets/projects/ejercito.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj13"><div class="ptags">3D · Eventos · Cliente: Ejército de Tierra</div><h3>Maqueta 3D de la base logística</h3><p>Maqueta 3D de la base logística de Córdoba para que el Ejército de Tierra la presentara en sus eventos. Fue el primer cliente de EONESIA.</p></div></div></li><li class="ix-it" data-cats=""><button type="button" class="ix-row" id="ix-pj14-b" aria-expanded="false" aria-controls="ix-pj14"><span class="ix-name" data-i18n="ixn_pj14">Calidad del aire en Carboneras</span><span class="ix-ctx" data-i18n="ixc_pj14">SGS · 2021</span></button><div class="ix-panel" id="ix-pj14" role="region" aria-labelledby="ix-pj14-b"><div class="ix-media"><img src="/assets/projects/carboneras.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj14"><div class="ptags">Datos geoespaciales · Medio ambiente · SGS · 2021</div><h3>Calidad del aire en Carboneras</h3><p>Los datos horarios de los sensores de SGS, en un mapa con código de colores que muestra dónde se acercan o superan los límites europeos y españoles, para que el cliente actúe antes de incumplirlos. Fue una de las dos líneas de negocio nuevas que lancé en SGS.</p><div class="prole"><b>Mi papel:</b> diseño del producto, tratamiento de los datos con Excel y R y visualización.</div></div></div></li><li class="ix-it" data-cats="mob"><button type="button" class="ix-row" id="ix-pj15-b" aria-expanded="false" aria-controls="ix-pj15"><span class="ix-name" data-i18n="ixn_pj15">Empollo App</span><span class="ix-ctx" data-i18n="ixc_pj15">Proyecto propio · 2015</span></button><div class="ix-panel" id="ix-pj15" role="region" aria-labelledby="ix-pj15-b"><div class="ix-media"><img src="/assets/projects/empollo.webp" alt="" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj15"><div class="ptags">App móvil · EdTech · Proyecto propio · 2015</div><h3>Empollo App</h3><p>MVP de EdTech gamificado. En las primeras 24 horas consiguió más de 500 usuarios activos.</p><div class="paward">★ 1.er premio · Startup Weekend Córdoba 2015</div><div class="prole"><b>Mi papel:</b> cofundador y CEO.</div></div></div></li></ul>
   </div>
 </section>
 
@@ -677,20 +684,7 @@ a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba
     <span class="eyebrow rvx" data-i18n="e03t"><span class="n">03</span> Taller</span>
     <h2 class="sec rvx" data-i18n="h_taller">Lo que construyo <em>por mi cuenta.</em></h2>
     <p class="plead rvx" data-i18n="taller_lead">Productos propios que diseño y construyo dirigiendo agentes de IA. Cada uno resuelve un problema concreto y se puede probar.</p>
-    <div class="tgrid">
-      <article class="tc rvx" data-i18n="tk1"><div class="tk">IA agéntica · CRM</div><h3>Rumbo</h3>
-        <p>Cinco agentes preparan cada oportunidad comercial: investigan la cuenta, puntúan el encaje con reglas que se pueden explicar, recomiendan producto y redactan el primer email. Ningún email sale sin aprobación humana y cada acción queda registrada.</p>
-        <div class="tlinks"><a href="https://rumbo-crm-omega.vercel.app" target="_blank" rel="noopener" data-c>Ver la demo ↗</a><a href="https://github.com/KairlosGG/rumbo-crm" target="_blank" rel="noopener" data-c>Ver el código ↗</a></div></article>
-      <article class="tc rvx" data-i18n="tk2"><div class="tk">IA conversacional</div><h3>Colibrí</h3>
-        <p>Una entrevista guiada por fases, con un personaje que acompaña al usuario y un panel con los resultados. Versión de demostración de un piloto real, sin datos del cliente.</p>
-        <div class="tlinks"><a href="https://colibri-entrevista.vercel.app" target="_blank" rel="noopener" data-c>Ver la demo ↗</a><a href="https://github.com/KairlosGG/colibri-entrevista" target="_blank" rel="noopener" data-c>Ver el código ↗</a></div></article>
-      <article class="tc rvx" data-i18n="tk3"><div class="tk">Sostenibilidad · Herramienta web</div><h3>Wattprint</h3>
-        <p>Calcula en un minuto el carbono, la energía y el agua que consumen los entrenamientos y las inferencias de IA, con la metodología SCI (ISO/IEC 21031) y datos de Ember y Uptime Institute.</p>
-        <div class="tlinks"><a href="/wattprint" data-c>Ver Wattprint →</a><a href="https://github.com/KairlosGG/wattprint" target="_blank" rel="noopener" data-c>Ver el código ↗</a></div></article>
-      <article class="tc rvx" data-i18n="tk4"><div class="tk">Formación · En desarrollo</div><h3>Forja 42001</h3>
-        <p>Plataforma de estudio y simulador de examen que construí para preparar la ISO/IEC 42001 Lead Implementer. Quiero convertirla en producto con contenido original.</p>
-        <div class="tlinks"><span class="tsoon">Sin publicar</span></div></article>
-    </div>
+    <div class="trs"><article class="tr rvx"><div class="tr-img"><img src="/assets/projects/rumbo.webp" alt="Rumbo: ficha de un lead con el email del agente, la probabilidad de cierre y el encaje explicado" data-i18n-attr="alt:a_tk1" loading="lazy" decoding="async" width="1600" height="900"/></div><div class="tc tr-body" data-i18n="tk1"><div class="tk">IA agéntica · CRM</div><h3>Rumbo</h3><p>Cinco agentes preparan cada oportunidad comercial: investigan la cuenta, puntúan el encaje con reglas que se pueden explicar, recomiendan producto y redactan el primer email. Ningún email sale sin aprobación humana y cada acción queda registrada.</p><div class="tlinks"><a href="https://rumbo-crm-omega.vercel.app" target="_blank" rel="noopener" data-c>Ver la demo ↗</a><a href="https://github.com/KairlosGG/rumbo-crm" target="_blank" rel="noopener" data-c>Ver el código ↗</a></div></div></article><article class="tr rvx"><div class="tr-img"><img src="/assets/projects/colibri.webp" alt="Colibrí: el valle con las cuatro etapas de la entrevista" data-i18n-attr="alt:a_tk2" loading="lazy" decoding="async" width="1600" height="900"/></div><div class="tc tr-body" data-i18n="tk2"><div class="tk">IA conversacional</div><h3>Colibrí</h3><p>Una entrevista guiada por fases, con un personaje que acompaña al usuario y un panel con los resultados. Versión de demostración de un piloto real, sin datos del cliente.</p><div class="tlinks"><a href="https://colibri-entrevista.vercel.app" target="_blank" rel="noopener" data-c>Ver la demo ↗</a><a href="https://github.com/KairlosGG/colibri-entrevista" target="_blank" rel="noopener" data-c>Ver el código ↗</a></div></div></article><article class="tr rvx"><div class="tr-img"><img src="/assets/projects/wattprint.webp" alt="Wattprint: huella de una tarea de IA y mapa de dónde conviene ejecutarla" data-i18n-attr="alt:a_tk3" loading="lazy" decoding="async" width="1600" height="900"/></div><div class="tc tr-body" data-i18n="tk3"><div class="tk">Sostenibilidad · Herramienta web</div><h3>Wattprint</h3><p>Calcula en un minuto el carbono, la energía y el agua que consumen los entrenamientos y las inferencias de IA, con la metodología SCI (ISO/IEC 21031) y datos de Ember y Uptime Institute.</p><div class="tlinks"><a href="/wattprint" data-c>Ver Wattprint →</a><a href="https://github.com/KairlosGG/wattprint" target="_blank" rel="noopener" data-c>Ver el código ↗</a></div></div></article><article class="tr rvx"><div class="tr-img"><img src="/assets/projects/forja.webp" alt="Forja 42001: plataforma de estudio para la ISO/IEC 42001" data-i18n-attr="alt:a_tk4" loading="lazy" decoding="async" width="1600" height="900"/></div><div class="tc tr-body" data-i18n="tk4"><div class="tk">Formación · En desarrollo</div><h3>Forja 42001</h3><p>Plataforma de estudio y simulador de examen que construí para preparar la ISO/IEC 42001 Lead Implementer. Quiero convertirla en producto con contenido original.</p><div class="tlinks"><span class="tsoon">Sin publicar</span></div></div></article></div>
   </div>
 </section>
 
@@ -1000,9 +994,9 @@ window.NC_EN["h1b"]="that work.";
 window.NC_EN["intro"]="Since 2015 I have been turning ideas into things people use: an app with 500 users in 24 hours, a 16 km high-voltage construction site, virtual reality experiences for clients and, now, AI agents. The new layer: <strong>making that AI explainable and auditable.</strong>";
 window.NC_EN["mq"]="<span class=\"mqi\"><i></i>Digital product</span><span class=\"mqi\"><i></i><b>From idea to delivery</b></span><span class=\"mqi\"><i></i>Virtual reality</span><span class=\"mqi\"><i></i>Web360</span><span class=\"mqi\"><i></i><b>Serious games</b></span><span class=\"mqi\"><i></i>UX/UI design</span><span class=\"mqi\"><i></i>AI agents</span><span class=\"mqi\"><i></i><b>Governable by design</b></span><span class=\"mqi\"><i></i>Discovery · PoC · MVP</span><span class=\"mqi\"><i></i>ISO/IEC 42001</span>";
 window.NC_EN["e01p"]="<span class=\"n\">01</span> Who I am";
-window.NC_EN["e02p"]="<span class=\"n\">02</span> Projects · EONESIA 2022–2026";
+window.NC_EN["e02p"]="<span class=\"n\">02</span> Projects";
 window.NC_EN["h_proy"]="Things that exist <em>because I made them happen.</em>";
-window.NC_EN["proy_lead"]="Immersive products I created, directed or designed as co-founder and Product and Innovation Lead at EONESIA, built for VR headsets, web and mobile.";
+window.NC_EN["proy_lead"]="What I have created, directed or designed since 2015, at EONESIA and beyond. Pick one to see what it was and what I did.";
 window.NC_EN["pj1"]="<div class=\"ptags\">VR · Educational game · STEM</div><h3>SOL 672</h3><p>The player is an astronaut stranded on Mars who has to restore power, produce oxygen and keep the station running using science and logic.</p><div class=\"paward\">★ Finalist · Indie Games Málaga Awards 2024</div><div class=\"prole\"><b>My role:</b> product creation and direction, UX/UI design, game design, narrative.</div><a class=\"plink\" href=\"https://www.eonesia.com/portfolios/sol672-experiencia-ciencia-vr/\" target=\"_blank\" rel=\"noopener\" data-c>View project ↗</a>";
 window.NC_EN["pj2"]="<div class=\"ptags\">VR · Educational game · Biology</div><h3>BioVoyager VR</h3><p>A microscopic journey through the human body inside an exploration capsule, visiting organs, tissues and vital systems at cellular scale.</p><div class=\"prole\"><b>My role:</b> product creation and direction, UX/UI design, game design, narrative.</div><a class=\"plink\" href=\"https://www.eonesia.com/portfolios/bioyager-vr/\" target=\"_blank\" rel=\"noopener\" data-c>View project ↗</a>";
 window.NC_EN["pj3"]="<div class=\"ptags\">VR · Multiplayer · Education and health</div><h3>Cronos Adventure</h3><p>A multiplayer boat journey through historical periods, designed for children in hospital oncology units.</p><div class=\"prole\"><b>My role:</b> product direction and UX/UI design.</div><a class=\"plink\" href=\"https://www.eonesia.com/portfolios/experiencias-cronos-adventure-historia-vr/\" target=\"_blank\" rel=\"noopener\" data-c>View project ↗</a>";
@@ -1040,6 +1034,50 @@ window.NC_EN["conv3"]="<span class=\"hl\">With the standard:</span> the new laye
 window.NC_EN["e05g"]="<span class=\"n\">05</span> The new layer · AI governance";
 window.NC_EN["posit"]="74% of companies plan to deploy agentic AI within the next two years, but only 21% have a mature governance model for autonomous agents (Deloitte, <i>State of AI in the Enterprise</i>, 2026).";
 window.NC_EN["e07"]="07 · Contact";
+window.NC_EN["a_ixf"]="Filter projects";
+window.NC_EN["a_ixdots"]="Images";
+window.NC_EN["ixf_all"]="All";
+window.NC_EN["ixf_vr"]="Virtual reality";
+window.NC_EN["ixf_w3d"]="Web360 and 3D";
+window.NC_EN["ixf_game"]="Games";
+window.NC_EN["ixf_mob"]="Mobile and AR";
+window.NC_EN["ixn_pj6"]="LiVRe";
+window.NC_EN["ixc_pj6"]="Fundación Magtel";
+window.NC_EN["ixn_pj16"]="Cerco Industrial · Phase III";
+window.NC_EN["ixc_pj16"]="With a partner";
+window.NC_EN["ixn_pj1"]="SOL 672";
+window.NC_EN["ixc_pj1"]="Educational VR game";
+window.NC_EN["ixn_pj7"]="In-Habit · CongreSkills";
+window.NC_EN["ixc_pj7"]="Inclusive training";
+window.NC_EN["ixn_pj3"]="Cronos Adventure";
+window.NC_EN["ixc_pj3"]="Multiplayer VR";
+window.NC_EN["ixn_pj9"]="Metropolitan";
+window.NC_EN["ixc_pj9"]="Metrovacesa";
+window.NC_EN["ixn_pj10"]="COEC virtual tour";
+window.NC_EN["ixc_pj10"]="Córdoba College of Nursing";
+window.NC_EN["ixn_pj2"]="BioVoyager VR";
+window.NC_EN["ixc_pj2"]="Educational VR game";
+window.NC_EN["ixn_pj4"]="Superinspector";
+window.NC_EN["ixc_pj4"]="Serious game";
+window.NC_EN["ixn_pj5"]="Olympia XR";
+window.NC_EN["ixc_pj5"]="With Complutense University";
+window.NC_EN["ixn_pj8"]="José Cuervo 360º";
+window.NC_EN["ixc_pj8"]="Próximo Spain";
+window.NC_EN["ixn_pj11"]="Christmas in 360º";
+window.NC_EN["ixc_pj11"]="Juegaterapia";
+window.NC_EN["ixn_pj12"]="Augmented reality invitation";
+window.NC_EN["ixc_pj12"]="Conference";
+window.NC_EN["ixn_pj13"]="3D model of the logistics base";
+window.NC_EN["ixc_pj13"]="Spanish Army";
+window.NC_EN["ixn_pj14"]="Air quality in Carboneras";
+window.NC_EN["ixc_pj14"]="SGS · 2021";
+window.NC_EN["ixn_pj15"]="Empollo App";
+window.NC_EN["ixc_pj15"]="Own project · 2015";
+window.NC_EN["pj16"]="<div class=\"ptags\">Web360 · Virtual reality · Industrial heritage</div><h3>Cerco Industrial · Phase III</h3><p>Virtual tour of the Cerco Industrial in Peñarroya-Pueblonuevo, Spain. 3D models of the historic buildings built from around 13,900 aerial and ground photographs, 360º panoramas with a card for each building and narration in Spanish and English, and a virtual reality station at the viewpoint with six headsets. Outside EONESIA, funded through the EU LEADER programme.</p><div class=\"prole\"><b>My role:</b> designed and directed part of the project, together with a partner.</div><div class=\"plinks2\"><a class=\"plink\" href=\"https://www.cercoindustrialtourvirtual.com/fase3/index.htm\" target=\"_blank\" rel=\"noopener\" data-c>Enter the tour ↗</a><a class=\"plink\" href=\"https://www.cercoindustrialvirtual.com/faseiii\" target=\"_blank\" rel=\"noopener\" data-c>See the project ↗</a></div>";
+window.NC_EN["a_tk1"]="Rumbo: a lead record with the agent’s email, close probability and explained fit score";
+window.NC_EN["a_tk2"]="Colibrí: the valley with the four interview stages";
+window.NC_EN["a_tk3"]="Wattprint: the footprint of an AI task and a map of where to run it";
+window.NC_EN["a_tk4"]="Forja 42001: study platform for ISO/IEC 42001";
 </script>
 <script>(function(){
 var D=window.NC_EN||{};
@@ -1339,5 +1377,64 @@ document.querySelectorAll('[data-c]').forEach(function(el){el.addEventListener('
 })();
 </script>
 
+<script>(function(){
+var ix=document.getElementById('ix');if(!ix)return;
+var items=[].slice.call(ix.querySelectorAll('.ix-it'));
+var wide=window.matchMedia('(min-width: 901px)');
+var fine=window.matchMedia('(hover: hover) and (pointer: fine)');
+function row(it){return it.querySelector('.ix-row');}
+function visible(){return items.filter(function(it){return !it.classList.contains('off');});}
+function setOpen(target){
+  items.forEach(function(it){var on=it===target;row(it).setAttribute('aria-expanded',String(on));it.querySelector('.ix-panel').classList.toggle('on',on);});
+}
+function current(){for(var i=0;i<items.length;i++){if(row(items[i]).getAttribute('aria-expanded')==='true')return items[i];}return null;}
+function refresh(){if(window.ScrollTrigger)window.ScrollTrigger.refresh();}
+var hoverT=null;
+items.forEach(function(it){
+  var r=row(it);
+  r.addEventListener('click',function(){
+    if(wide.matches){setOpen(it);return;}
+    var was=r.getAttribute('aria-expanded')==='true';
+    setOpen(was?null:it);refresh();
+  });
+  r.addEventListener('mouseenter',function(){
+    if(!wide.matches||!fine.matches)return;
+    clearTimeout(hoverT);hoverT=setTimeout(function(){setOpen(it);},90);
+  });
+  r.addEventListener('mouseleave',function(){clearTimeout(hoverT);});
+  r.addEventListener('focus',function(){if(wide.matches)setOpen(it);});
+  r.addEventListener('keydown',function(e){
+    var v=visible(),i=v.indexOf(it),n=null;
+    if(e.key==='ArrowDown')n=v[Math.min(i+1,v.length-1)];
+    else if(e.key==='ArrowUp')n=v[Math.max(i-1,0)];
+    else if(e.key==='Home')n=v[0];
+    else if(e.key==='End')n=v[v.length-1];
+    if(n){e.preventDefault();row(n).focus();}
+  });
+  var dots=it.querySelectorAll('.ix-dots button'),imgs=it.querySelectorAll('.ix-media img');
+  [].forEach.call(dots,function(d,j){
+    d.addEventListener('click',function(){
+      [].forEach.call(imgs,function(im,k){im.classList.toggle('on',k===j);});
+      [].forEach.call(dots,function(o,k){if(k===j)o.setAttribute('aria-current','true');else o.removeAttribute('aria-current');});
+    });
+  });
+});
+[].forEach.call(document.querySelectorAll('.ixf'),function(b,_,all){
+  b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f');
+    [].forEach.call(document.querySelectorAll('.ixf'),function(o){o.setAttribute('aria-pressed',String(o===b));});
+    items.forEach(function(it){var c=(it.getAttribute('data-cats')||'').split(' ');it.classList.toggle('off',f!=='all'&&c.indexOf(f)<0);});
+    var v=visible();ix.style.setProperty('--n',String(Math.max(v.length,1)));
+    var cur=current();
+    if(wide.matches){if(!cur||cur.classList.contains('off'))setOpen(v[0]||null);}
+    else if(cur&&cur.classList.contains('off'))setOpen(null);
+    refresh();
+  });
+});
+if(!wide.matches)setOpen(null);
+var onChange=function(){if(wide.matches&&!current())setOpen(visible()[0]||null);refresh();};
+if(wide.addEventListener)wide.addEventListener('change',onChange);else if(wide.addListener)wide.addListener(onChange);
+})();
+</script>
 </body>
 </html>
