@@ -32,7 +32,7 @@ P = [
  dict(k='pj8', name='José Cuervo 360º', cats='w3d', imgs=['josecuervo'], ctx=('Próximo Spain', 'Próximo Spain')),
  dict(k='pj11', name='Navidad 360º', cats='', imgs=['juegaterapia'], ctx=('Juegaterapia', 'Juegaterapia')),
  dict(k='pj12', name='Invitación en realidad aumentada', cats='mob', imgs=['invitacion-ar'], ctx=('Congreso', 'Conference'), name_en='Augmented reality invitation'),
- dict(k='pj13', name='Maqueta 3D de la base logística', cats='w3d', imgs=['ejercito'], ctx=('Ejército de Tierra', 'Spanish Army'), name_en='3D model of the logistics base'),
+ dict(k='pj13', name='Maqueta 3D de la BLET', cats='w3d', imgs=['ejercito'], ctx=('Ejército de Tierra', 'Spanish Army'), name_en='3D model of the BLET'),
  dict(k='pj14', name='Calidad del aire en Carboneras', cats='', imgs=['carboneras'], ctx=('SGS · 2021', 'SGS · 2021'), name_en='Air quality in Carboneras'),
  dict(k='pj15', name='Empollo App', cats='mob', imgs=['empollo'], ctx=('Proyecto propio · 2015', 'Own project · 2015')),
 ]
@@ -41,10 +41,13 @@ for p in P:
 
 # Textos nuevos o cambiados de las fichas
 BODY_ES = {
- 'pj13': '<div class="ptags">3D · Eventos · Cliente: Ejército de Tierra</div><h3>Maqueta 3D de la base logística</h3><p>Maqueta 3D de la base logística de Córdoba para que el Ejército de Tierra la presentara en sus eventos. Fue el primer cliente de EONESIA.</p>',
+ 'pj13': '<div class="ptags">3D · Eventos · Cliente: Ejército de Tierra</div><h3>Maqueta 3D de la BLET</h3><p>Maqueta 3D de la futura Base Logística del Ejército de Tierra (BLET) en Córdoba, para que el Ejército la presentara en sus eventos. Fue el primer cliente de EONESIA.</p><div class="prole"><b>Mi papel:</b> diseño UX/UI.</div>',
+ 'pj15': '<div class="ptags">App móvil · EdTech · Proyecto propio · 2015</div><h3>Empollo App</h3><p>App para universitarios que convierte el estudio en una partida de preguntas al estilo del Trivial. Nació en Córdoba con la idea de llevarla a otras universidades, y en las primeras 24 horas consiguió más de 500 usuarios activos.</p><div class="paward">★ Ganadora · Startup Weekend Córdoba 2015</div><div class="prole"><b>Mi papel:</b> cofundador y CEO.</div>',
  'pj16': '<div class="ptags">Web360 · Realidad virtual · Patrimonio industrial</div><h3>Cerco Industrial · Fase III</h3><p>Tour virtual del Cerco Industrial de Peñarroya-Pueblonuevo. Modelos 3D de los edificios históricos a partir de unas 13.900 fotografías aéreas y terrestres, panorámicas 360º con fichas de cada edificio y locuciones en español e inglés, y un puesto de realidad virtual en el mirador con seis visores. Proyecto fuera de EONESIA, financiado con ayudas LEADER.</p><div class="prole"><b>Mi papel:</b> diseño y dirección de parte del proyecto, junto a otro socio.</div><div class="plinks2"><a class="plink" href="https://www.cercoindustrialtourvirtual.com/fase3/index.htm" target="_blank" rel="noopener" data-c>Entrar en el tour ↗</a><a class="plink" href="https://www.cercoindustrialvirtual.com/faseiii" target="_blank" rel="noopener" data-c>Ver el proyecto ↗</a></div>',
 }
 BODY_EN = {
+ 'pj13': '<div class="ptags">3D · Events · Client: Spanish Army</div><h3>3D model of the BLET</h3><p>A 3D model of the future Spanish Army Logistics Base (BLET) in Córdoba, for the Army to present at its events. It was EONESIA’s first client.</p><div class="prole"><b>My role:</b> UX/UI design.</div>',
+ 'pj15': '<div class="ptags">Mobile app · EdTech · Own project · 2015</div><h3>Empollo App</h3><p>An app for university students that turns studying into a Trivial Pursuit-style quiz game. It started in Córdoba with the aim of reaching other universities, and it got more than 500 active users in its first 24 hours.</p><div class="paward">★ Winner · Startup Weekend Córdoba 2015</div><div class="prole"><b>My role:</b> co-founder and CEO.</div>',
  'pj16': '<div class="ptags">Web360 · Virtual reality · Industrial heritage</div><h3>Cerco Industrial · Phase III</h3><p>Virtual tour of the Cerco Industrial in Peñarroya-Pueblonuevo, Spain. 3D models of the historic buildings built from around 13,900 aerial and ground photographs, 360º panoramas with a card for each building and narration in Spanish and English, and a virtual reality station at the viewpoint with six headsets. Outside EONESIA, funded through the EU LEADER programme.</p><div class="prole"><b>My role:</b> designed and directed part of the project, together with a partner.</div><div class="plinks2"><a class="plink" href="https://www.cercoindustrialtourvirtual.com/fase3/index.htm" target="_blank" rel="noopener" data-c>Enter the tour ↗</a><a class="plink" href="https://www.cercoindustrialvirtual.com/faseiii" target="_blank" rel="noopener" data-c>See the project ↗</a></div>',
 }
 
