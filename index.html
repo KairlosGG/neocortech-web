@@ -8,21 +8,9 @@
 <meta name="theme-color" content="#0A141F"/>
 <meta property="og:title" content="Carlos Gallego Galán — Hago productos que funcionan."/>
 <meta property="og:description" content="Technical Product Manager. Realidad virtual, Web360, serious games y agentes de IA, de la idea a la entrega."/>
-<!-- meta:begin -->
-<link rel="canonical" href="https://neocortech-kohl.vercel.app/"/>
-<link rel="alternate" hreflang="es" href="https://neocortech-kohl.vercel.app/"/>
-<link rel="alternate" hreflang="en" href="https://neocortech-kohl.vercel.app/?lang=en"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://neocortech-kohl.vercel.app/"/>
-<meta property="og:image" content="https://neocortech-kohl.vercel.app/assets/og-carlos.jpg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:locale" content="es_ES"/>
-<meta property="og:locale:alternate" content="en_GB"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://neocortech-kohl.vercel.app/assets/og-carlos.jpg"/>
-<!-- meta:end -->
-<link rel="stylesheet" href="/assets/fonts/fonts.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@700&family=Marcellus&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z' fill='none' stroke='%23C9A24B' stroke-width='8' stroke-linejoin='round'/%3E%3Ccircle cx='60' cy='60' r='14' fill='%235B8FC6'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%237FB4E8'/%3E%3C/svg%3E"/>
 <script>document.documentElement.className='js';</script>
 <script>(function(){var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}
@@ -422,6 +410,9 @@ footer h3 em{font-style:normal;color:var(--gold)}
 .lang button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
 
 /* proyectos (galería) y taller */
+.psub{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,30px);margin-top:72px;letter-spacing:.01em}
+.psub em{color:var(--gold);font-style:normal;font-size:.7em;letter-spacing:.06em}
+.psub+.pgrid{margin-top:28px}
 .plead{max-width:62ch;color:var(--muted);font-size:17px;line-height:1.65;margin-top:20px}
 .pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:46px}
 @media(max-width:1020px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -646,6 +637,34 @@ a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba
         <p>Los futuros compradores recorren las viviendas y la comunidad antes de construirse y opinan sobre los servicios previstos para la promoción.</p>
         <div class="prole"><b>Mi papel:</b> creación y dirección del producto, diseño UX/UI y narrativa.</div>
         <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-inmobiliario-metropolitan/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
+      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/coec.jpg" alt="Tour virtual del Colegio Oficial de Enfermería de Córdoba" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj10">
+        <div class="ptags">Web360 · Tour virtual · Cliente: Colegio Oficial de Enfermería de Córdoba</div><h3>Tour virtual COEC</h3>
+        <p>Recorrido en el navegador por las instalaciones del Colegio, para que estudiantes, profesionales y ciudadanía conozcan cada espacio antes de ir.</p>
+        <div class="prole"><b>Mi papel:</b> diseño de producto UX/UI.</div>
+        <a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-centro-coec/" target="_blank" rel="noopener" data-c>Ver proyecto ↗</a></div></article>
+      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/juegaterapia.jpg" alt="Vídeo de Navidad 360º" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj11">
+        <div class="ptags">Vídeo 360º · IA generativa · Cliente: Juegaterapia</div><h3>Navidad 360º</h3>
+        <p>Vídeo de Navidad para la sala inmersiva 360º que Juegaterapia tiene en Madrid.</p>
+        <div class="prole"><b>Mi papel:</b> creación del vídeo con ComfyUI, After Effects, Premiere y ElevenLabs.</div></div></article>
+      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/invitacion-ar.jpg" alt="Invitación en realidad aumentada" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj12">
+        <div class="ptags">Realidad aumentada · Móvil · Eventos</div><h3>Invitación en realidad aumentada</h3>
+        <p>La invitación a un congreso se abre en el móvil como una tarjeta 3D flotante en la que el asistente responde preguntas.</p>
+        <div class="prole"><b>Mi papel:</b> modelado y animación 3D en Blender y montaje de la experiencia en Onirix.</div></div></article>
+      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/ejercito.jpg" alt="Maqueta 3D de la base logística" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj13">
+        <div class="ptags">3D · Eventos · Cliente: Ejército de Tierra</div><h3>Maqueta 3D de la base logística</h3>
+        <p>Maqueta 3D de la base logística de Córdoba para que el Ejército de Tierra la presentara en sus eventos. Fue el primer cliente de EONESIA.</p></div></article>
+    </div>
+    <h3 class="psub rvx" data-i18n="psub">Antes de EONESIA <em>· 2015–2021</em></h3>
+    <div class="pgrid">
+      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/carboneras.jpg" alt="Calidad del aire en Carboneras" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj14">
+        <div class="ptags">Datos geoespaciales · Medio ambiente · SGS · 2021</div><h3>Calidad del aire en Carboneras</h3>
+        <p>Los datos horarios de los sensores de SGS, en un mapa con código de colores que muestra dónde se acercan o superan los límites europeos y españoles, para que el cliente actúe antes de incumplirlos. Fue una de las dos líneas de negocio nuevas que lancé en SGS.</p>
+        <div class="prole"><b>Mi papel:</b> diseño del producto, tratamiento de los datos con Excel y R y visualización.</div></div></article>
+      <article class="pj rvx"><div class="pimg"><img src="/assets/projects/empollo.jpg" alt="Empollo App" loading="lazy" width="1000" height="434"/></div><div class="pbody" data-i18n="pj15">
+        <div class="ptags">App móvil · EdTech · Proyecto propio · 2015</div><h3>Empollo App</h3>
+        <p>MVP de EdTech gamificado. En las primeras 24 horas consiguió más de 500 usuarios activos.</p>
+        <div class="paward">★ 1.er premio · Startup Weekend Córdoba 2015</div>
+        <div class="prole"><b>Mi papel:</b> cofundador y CEO.</div></div></article>
     </div>
   </div>
 </section>
@@ -993,6 +1012,13 @@ window.NC_EN["pj6"]="<div class=\"ptags\">VR · Inclusive training · Client: Fu
 window.NC_EN["pj7"]="<div class=\"ptags\">Web360 · Training platform</div><h3>In-Habit · CongreSkills</h3><p>Immersive platform that trains people with Down syndrome for five event-industry jobs through practical simulations.</p><div class=\"prole\"><b>My role:</b> 3D avatar menu to choose the right outfit for each job, UI design, support on UX and logic.</div><a class=\"plink\" href=\"https://www.eonesia.com/portfolios/experiencias-in-habit-formacion-inclusiva/\" target=\"_blank\" rel=\"noopener\" data-c>View project ↗</a>";
 window.NC_EN["pj8"]="<div class=\"ptags\">Web360 · Corporate training · Client: Próximo Spain</div><h3>José Cuervo 360º</h3><p>Browser-based 360º tour of the brand's headquarters for bartenders, with the brand's history and gamified cocktail training.</p><div class=\"prole\"><b>My role:</b> client project lead.</div><a class=\"plink\" href=\"https://www.eonesia.com/portfolios/experiencias-tour-virtual-corporativo-cuervo/\" target=\"_blank\" rel=\"noopener\" data-c>View project ↗</a>";
 window.NC_EN["pj9"]="<div class=\"ptags\">VR · 360º tour · Client: Metrovacesa</div><h3>Metropolitan</h3><p>Prospective buyers walk through homes and the community before they are built and give feedback on the services planned for the development.</p><div class=\"prole\"><b>My role:</b> product creation and direction, UX/UI design, narrative.</div><a class=\"plink\" href=\"https://www.eonesia.com/portfolios/experiencias-tour-virtual-inmobiliario-metropolitan/\" target=\"_blank\" rel=\"noopener\" data-c>View project ↗</a>";
+window.NC_EN["pj10"]="<div class=\"ptags\">Web360 · Virtual tour · Client: Córdoba College of Nursing</div><h3>COEC virtual tour</h3><p>A browser-based walkthrough of the College's facilities, so students, professionals and the public can see every space before they visit.</p><div class=\"prole\"><b>My role:</b> UX/UI product design.</div><a class=\"plink\" href=\"https://www.eonesia.com/portfolios/experiencias-tour-virtual-centro-coec/\" target=\"_blank\" rel=\"noopener\" data-c>View project ↗</a>";
+window.NC_EN["pj11"]="<div class=\"ptags\">360º video · Generative AI · Client: Juegaterapia</div><h3>Christmas in 360º</h3><p>A Christmas video for Juegaterapia's 360º immersive room in Madrid.</p><div class=\"prole\"><b>My role:</b> created the video with ComfyUI, After Effects, Premiere and ElevenLabs.</div>";
+window.NC_EN["pj12"]="<div class=\"ptags\">Augmented reality · Mobile · Events</div><h3>Augmented reality invitation</h3><p>A conference invitation that opens on the phone as a floating 3D card where guests answer questions.</p><div class=\"prole\"><b>My role:</b> 3D modelling and animation in Blender, and building the experience in Onirix.</div>";
+window.NC_EN["pj13"]="<div class=\"ptags\">3D · Events · Client: Spanish Army</div><h3>3D model of the logistics base</h3><p>A 3D model of the Córdoba logistics base for the Spanish Army to present at its events. It was EONESIA's first client.</p>";
+window.NC_EN["psub"]="Before EONESIA <em>· 2015–2021</em>";
+window.NC_EN["pj14"]="<div class=\"ptags\">Geospatial data · Environment · SGS · 2021</div><h3>Air quality in Carboneras</h3><p>Hourly data from SGS sensors on a colour-coded map showing where levels approach or exceed EU and Spanish limits, so the client can act before breaching them. One of the two new business lines I launched at SGS.</p><div class=\"prole\"><b>My role:</b> product design, data processing in Excel and R, and visualisation.</div>";
+window.NC_EN["pj15"]="<div class=\"ptags\">Mobile app · EdTech · Own project · 2015</div><h3>Empollo App</h3><p>A gamified EdTech MVP. It reached more than 500 active users in its first 24 hours.</p><div class=\"paward\">★ 1st prize · Startup Weekend Córdoba 2015</div><div class=\"prole\"><b>My role:</b> co-founder and CEO.</div>";
 window.NC_EN["e03t"]="<span class=\"n\">03</span> Workshop";
 window.NC_EN["h_taller"]="What I build <em>on my own.</em>";
 window.NC_EN["taller_lead"]="My own products, designed and built by directing AI agents. Each one solves a specific problem and you can try it.";

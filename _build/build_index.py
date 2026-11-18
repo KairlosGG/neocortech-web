@@ -34,6 +34,9 @@ s = re.sub(r'<meta property="og:title" content="[^"]*"/>', '<meta property="og:t
 s = rep(s, "<script>document.documentElement.className='js';</script>", "<script>document.documentElement.className='js';</script>\n" + HEAD)
 extra_css = CSS + """
 /* proyectos (galería) y taller */
+.psub{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,30px);margin-top:72px;letter-spacing:.01em}
+.psub em{color:var(--gold);font-style:normal;font-size:.7em;letter-spacing:.06em}
+.psub+.pgrid{margin-top:28px}
 .plead{max-width:62ch;color:var(--muted);font-size:17px;line-height:1.65;margin-top:20px}
 .pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:46px}
 @media(max-width:1020px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
