@@ -85,7 +85,7 @@ e_form:'<span class="n">—</span> Education',h_form:"Education and certificatio
 ed1:'<div class="y">2026</div><div class="t">AI Expert Programme (150 h, 6 ECTS)</div><div class="w">BIG School</div>',
 ed2:'<div class="y">2023</div><div class="t">MSc in Metaverse, VR and AR</div><div class="w">Complutense University of Madrid</div><div class="hon">Highest Distinction (Matrícula de Honor)</div>',
 ed3:'<div class="y">2022</div><div class="t">Business 360º programme</div><div class="w">ThePower Business School</div>',
-ed4:'<div class="y">2022</div><div class="t">UX/UI Product Design Bootcamp</div><div class="w">The Bridge</div>',
+ed4:'<div class="y">2022</div><div class="t">UX/UI Product Design Bootcamp</div><div class="w">The Bridge · full-time</div>',
 ed5:'<div class="y">2018</div><div class="t">MSc in Environmental Hydraulics</div><div class="w">University of Córdoba</div><div class="hon">Highest Distinction (Matrícula de Honor)</div>',
 ed6:'<div class="y">2016</div><div class="t">Bachelor\'s Degree in Civil Engineering</div><div class="w">University of Córdoba</div>',
 certs:'<span class="cert star">ISO/IEC 42001 Lead Implementer · PECB · exam passed, Aug 2026</span><span class="cert">Generative AI Leader · Google · 2026</span><span class="cert">AI Agent Builder Associate (AB-620) · Microsoft · in progress</span><span class="cert">Lean Six Sigma Green Belt · ISO 18404 · SGS</span><span class="cert">Design Thinking Specialisation · Actitud Creativa (SGS)</span><span class="cert">English B2 · certification in progress</span>',
