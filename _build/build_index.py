@@ -14,7 +14,7 @@ assert body.count('{{VIDEO}}') == 1
 s = src[:a] + body.replace('{{VIDEO}}', video) + src[b:]
 
 # 2. cabecera: subtítulo, aria, selector de idioma, texto del menú
-s = rep(s, '<span class="sub">Gobernanza de IA</span>', '<span class="sub" data-i18n="brand_sub">Gobernanza de IA</span>')
+s = rep(s, '<span class="wm"><span class="neo">NEO</span>CORTECH</span><span class="sub">Gobernanza de IA</span>', '<span class="wm wm-cg">Carlos Gallego Galán</span><span class="sub">Product Designer · Technical PM</span>')
 s = rep(s, '<nav class="switch" aria-label="Páginas del ecosistema">', '<nav class="switch" aria-label="Páginas del ecosistema" data-i18n-attr="aria-label:a_nav">')
 s = rep(s, '<button class="menu-btn" id="menuBtn"', index_toggle('es') + '\n      <button class="menu-btn" id="menuBtn"')  # fase 4: enlaces / y /en
 s = rep(s, '<span id="menuTxt">Índice</span>', '<span id="menuTxt">Índice</span>')
