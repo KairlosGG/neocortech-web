@@ -38,8 +38,11 @@ hero = rep(hero, '''      <span class="line-mask"><span class="l1" data-i18n="h1
       <span class="line-mask"><span class="l2"><span class="it" data-i18n="h1b">agéntica.</span></span></span>
       <span class="line-mask"><span class="l1" data-i18n="h1c">Y la hago</span></span>
       <span class="line-mask"><span class="l2"><span class="it" data-i18n="h1d">gobernable.</span></span></span>''',
-'''      <span class="line-mask"><span class="l1" data-i18n="h1a">Hago productos</span></span>
-      <span class="line-mask"><span class="l2"><span class="it" data-i18n="h1b">que funcionan.</span></span></span>''')
+'''      <span class="line-mask"><span class="l1" data-i18n="h1a">«La creatividad es</span></span>
+      <span class="line-mask"><span class="l1" data-i18n="h1m">una manera de</span></span>
+      <span class="line-mask"><span class="l2"><span class="it" data-i18n="h1b">resolver problemas.»</span></span></span>''')
+# cita: firma bajo el titular
+hero = rep(hero, '    </h1>\n', '    </h1>\n    <p class="hero-cite rvx" data-i18n="h1cite">— Ed Catmull, cofundador de Pixar</p>\n')
 hero = re.sub(r'<p class="intro rvx" data-i18n="intro">.*?</p>',
               '<p class="intro rvx" data-i18n="intro">Desde 2015 convierto ideas en cosas que se usan: una app con 500 usuarios en 24 horas, experiencias de realidad virtual para clientes y, ahora, agentes de IA. La capa nueva: <strong>que esa IA se pueda explicar y auditar.</strong></p>', hero, flags=re.S)
 hero = re.sub(r'\n<div class="marquee".*?</div></div>\n', '\n', hero, flags=re.S)  # fase 1: sin marquesina

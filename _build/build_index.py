@@ -28,8 +28,8 @@ s = re.sub(r'<meta property="og:description" content="[^"]*"/>',
            '<meta property="og:description" content="' + DESC_ES + '"/>', s, count=1)
 
 
-s = re.sub(r'<title>[^<]*</title>', '<title>Carlos Gallego Galán — Hago productos que funcionan.</title>', s, count=1)
-s = re.sub(r'<meta property="og:title" content="[^"]*"/>', '<meta property="og:title" content="Carlos Gallego Galán — Hago productos que funcionan."/>', s, count=1)
+s = re.sub(r'<title>[^<]*</title>', '<title>Carlos Gallego Galán — Product Designer · Technical PM</title>', s, count=1)
+s = re.sub(r'<meta property="og:title" content="[^"]*"/>', '<meta property="og:title" content="Carlos Gallego Galán — Product Designer · Technical PM"/>', s, count=1)
 
 # 4. idioma (fase 4): la página española ya no lleva el diccionario inglés; /en se genera aparte (en_page.py) con los textos en el HTML
 s = rep(s, "<script>document.documentElement.className='js';</script>", "<script>document.documentElement.className='js';</script>\n" + index_head('es'))

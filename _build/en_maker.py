@@ -2,9 +2,9 @@
 import json
 EN = {
  "ov1": "Profile", "ov2": "<em>Projects</em>", "ov3": "Side projects", "ov4": "What I <em>bring</em>", "ov5": "AI governance", "ov6": "Research", "ov7": "Contact",
- "_title": "Carlos Gallego Galán — I make products that work.",
+ "_title": "Carlos Gallego Galán — Product Designer · Technical PM",
  "_desc": "Product design and product management. Virtual reality for health and inclusion, web tools and AI agents with human oversight. Córdoba, Spain, remote.",
- "h1a": "I make products", "h1b": "that work.",
+ "h1a": "“Creativity is", "h1m": "about solving", "h1b": "problems.”", "h1cite": "— Ed Catmull, co-founder of Pixar",
  "intro": "Since 2015 I have been turning ideas into things people use: an app with 500 users in 24 hours, virtual reality experiences for clients and, now, AI agents. The new layer: <strong>making that AI explainable and auditable.</strong>",
  "e01p": '<span class="n">01</span> Who I am',
  "e02p": '<span class="n">02</span> Projects · EONESIA 2022–2026',
