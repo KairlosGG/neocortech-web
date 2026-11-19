@@ -4,10 +4,7 @@ import hashlib, os, re
 # ---------- 1. bucles que no paran ----------
 # partículas: DPR 1 (son manchas difusas) y en pausa también con la pestaña oculta
 s = rep(s, "function size(){DPR=Math.min(devicePixelRatio||1,1.5);W=c.width=innerWidth*DPR;", "function size(){DPR=1;W=c.width=innerWidth*DPR;")
-s = rep(s, "function setActive(v){active=v;c.style.opacity=v?1:0;if(v&&!running&&!RM){running=true;requestAnimationFrame(f);}}",
-        "function setActive(v){c.style.opacity=v?1:0;v=v&&!document.hidden;active=v;if(v&&!running&&!RM){running=true;requestAnimationFrame(f);}}")
-s = rep(s, "if(el)io.observe(el);});}",
-        "if(el)io.observe(el);});\ndocument.addEventListener('visibilitychange',function(){setActive(!!(vis.hero||vis.contacto));});}")
+# (las partículas vuelven a toda la página y ya se pausan con la pestaña oculta en src/index.html)
 
 # caja negra: solo pide fotogramas si está a la vista, la pestaña es visible y algo cambia
 # (se para cuando la apertura converge; con el cursor encima sigue, porque los puntos recorren las aristas)

@@ -23,13 +23,10 @@ if(p.y<-10){p.y=H+10;p.x=Math.random()*W;}if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-1
 var tw=p.a*(.6+.4*Math.sin(p.ph*2));var R4=p.r*4;
 x.globalAlpha=tw<0?0:tw>1?1:tw;x.drawImage(p.sap?SPR_S:SPR_G,p.x-R4,p.y-R4,R4*2,R4*2);}
 x.globalAlpha=1;sv*=.9;x.globalCompositeOperation='source-over';if(active)requestAnimationFrame(f);else{x.clearRect(0,0,W,H);running=false;}}
-/* fase 1: solo en el hero y el pie; en pausa el resto del tiempo */
-var active=false,running=false,vis={};
-c.style.transition='opacity .6s';c.style.opacity=0;
-function setActive(v){c.style.opacity=v?1:0;v=v&&!document.hidden;active=v;if(v&&!running&&!RM){running=true;requestAnimationFrame(f);}}
-if(!RM&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target.id]=e.isIntersecting;});setActive(!!(vis.hero||vis.contacto));},{threshold:.12});
-['hero','contacto'].forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el);});
-document.addEventListener('visibilitychange',function(){setActive(!!(vis.hero||vis.contacto));});}
+/* Partículas en toda la página (petición de Carlos); en pausa solo con la pestaña oculta */
+var active=false,running=false;
+function setActive(v){active=v;if(v&&!running&&!RM){running=true;requestAnimationFrame(f);}}
+if(!RM){setActive(!document.hidden);document.addEventListener('visibilitychange',function(){setActive(!document.hidden);});}
 })();
 
 /* black box */
