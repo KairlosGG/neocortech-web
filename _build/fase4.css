@@ -1,0 +1,12 @@
+
+/* ---------- fase 4 · rendimiento ---------- */
+/* fuentes de reserva con métricas ajustadas (las @font-face van en línea en <head>, ver selfhost.py):
+   mientras llega la fuente, el texto ocupa casi lo mismo y el hero no salta */
+:root{
+  --display:"Cinzel","Cinzel Fallback",Georgia,serif;
+  --ui:"Inter","Inter Fallback",system-ui,sans-serif;
+  --mono:"Inter","Inter Fallback",system-ui,sans-serif;
+  --long:"Marcellus","Marcellus Fallback","Cinzel","Cinzel Fallback",Georgia,serif;
+}
+/* en móvil el acordeón empieza cerrado: hasta que projects.js lo prepara, ningún panel se pinta (ni descarga su imagen) */
+@media (max-width:900px){html.js .ix:not(.ix-ready) .ix-panel{display:none}}

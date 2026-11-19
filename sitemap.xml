@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://neocortech-kohl.vercel.app/</loc></url>
-  <url><loc>https://neocortech-kohl.vercel.app/newsletter</loc></url>
-  <url><loc>https://neocortech-kohl.vercel.app/wattprint</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://neocortech-kohl.vercel.app/</loc><lastmod>2026-11-19</lastmod><xhtml:link rel="alternate" hreflang="es" href="https://neocortech-kohl.vercel.app/"/><xhtml:link rel="alternate" hreflang="en" href="https://neocortech-kohl.vercel.app/en"/><xhtml:link rel="alternate" hreflang="x-default" href="https://neocortech-kohl.vercel.app/"/></url>
+  <url><loc>https://neocortech-kohl.vercel.app/en</loc><lastmod>2026-11-19</lastmod><xhtml:link rel="alternate" hreflang="es" href="https://neocortech-kohl.vercel.app/"/><xhtml:link rel="alternate" hreflang="en" href="https://neocortech-kohl.vercel.app/en"/><xhtml:link rel="alternate" hreflang="x-default" href="https://neocortech-kohl.vercel.app/"/></url>
+  <url><loc>https://neocortech-kohl.vercel.app/newsletter</loc><lastmod>2026-11-19</lastmod></url>
+  <url><loc>https://neocortech-kohl.vercel.app/wattprint</loc><lastmod>2026-11-19</lastmod></url>
 </urlset>

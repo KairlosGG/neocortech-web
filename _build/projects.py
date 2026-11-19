@@ -8,6 +8,29 @@ import html
 
 IMG = '/assets/projects/'
 
+# fase 4: srcset con variantes de 800 y 1200 px (las genera build/img_variants.py en el build)
+SRC_DIR = '/home/claude/neocortech/static/projects/'
+SIZES_IX = '(min-width: 901px) 44vw, 92vw'
+SIZES_TW = {'lead': '(min-width: 901px) 50vw, 92vw', 'pair': '(min-width: 901px) 44vw, 92vw'}
+
+
+def _width(im):
+    try:
+        from PIL import Image
+        return Image.open(SRC_DIR + im + '.webp').width
+    except Exception:
+        return 1600
+
+
+def img_attrs(im, sizes, lazy_data=False):
+    """src (la de 1200 o el original), srcset y sizes. Con lazy_data, como data-* para no descargar hasta que se vaya a mostrar."""
+    w = _width(im)
+    cands = [(f'{IMG}{im}-{v}.webp', v) for v in (800, 1200) if w > v] + [(f'{IMG}{im}.webp', w)]
+    src = next((u for u, v in cands if v == 1200), cands[-1][0])
+    srcset = ', '.join(f'{u} {v}w' for u, v in cands)
+    pre = 'data-' if lazy_data else ''
+    return f'{pre}src="{src}" {pre}srcset="{srcset}" sizes="{sizes}"'
+
 # Filtros: clave, etiqueta ES, etiqueta EN
 FILTERS = [
     ('all', 'Todos', 'All'),
@@ -97,6 +120,8 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
+# fase 4: solo el primer proyecto (abierto por defecto en escritorio) lleva src; el resto, data-src/data-srcset
+# y projects.js los hidrata al pasar, enfocar o abrir la fila (y a sus vecinas), para que los paneles ocultos no descarguen nada.
 def proyectos_html(bodies):
     counts = {f: sum(1 for p in P if f in p['cats'].split()) for f, _, _ in FILTERS}
     counts['all'] = len(P)
@@ -108,7 +133,7 @@ def proyectos_html(bodies):
         pid = 'ix-' + p['k']
         n = len(p['imgs'])
         figs = ''.join(
-            f'<img src="{IMG}{im}.webp" alt="{esc(ALT[im][0])}" data-i18n-attr="alt:a_ixi_{im}" loading="lazy" decoding="async" width="1600" height="900"{" class=\"on\"" if j == 0 else " aria-hidden=\"true\""}/>'
+            f'<img {img_attrs(im, SIZES_IX, lazy_data=(i > 0))} alt="{esc(ALT[im][0])}" data-i18n-attr="alt:a_ixi_{im}" loading="lazy" decoding="async" width="1600" height="900"{" class=\"on\"" if j == 0 else " aria-hidden=\"true\""}/>'
             for j, im in enumerate(p['imgs']))
         dots = ''
         if n > 1:
@@ -139,7 +164,7 @@ def taller_html(bodies):
     kind = ['lead', 'pair', 'pair', 'note']
     rows = ''.join(
         f'<article class="tw tw-{kind[i]} rvx">'
-        + ('' if kind[i] == 'note' else f'<div class="tw-img"><img src="{IMG}{im}.webp" alt="{esc(alt)}" data-i18n-attr="alt:a_{k}" loading="lazy" decoding="async" width="1600" height="900"/></div>')
+        + ('' if kind[i] == 'note' else f'<div class="tw-img"><img {img_attrs(im, SIZES_TW[kind[i]])} alt="{esc(alt)}" data-i18n-attr="alt:a_{k}" loading="lazy" decoding="async" width="1600" height="900"/></div>')
         + f'<div class="tw-body" data-i18n="{k}">{bodies[k]}</div></article>'
         for i, (k, im, alt) in enumerate(TALLER))
     return (

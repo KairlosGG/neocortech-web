@@ -5,7 +5,14 @@ var wide=window.matchMedia('(min-width: 901px)');
 var fine=window.matchMedia('(hover: hover) and (pointer: fine)');
 function row(it){return it.querySelector('.ix-row');}
 function visible(){return items.filter(function(it){return !it.classList.contains('off');});}
+/* fase 4: las imágenes de los paneles cerrados no se descargan hasta que se van a mostrar.
+   Se hidratan (data-srcset/data-src -> srcset/src) al pasar o enfocar la fila, con sus dos vecinas por arriba y por abajo,
+   al pulsarla y cuando el índice queda cerca de la pantalla (el panel abierto y sus vecinas). */
+function hydrate(it){if(!it||it.__h)return;it.__h=1;
+  [].forEach.call(it.querySelectorAll('img[data-src]'),function(im){if(im.dataset.srcset){im.srcset=im.dataset.srcset;im.removeAttribute('data-srcset');}im.src=im.dataset.src;im.removeAttribute('data-src');});}
+function warm(it){hydrate(it);var v=visible(),i=v.indexOf(it);if(i<0)return;for(var d=1;d<=2;d++){hydrate(v[i+d]);hydrate(v[i-d]);}}
 function setOpen(target){
+  if(target)hydrate(target);
   if(target&&current()===target)return;
   items.forEach(function(it){var on=it===target;row(it).setAttribute('aria-expanded',String(on));it.querySelector('.ix-panel').classList.toggle('on',on);});
 }
@@ -35,14 +42,17 @@ items.forEach(function(it){
     setOpen(was?null:it);refresh();
     if(!was)keepInView(r,before);
   });
-  r.addEventListener('mouseenter',function(){
-    if(!wide.matches||!fine.matches)return;
+  r.addEventListener('pointerdown',function(){hydrate(it);},{passive:true});
+  /* QA: solo con movimiento real del ratón; al hacer scroll con el puntero quieto no cambia la ficha */
+  r.addEventListener('pointermove',function(e){
+    if(e.pointerType!=='mouse'||!wide.matches||!fine.matches||current()===it)return;
+    warm(it);
     clearTimeout(hoverT);
     /* fase 1: si ya hay un panel abierto se cambia al momento (sin parpadeo al recorrer la lista) */
     if(current())setOpen(it);else hoverT=setTimeout(function(){setOpen(it);},90);
   });
   r.addEventListener('mouseleave',function(){clearTimeout(hoverT);});
-  r.addEventListener('focus',function(){if(wide.matches)setOpen(it);});
+  r.addEventListener('focus',function(){if(wide.matches){warm(it);setOpen(it);}});
   r.addEventListener('keydown',function(e){
     var v=visible(),i=v.indexOf(it),n=null;
     if(e.key==='ArrowDown')n=v[Math.min(i+1,v.length-1)];
@@ -75,6 +85,19 @@ items.forEach(function(it){
   });
 });
 if(!wide.matches)setOpen(null);
+ix.classList.add('ix-ready');
+if('IntersectionObserver' in window){var nio=new IntersectionObserver(function(es){if(es[0].isIntersecting&&wide.matches){warm(current()||visible()[0]);nio.disconnect();}},{rootMargin:'300px 0px'});nio.observe(ix);}
+/* fase 4: en escritorio el panel es fijo (sticky). Si un panel mide más que la ventana (LiVRe), se fija por abajo:
+   baja con la página hasta que se ve su final y ahí se queda, así el texto se lee entero sin perder el sticky. */
+function fitSticky(){
+  items.forEach(function(it){var p=it.querySelector('.ix-panel');p.style.top='';
+    if(!wide.matches)return;
+    var base=parseFloat(getComputedStyle(p).top)||96,h=p.offsetHeight;
+    if(h>innerHeight-base-24)p.style.top=(innerHeight-h-24)+'px';});
+}
+fitSticky();addEventListener('resize',fitSticky);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitSticky);
+if('ResizeObserver' in window){var fsT=0,ro=new ResizeObserver(function(){cancelAnimationFrame(fsT);fsT=requestAnimationFrame(fitSticky);});items.forEach(function(it){ro.observe(it.querySelector('.ix-panel'));});}
 var onChange=function(){if(wide.matches&&!current())setOpen(visible()[0]||null);refresh();};
 if(wide.addEventListener)wide.addEventListener('change',onChange);else if(wide.addListener)wide.addListener(onChange);
 })();

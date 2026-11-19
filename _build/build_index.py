@@ -1,6 +1,6 @@
 import re, sys
 sys.path.insert(0, '/home/claude/neocortech/build')
-from i18n import HEAD, CSS, APPLY, toggle, rep
+from i18n import CSS, rep, index_head, index_toggle, INDEX_SWITCH, INDEX_CSS
 
 src = open('/home/claude/neocortech/src/index.html', encoding='utf-8').read()
 body = open('/home/claude/neocortech/build/index_body.html', encoding='utf-8').read()
@@ -16,7 +16,7 @@ s = src[:a] + body.replace('{{VIDEO}}', video) + src[b:]
 # 2. cabecera: subtítulo, aria, selector de idioma, texto del menú
 s = rep(s, '<span class="sub">Gobernanza de IA</span>', '<span class="sub" data-i18n="brand_sub">Gobernanza de IA</span>')
 s = rep(s, '<nav class="switch" aria-label="Páginas del ecosistema">', '<nav class="switch" aria-label="Páginas del ecosistema" data-i18n-attr="aria-label:a_nav">')
-s = rep(s, '<button class="menu-btn" id="menuBtn"', toggle() + '\n      <button class="menu-btn" id="menuBtn"')
+s = rep(s, '<button class="menu-btn" id="menuBtn"', index_toggle('es') + '\n      <button class="menu-btn" id="menuBtn"')  # fase 4: enlaces / y /en
 s = rep(s, '<span id="menuTxt">Índice</span>', '<span id="menuTxt">Índice</span>')
 s = rep(s, '<button class="totop-float" id="toTopFloat" aria-label="Volver arriba">', '<button class="totop-float" id="toTopFloat" aria-label="Volver arriba" data-i18n-attr="aria-label:a_totop">')
 
@@ -31,8 +31,8 @@ s = re.sub(r'<meta property="og:description" content="[^"]*"/>',
 s = re.sub(r'<title>[^<]*</title>', '<title>Carlos Gallego Galán — Hago productos que funcionan.</title>', s, count=1)
 s = re.sub(r'<meta property="og:title" content="[^"]*"/>', '<meta property="og:title" content="Carlos Gallego Galán — Hago productos que funcionan."/>', s, count=1)
 
-# 4. idioma: script en <head>, estilos, diccionario + aplicación antes de los scripts del cuerpo
-s = rep(s, "<script>document.documentElement.className='js';</script>", "<script>document.documentElement.className='js';</script>\n" + HEAD)
+# 4. idioma (fase 4): la página española ya no lleva el diccionario inglés; /en se genera aparte (en_page.py) con los textos en el HTML
+s = rep(s, "<script>document.documentElement.className='js';</script>", "<script>document.documentElement.className='js';</script>\n" + index_head('es'))
 extra_css = CSS + """
 /* proyectos (galería) y taller */
 .psub{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,30px);margin-top:72px;letter-spacing:.01em}
@@ -74,10 +74,11 @@ a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba
 extra_css += open('/home/claude/neocortech/build/projects.css', encoding='utf-8').read()
 extra_css += open('/home/claude/neocortech/build/fase1.css', encoding='utf-8').read()  # fase 1: diseño y estructura
 extra_css += open('/home/claude/neocortech/build/fase2.css', encoding='utf-8').read()  # fase 2: accesibilidad y UX
-extra_css += open('/home/claude/neocortech/build/fase3.css', encoding='utf-8').read()  # fase 3: contenido (último)
+extra_css += open('/home/claude/neocortech/build/fase3.css', encoding='utf-8').read()  # fase 3: contenido
+extra_css += INDEX_CSS + open('/home/claude/neocortech/build/fase4.css', encoding='utf-8').read()  # fase 4: rendimiento (último)
 s = rep(s, '</style>\n</head>', extra_css + '</style>\n</head>') if '</style>\n</head>' in s else s.replace('</head>', '<style>' + extra_css + '</style>\n</head>', 1)
 first_script = s.index('<script>/*!', s.index('</footer>'))
-s = s[:first_script] + '<script>' + en + '</script>\n' + APPLY + '\n' + s[first_script:]
+s = s[:first_script] + INDEX_SWITCH + '\n' + s[first_script:]
 
 # 5. textos que pone el JavaScript
 # fase 3: los botones del hero entran con el resto del hero
@@ -89,7 +90,6 @@ s = rep(s, "hh.textContent='✦ camino completado'", "hh.textContent=NCT('✦ re
 s = rep(s, "{x:.10,y:.5,l:'PETICIÓN',t:'in'},{x:.32,y:.27,l:'PERCEPCIÓN',t:'p'},{x:.32,y:.73,l:'CONTEXTO·RAG',t:'p'},{x:.55,y:.5,l:'RAZONAMIENTO',t:'r'},{x:.74,y:.29,l:'POLÍTICA·ISO 42001',t:'pol'},{x:.74,y:.71,l:'VERIFICACIÓN',t:'pol'},{x:.90,y:.5,l:'ACCIÓN',t:'out'}",
         "{x:.10,y:.5,l:NCT('PETICIÓN','REQUEST'),t:'in'},{x:.32,y:.27,l:NCT('PERCEPCIÓN','PERCEPTION'),t:'p'},{x:.32,y:.73,l:NCT('CONTEXTO·RAG','CONTEXT·RAG'),t:'p'},{x:.55,y:.5,l:NCT('RAZONAMIENTO','REASONING'),t:'r'},{x:.74,y:.29,l:NCT('POLÍTICA·ISO 42001','POLICY·ISO 42001'),t:'pol'},{x:.74,y:.71,l:NCT('VERIFICACIÓN','VERIFICATION'),t:'pol'},{x:.90,y:.5,l:NCT('ACCIÓN','ACTION'),t:'out'}")
 s = s.replace('<span id="menuTxt">Índice</span>', '<span id="menuTxt" data-i18n="menu">Índice</span>', 1)
-s = s.replace('window.NC_EN={', 'window.NC_EN={menu:"Index",', 1)
 
 
 # ---- correcciones de la auditoría ----
@@ -114,7 +114,7 @@ s = rep(s, '</footer>\n', '</footer>\n<button class="totop-float" id="toTopFloat
 # b. menú: cerrado = inerte (fuera del orden de tabulación y del árbol de accesibilidad); sin aria-modal
 #    (el botón Cerrar vive en la cabecera, fuera del diálogo; con el menú abierto el resto de la página queda inerte)
 s = rep(s, '<div id="overlay" role="dialog" aria-modal="true" aria-label="Menú de navegación" data-i18n-attr="aria-label:a_menu">',
-        '<div id="overlay" role="dialog" aria-label="Menú de navegación" data-i18n-attr="aria-label:a_menu" inert>')
+        '<div id="overlay" role="dialog" aria-label="Menú de navegación" data-i18n-attr="aria-label:a_menu" data-lenis-prevent inert>')
 #    en móvil, las páginas del ecosistema (Carlos/Newsletter/Wattprint) pasan de la cabecera al menú
 s = rep(s, '  <div class="ov-side">\n',
         '  <nav class="ov-pages" aria-label="Páginas del ecosistema" data-i18n-attr="aria-label:a_ovpages">\n'
@@ -146,6 +146,9 @@ s = rep(s, "if(hintEl)hintEl.style.opacity=reveal>.3?0:.7;", "if(hintEl)hintEl.s
 s = s.replace('</body>', '<script>' + open('/home/claude/neocortech/build/fase2.js', encoding='utf-8').read() + '</script>\n</body>', 1)
 
 s = s.replace('</body>', '<script>' + open('/home/claude/neocortech/build/projects.js', encoding='utf-8').read() + '</script>\n</body>', 1)
+
+# ---- fase 4: rendimiento ----
+exec(open('/home/claude/neocortech/build/fase4.py', encoding='utf-8').read())
 open('/home/claude/neocortech/out/index.html', 'w', encoding='utf-8').write(s)
 
 # comprobaciones

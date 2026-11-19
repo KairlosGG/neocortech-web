@@ -3,6 +3,30 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "has": [
+        {
+          "type": "query",
+          "key": "lang",
+          "value": "es"
+        }
+      ],
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/tool/wattprint",
       "destination": "https://wattprint-kappa.vercel.app/",
       "permanent": true
@@ -32,15 +56,64 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-5r0ceAi77ofyhKluuUBJUzdOIMc4aEZR9Xlgif5W6zg=' 'sha256-691NzKsJgQJShIvfh5+vjncFE02yZR1a5MlFk/V17S0=' 'sha256-FIxTHi7Li6G0zhpBq+/LcvWb+S7x9F9oapHMFptotA0=' 'sha256-SeyVZy2uSRUnimnm0kpiegYfuv0GAE0k2/LpD2L9FoU=' 'sha256-VCvIhyIrU70Ypq687JS2e0G2X5A1UtBR32vY1IASX3I=' 'sha256-VXtK6xF4AyKcpINW4Xacw11ZXSKSwHIg8pZh+D/PUyU=' 'sha256-VkBmHMnRW42uyrbJDsM/eCY2d7lbWb0koQ5gubee3g8=' 'sha256-k/rlx+l/tSG+8MLw10CBQHtftXYYTNNdGpTnn3mHXMY=' 'sha256-r3VWdVAyTrsGZpPPryXwRb1yWkAKgXF68JQP6ABCGX0=' 'sha256-uJ7Gmx6Y7ds0XG+5fWdTqF0D1aLeoJv5zANZyGds3do='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; manifest-src 'self'; frame-src 'self' https://app.kit.com https://*.kit.com https://*.convertkit.com; form-action 'self' https://app.kit.com https://*.kit.com https://*.convertkit.com; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
         }
       ]
     },
     {
-      "source": "/assets/(.*)",
+      "source": "/((?!assets/).*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=604800"
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/fonts/(.*)\\.woff2",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/fonts/fonts.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    },
+    {
+      "source": "/assets/cv/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/((?!fonts/|js/|cv/).*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
         }
       ]
     }

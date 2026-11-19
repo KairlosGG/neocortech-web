@@ -78,3 +78,9 @@
   .ix-panel,.ix-panel.on,.ix-media img,.ix-row::before,.ix-name,.tw-img img{transition:none}
   .ix-media img{transform:none}
 }
+
+/* QA: menú en pantallas bajas y foco del carrusel */
+@media (max-width:820px){
+  #overlay{align-content:start;overflow-y:auto;overscroll-behavior:contain;padding-top:calc(76px + env(safe-area-inset-top));padding-bottom:32px}
+}
+#htrack:focus-visible{outline:2px solid var(--gold);outline-offset:4px}

@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Carlos Gallego Galán — I make products that work.</title>
+<meta name="description" content="Product design and product management. Virtual reality for health and inclusion, web tools and AI agents with human oversight. Córdoba, Spain, remote."/>
+<meta name="theme-color" content="#0A141F"/>
+<meta property="og:title" content="Carlos Gallego Galán — I make products that work."/>
+<meta property="og:description" content="Product design and product management. Virtual reality for health and inclusion, web tools and AI agents with human oversight. Córdoba, Spain, remote."/>
+<!-- meta:begin -->
+<link rel="canonical" href="https://neocortech-kohl.vercel.app/en"/>
+<link rel="alternate" hreflang="es" href="https://neocortech-kohl.vercel.app/"/>
+<link rel="alternate" hreflang="en" href="https://neocortech-kohl.vercel.app/en"/>
+<link rel="alternate" hreflang="x-default" href="https://neocortech-kohl.vercel.app/"/>
+<meta property="og:locale" content="en_GB"/>
+<meta property="og:locale:alternate" content="es_ES"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://neocortech-kohl.vercel.app/#carlos","name":"Carlos Gallego Galán","jobTitle":"Product Designer · Technical PM","description":"Product design and product management. Virtual reality for health and inclusion, web tools and AI agents with human oversight. Córdoba, Spain, remote.","url":"https://neocortech-kohl.vercel.app/en","image":"https://neocortech-kohl.vercel.app/assets/cine-poster.webp","address":{"@type":"PostalAddress","addressLocality":"Córdoba","addressCountry":"ES"},"sameAs":["https://www.linkedin.com/in/carlosgallegogalan","https://github.com/KairlosGG"]}</script>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://neocortech-kohl.vercel.app/en"/>
+<meta property="og:image" content="https://neocortech-kohl.vercel.app/assets/og-carlos-en.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://neocortech-kohl.vercel.app/assets/og-carlos-en.jpg"/>
+<!-- meta:end -->
+<script defer fetchpriority="high" src="/assets/js/gsap-3.15.0.min.js"></script>
+<script defer fetchpriority="high" src="/assets/js/ScrollTrigger-3.15.0.min.js"></script>
+<script defer fetchpriority="high" src="/assets/js/lenis-1.3.23.min.js"></script>
+<script defer fetchpriority="high" src="/assets/js/app.73078ede73.js"></script>
+<link rel="preload" href="/assets/fonts/cinzel-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href="/assets/fonts/cinzel-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin/>
+<style>@font-face{font-family:'Cinzel';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/cinzel-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Cinzel';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/cinzel-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/inter-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/inter-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/inter-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/inter-latin-700-normal.woff2) format('woff2')}@font-face{font-family:'Cinzel Decorative';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/cinzel-decorative-latin-700-normal.woff2) format('woff2')}@font-face{font-family:'Marcellus';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/marcellus-latin-400-normal.woff2) format('woff2')}@font-face{font-family:"Cinzel Fallback";src:local("Times New Roman"),local("TimesNewRomanPSMT"),local("Liberation Serif"),local("Tinos"),local("Times");size-adjust:131.5%;ascent-override:74.2%;descent-override:28.3%;line-gap-override:0%}@font-face{font-family:"Marcellus Fallback";src:local("Times New Roman"),local("TimesNewRomanPSMT"),local("Liberation Serif"),local("Tinos"),local("Times");size-adjust:110.7%;ascent-override:88%;descent-override:25.3%;line-gap-override:0%}@font-face{font-family:"Inter Fallback";src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("Arimo"),local("Helvetica");size-adjust:105.5%;ascent-override:91.8%;descent-override:22.9%;line-gap-override:0%}</style>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M60 22 Q74.5 34.9 92.9 41 Q89 60 92.9 79 Q74.5 85.1 60 98 Q45.5 85.1 27.1 79 Q31 60 27.1 41 Q45.5 34.9 60 22 Z' fill='none' stroke='%23C9A24B' stroke-width='8' stroke-linejoin='round'/%3E%3Ccircle cx='60' cy='60' r='14' fill='%235B8FC6'/%3E%3Ccircle cx='60' cy='60' r='7' fill='%237FB4E8'/%3E%3C/svg%3E"/>
+<script>document.documentElement.className='js';</script>
+<script>(function(){var l='en';window.NC_LANG=l;window.NCT=function(es,en){return l==='en'?en:es;};var q=null;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}if(q&&q!==l&&(q==='en'||q==='es')){location.replace('/'+location.hash);return;}try{localStorage.setItem('nc_lang',l);}catch(e){}})();</script>
+<style>
+:root{
+  --night:#0A141F; --night2:#0D1B29; --slate:#13273B;
+  --line:rgba(236,231,218,.075); --line2:rgba(236,231,218,.15);
+  --gold:#C9A24B; --gold-bright:#F0D896; --gold-deep:#7D5F26;
+  --arcane:#5B8FC6; --arcane-glow:#7FB4E8;
+  --bone:#ECE7DA; --muted:#7E92A6; --muted2:#52677E;
+  --metal:linear-gradient(160deg,var(--gold-deep) 0%,var(--gold-bright) 38%,var(--gold-bright) 62%,var(--gold-deep) 100%);
+  /* TYPE SYSTEM — 3 deliberate tiers */
+  --display:"Cinzel",Georgia,serif;        /* headlines, numbers, editorial */
+  --ui:"Inter",system-ui,sans-serif;       /* body, leads, nav, UI */
+  --mono:"Cinzel",Georgia,serif;           /* labels, technical — versalitas */
+  --w:1240px; --gut:40px; --e:cubic-bezier(.19,1,.22,1); --e2:cubic-bezier(.76,0,.24,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scrollbar-color:var(--slate) var(--night)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:clip}
+::selection{background:var(--gold);color:#0A141F}
+body{background:var(--night);color:var(--bone);font-family:var(--ui);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 var(--gut);position:relative}
+@media(max-width:600px){:root{--gut:22px}}
+
+/* atmosphere */
+#field{position:fixed;inset:0;z-index:0;pointer-events:none}
+.atmo{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(1200px 760px at 80% -12%,rgba(201,162,75,.14),transparent 58%),radial-gradient(900px 680px at -10% 42%,rgba(91,143,198,.06),transparent 55%),radial-gradient(1000px 760px at 50% 118%,rgba(125,95,38,.09),transparent 60%)}
+.grain{position:fixed;inset:-12%;z-index:1;pointer-events:none;opacity:.05;mix-blend-mode:overlay;will-change:transform;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:gr 6.5s steps(7) infinite}
+@keyframes gr{0%,100%{transform:translate(0,0)}25%{transform:translate(-2%,3%)}50%{transform:translate(3%,-2%)}75%{transform:translate(-3%,-2%)}}
+.vig{position:fixed;inset:0;z-index:1;pointer-events:none;box-shadow:inset 0 0 280px 40px rgba(0,0,0,.6)}
+
+/* loader */
+#loader{position:fixed;inset:0;z-index:300;background:var(--night);display:none;align-items:center;justify-content:center}
+.js #loader{display:flex}
+#loader .mk{width:46px;height:46px}
+.curtain{position:fixed;inset:0;z-index:290;pointer-events:none;display:none}
+.js .curtain{display:flex}
+.curtain i{flex:1;background:var(--night);border-right:1px solid rgba(201,162,75,.05)}
+
+#prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--metal);z-index:160;transform:scaleX(0);transform-origin:left}
+
+/* ---------- minimal header + overlay menu ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:170;transition:transform .5s var(--e)}
+header.nav.hide{transform:translateY(-105%)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.nav::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(10,20,31,.8),transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);-webkit-mask:linear-gradient(#000,transparent);mask:linear-gradient(#000,transparent);z-index:-1;transition:opacity .4s}
+.brand{display:flex;align-items:center;gap:11px;z-index:2}
+.brand .wm{display:block;font-family:"Cinzel Decorative",var(--display);font-weight:700;font-size:14.5px;letter-spacing:.1em;color:var(--bone);line-height:1}
+.brand .wm .neo{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand .sub{display:block;font-family:"Marcellus",var(--display);font-size:9.5px;letter-spacing:.24em;color:var(--gold-deep);text-transform:uppercase;margin-top:3px}
+.mk{width:25px;height:25px;filter:drop-shadow(0 1px 7px rgba(201,162,75,.5))}
+.brand .mk{width:28px;height:28px}
+/* switch — navegación del ecosistema (píldora dorada = activo) */
+.switch{display:flex;align-items:center;gap:4px;padding:5px;border:1px solid rgba(201,162,75,.10);border-radius:40px;background:rgba(19,39,59,.5);z-index:2}
+.switch a{padding:8px 16px;border-radius:40px;font-family:"Marcellus",var(--display);font-size:13px;letter-spacing:.03em;color:var(--muted);transition:color .3s,background .3s;white-space:nowrap}
+.switch a .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:currentColor;margin-right:7px;vertical-align:middle;opacity:.55}
+.switch a:hover{color:var(--bone)}
+.switch a.on{color:var(--night);background:var(--metal);box-shadow:0 4px 18px rgba(201,162,75,.28)}
+.switch a.on .dot{opacity:1;background:var(--night)}
+.switch a.wp{color:#4ADE80}
+.switch a.wp.on{color:var(--night)}
+@media(max-width:980px){
+  .nav .wrap{height:auto;min-height:64px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px;row-gap:10px}
+  .switch{order:3;width:100%;justify-content:space-between}
+  .switch a{flex:1;text-align:center;padding:8px 4px;font-size:12px}
+  .switch a .dot{display:none}
+}
+.nav-right{display:flex;align-items:center;gap:26px;z-index:2}
+@keyframes bk{0%,100%{opacity:1}50%{opacity:.3}}
+.menu-btn{display:inline-flex;align-items:center;gap:11px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone);background:none;border:0;cursor:pointer;padding:8px 0}
+.menu-btn .bars{display:flex;flex-direction:column;gap:4px;width:22px}
+.menu-btn .bars i{height:1.5px;background:var(--bone);transition:transform .4s var(--e),opacity .3s}
+.menu-btn .bars i:nth-child(1){width:22px}.menu-btn .bars i:nth-child(2){width:14px;align-self:flex-end}
+.menu-open .menu-btn .bars i:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.menu-open .menu-btn .bars i:nth-child(2){width:22px;transform:translateY(-0px) rotate(-45deg)}
+
+#overlay{position:fixed;inset:0;z-index:165;background:rgba(10,20,31,.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  display:grid;grid-template-columns:1.4fr .9fr;align-items:center;clip-path:inset(0 0 100% 0);pointer-events:none}
+#overlay.open{pointer-events:auto}
+@media(max-width:820px){#overlay{grid-template-columns:1fr;align-content:center}}
+.ov-nav{padding:0 var(--gut) 0 max(var(--gut),calc((100vw - var(--w))/2 + var(--gut)))}
+.ov-nav a{display:flex;align-items:baseline;gap:18px;font-family:var(--display);font-weight:400;font-size:clamp(26px,4.2vw,52px);line-height:1.24;letter-spacing:.02em;color:var(--bone);padding:4px 0;transition:color .35s,padding-left .4s var(--e);position:relative}
+.ov-nav a .on{font-family:var(--mono);font-size:13px;color:var(--muted2);font-weight:400}
+.ov-nav a:hover{color:var(--gold);padding-left:14px}
+.ov-nav a em{font-style:normal;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ov-side{padding:0 max(var(--gut),calc((100vw - var(--w))/2 + var(--gut))) 0 var(--gut);border-left:1px solid var(--line)}
+@media(max-width:820px){.ov-side{border-left:0;margin-top:38px}}
+.ov-side .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);margin-bottom:14px}
+.ov-side a.ci{display:block;font-family:var(--ui);font-size:15px;color:var(--muted);margin-bottom:9px;transition:color .3s}
+.ov-side a.ci:hover{color:var(--gold-bright)}
+.ov-side .st{margin-top:28px;display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line2);border-radius:30px;padding:9px 15px}
+.ov-side .st .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-bright);box-shadow:0 0 10px var(--gold-bright)}
+
+/* ---------- type helpers ---------- */
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:38px;height:1px;background:currentColor;opacity:.6}
+.eyebrow .n{color:var(--muted2)}
+h2.sec{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,60px);line-height:1.08;letter-spacing:.01em;margin-top:24px}
+h2.sec em{font-style:normal;font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);max-width:60ch;margin-top:26px;font-size:19px;line-height:1.55}
+.lead strong{color:var(--bone);font-weight:600}
+h2.sec,footer .foot-h,.box-copy h3,.conv-copy h3,.t-title{text-wrap:balance}
+.line-mask{overflow:hidden;display:block}
+.line-mask>span{display:block;will-change:transform}
+
+section{position:relative;z-index:2;padding:clamp(100px,13vw,190px) 0}
+.rule{height:1px;background:var(--line);max-width:var(--w);margin:0 auto}
+.rvx{opacity:0;transform:translateY(30px)}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:120px;padding-bottom:74px;overflow:hidden}
+.hero .tagrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.hero .tagrow .pill{border:1px solid var(--line2);border-radius:40px;padding:8px 16px;display:inline-flex;align-items:center;gap:9px}
+.hero .tagrow .pill .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-bright);box-shadow:0 0 10px var(--gold-bright)}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(38px,8.2vw,128px);line-height:1.02;letter-spacing:.01em;margin:36px 0 0}
+.hero h1 .l2{padding-left:.06em}
+.hero h1 .it{font-style:normal;font-weight:500;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:44px;margin-top:58px;flex-wrap:wrap}
+.hero-foot .intro{color:var(--muted);max-width:48ch;font-size:18.5px;line-height:1.55}
+.hero-foot .intro strong{color:var(--bone);font-weight:600}
+.hero-foot .meta{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;line-height:2}
+.hero-foot .meta b{color:var(--bone);font-weight:700}
+@media(max-width:700px){.hero-foot .meta{text-align:left}}
+.scrollcue{display:flex;align-items:center;gap:12px;margin-top:52px;color:var(--muted2);font-family:var(--mono);font-size:10.5px;letter-spacing:.26em;text-transform:uppercase}
+.scrollcue .ln{width:60px;height:1px;background:var(--line2);overflow:hidden;position:relative}
+.scrollcue .ln::after{content:"";position:absolute;inset:0;width:40%;background:var(--gold);animation:sl 2.2s var(--e) infinite}
+@keyframes sl{0%{transform:translateX(-120%)}100%{transform:translateX(320%)}}
+
+/* marquee */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:20px 0;background:rgba(13,27,41,.4);position:relative;z-index:2}
+.mqt{display:flex;width:max-content;will-change:transform}
+.mqi{display:flex;align-items:center;gap:28px;padding:0 28px;font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.mqi i{width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+.mqi b{color:var(--bone);font-weight:400}
+
+/* manifesto + black box */
+.mani .big{font-family:var(--display);font-weight:400;font-size:clamp(24px,3.7vw,48px);line-height:1.28;letter-spacing:.01em;max-width:19ch;margin-top:30px}
+.mani .big .w{color:var(--muted2);transition:color .5s var(--e)}
+.mani .big .w.lit{color:var(--bone)}
+.mani .big .w.acc.lit{color:var(--gold)}
+.box-wrap{margin-top:90px;display:grid;grid-template-columns:1.18fr .82fr;gap:54px;align-items:center}
+@media(max-width:920px){.box-wrap{grid-template-columns:1fr;gap:36px}}
+.bb{position:relative;aspect-ratio:1/.72;border-radius:20px;border:1px solid var(--line2);overflow:hidden;cursor:none;background:radial-gradient(120% 120% at 50% 0%,#16283C,#08101A 70%)}
+.bb canvas{position:absolute;inset:0;width:100%;height:100%}
+.bb .hint{position:absolute;left:0;right:0;bottom:18px;text-align:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);pointer-events:none;transition:opacity .4s;z-index:3}
+.bb .corner{position:absolute;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);z-index:3;pointer-events:none}
+.bb .corner.tl{top:15px;left:17px}
+.bb .corner.tr{top:15px;right:17px;color:var(--gold)}
+.box-copy .km{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.box-copy h3{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.24;letter-spacing:.01em;margin-bottom:18px}
+.box-copy p{color:var(--muted);font-size:16.5px;margin-bottom:15px}
+.box-copy p strong{color:var(--bone);font-weight:600}
+.box-copy .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.box-copy .tg{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--muted);border:1px solid var(--line2);border-radius:30px;padding:6px 13px}
+
+/* ---------- perfil + cinematic portrait ---------- */
+/* cinematic video banner */
+.cinema{position:relative;width:100%;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid var(--line2);margin-top:58px;background:#08101A;box-shadow:0 50px 120px -55px rgba(0,0,0,.95)}
+.cinema video,.cinema .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cinema .grade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(192deg,transparent 42%,rgba(10,20,31,.66))}
+.cinema .edge{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 130px 12px rgba(10,20,31,.5);border-radius:20px}
+.cinema .cap{position:absolute;left:26px;bottom:24px;z-index:3;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone)}
+.cinema .cap span{color:var(--gold-bright)}
+.cinema .tc{position:absolute;right:24px;top:22px;z-index:3;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--muted);display:flex;align-items:center;gap:8px;text-transform:uppercase}
+.cinema .tc .rec{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:bk 2s infinite}
+.cinema .scrubhint{position:absolute;left:26px;top:22px;z-index:3;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:opacity .4s}
+.cinema .ctitle{position:absolute;left:26px;bottom:46px;z-index:3;font-family:var(--display);font-style:normal;font-weight:400;font-size:clamp(15px,1.9vw,22px);color:rgba(236,231,218,.94);text-shadow:0 2px 22px rgba(0,0,0,.55);letter-spacing:.02em}
+.cinema .pbar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(236,231,218,.1);z-index:4}
+.cinema .pbar i{display:block;height:100%;width:0;background:var(--metal)}
+@media(max-width:560px){.cinema .ctitle{font-size:16px;bottom:42px}}
+.perfil-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;margin-top:64px;align-items:start}
+.perfil-grid .sticky{position:sticky;top:120px}
+@media(max-width:980px){.perfil-grid{grid-template-columns:1fr;gap:36px}.perfil-grid .sticky{position:static}}
+.quote{font-family:var(--display);font-style:normal;font-weight:400;font-size:clamp(19px,2.2vw,26px);line-height:1.42;color:var(--bone);letter-spacing:.01em}
+.quote .em{color:var(--gold)}
+.qmeta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);margin:22px 0 0}
+.lyr{border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:50px 1fr;gap:22px;transition:background .4s}
+.lyr:last-child{border-bottom:1px solid var(--line)}
+.lyr:hover{background:linear-gradient(90deg,rgba(201,162,75,.045),transparent 75%)}
+.lyr .no{font-family:var(--mono);font-size:12px;color:var(--gold)}
+.lyr .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2)}
+.lyr h3{font-family:var(--display);font-weight:400;font-size:19px;margin:5px 0 9px;letter-spacing:.01em}
+.lyr p{color:var(--muted);font-size:15.5px}
+
+/* ---------- aporto + redesigned Venn ---------- */
+.posit{font-family:var(--display);font-weight:400;font-style:normal;font-size:clamp(18px,2.2vw,26px);line-height:1.45;color:var(--bone);max-width:24ch;margin-top:34px}
+.posit b{font-style:normal;font-weight:500;color:var(--gold)}
+.conv{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;margin-top:70px}
+@media(max-width:980px){.conv{grid-template-columns:1fr;gap:50px}}
+.venn{position:relative;width:100%;max-width:540px;margin:0 auto;aspect-ratio:1/.93}
+.venn-stage{position:absolute;inset:0}
+.venn-stage svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.vc{fill:rgba(201,162,75,.05);stroke:var(--gold);stroke-width:1.2;opacity:.85}
+.vlbl{position:absolute;max-width:42%}
+.vlbl .vn{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.06em}
+.vlbl .vt{font-family:var(--display);font-weight:400;font-size:clamp(15px,1.8vw,18px);margin-top:5px;letter-spacing:.01em;line-height:1.2}
+.vlbl .vs{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--muted);margin-top:5px;text-transform:uppercase}
+.vlbl.top{top:-6px;left:50%;transform:translateX(-50%);text-align:center;max-width:60%}
+.vlbl.bl{bottom:2%;left:-2%;text-align:left}
+.vlbl.br{bottom:2%;right:-2%;text-align:right}
+.vcenter{position:absolute;top:53%;left:50%;transform:translate(-50%,-50%);text-align:center;width:46%;z-index:2}
+.vcenter .vd{width:9px;height:9px;border-radius:50%;background:var(--gold-bright);box-shadow:0 0 22px 4px rgba(240,216,150,.7);margin:0 auto 12px}
+.vcenter .vtxt{font-family:var(--display);font-style:normal;font-size:12.5px;color:var(--gold-bright);line-height:1.3}
+@media(max-width:600px){
+  .venn{aspect-ratio:auto;max-width:420px}
+  .venn-stage{position:relative;width:100%;aspect-ratio:1/.93}
+  .vlbl{position:static!important;max-width:none!important;transform:none!important;text-align:left!important;display:grid;grid-template-columns:34px 1fr;gap:0 12px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line)}
+  .vlbl .vn{grid-row:span 2}.vlbl .vt{margin-top:0}.vlbl.top{margin-top:14px}
+}
+.conv-copy h3{font-family:var(--display);font-weight:400;font-size:26px;letter-spacing:.01em;margin-bottom:20px;line-height:1.22}
+.conv-copy p{color:var(--muted);font-size:16.5px;margin-bottom:16px}
+.conv-copy .hl{color:var(--gold-bright);font-weight:600;color:var(--gold-bright)}
+.conv-copy p .hl{font-family:var(--ui)}
+
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:80px}
+@media(max-width:720px){.metrics{grid-template-columns:1fr 1fr}}
+.metric{background:rgba(13,27,41,.6);padding:36px 30px;transition:background .35s}
+.metric:hover{background:var(--slate)}
+.metric .v{font-family:var(--display);font-weight:400;font-size:clamp(32px,4.2vw,48px);line-height:1;letter-spacing:0}
+.metric .v .u{color:var(--gold)}
+.metric .l{color:var(--muted);font-size:13.5px;margin-top:14px;line-height:1.45}
+
+.skills{display:grid;grid-template-columns:1.35fr 1fr;gap:60px;margin-top:80px}
+@media(max-width:980px){.skills{grid-template-columns:1fr;gap:44px}}
+.sg{padding:24px 0;border-top:1px solid var(--line)}
+.sg:first-child{border-top:0;padding-top:0}
+.sg .gh{display:flex;align-items:baseline;gap:14px;margin-bottom:15px}
+.sg .gh .k{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.1em}
+.sg .gh b{font-size:16px;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tg2{font-size:13px;color:var(--muted);background:rgba(19,39,59,.7);border:1px solid var(--line);padding:8px 14px;border-radius:9px;transition:.28s var(--e)}
+.tg2:hover{color:var(--bone);border-color:var(--line2);transform:translateY(-2px)}
+
+/* projects sticky stack */
+.stack{margin-top:70px;position:relative}
+.pcard{position:sticky;border:1px solid var(--line2);border-radius:24px;background:linear-gradient(160deg,#102030,#0A1522);overflow:hidden;padding:46px;min-height:400px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;box-shadow:0 -10px 60px -30px rgba(0,0,0,.9)}
+@media(max-width:820px){.pcard{grid-template-columns:1fr;gap:24px;padding:32px;min-height:0}}
+.pcard .idx{position:absolute;top:28px;right:34px;font-family:var(--mono);font-size:11px;color:var(--muted2)}
+.pcard .nm{font-family:var(--display);font-weight:400;font-size:clamp(24px,3.1vw,38px);letter-spacing:.01em;line-height:1.12}
+.pcard .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-top:13px}
+.pcard p{color:var(--muted);font-size:15.5px;margin-top:19px;max-width:48ch}
+.pcard .award{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-bright);border:1px solid rgba(240,216,150,.32);border-radius:30px;padding:6px 13px;margin-top:22px}
+.pcard .stk{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
+.pcard .st{font-family:var(--mono);font-size:10.5px;color:var(--muted);border:1px solid var(--line);padding:5px 11px;border-radius:30px}
+.pcard .viz{border:1px solid var(--line);border-radius:14px;background:rgba(10,20,31,.6);padding:24px;font-family:ui-monospace,"Cascadia Mono",Consolas,Menlo,monospace;font-size:12px;line-height:2;color:var(--muted)}
+.pcard .viz .ok{color:var(--gold-bright)}.pcard .viz .cm{color:var(--muted2)}
+.pcard .big-num{font-family:var(--display);font-weight:400;font-size:clamp(52px,7.4vw,104px);line-height:.95;letter-spacing:0}
+.pcard .big-num .u{color:var(--gold);font-size:.4em;vertical-align:super}
+.pcard .nlabel{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:16px;line-height:1.6}
+
+/* timeline */
+.tline{margin-top:66px}
+.trow{display:grid;grid-template-columns:170px 1fr;gap:30px;padding:34px 0;border-top:1px solid var(--line);position:relative;transition:background .35s}
+.trow:last-child{border-bottom:1px solid var(--line)}
+.trow:hover{background:linear-gradient(90deg,rgba(201,162,75,.04),transparent 70%)}
+@media(max-width:680px){.trow{grid-template-columns:1fr;gap:8px}}
+.trow .when{font-family:var(--mono);font-size:12px;color:var(--muted2);padding-top:6px}
+.trow .what{font-size:20px;font-weight:600}
+.trow .what .co{color:var(--gold);font-weight:500}
+.trow .desc{color:var(--muted);font-size:15px;margin-top:9px;max-width:70ch}
+.trow .res{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.trow .r{font-family:var(--mono);font-size:11px;color:var(--gold-bright);border:1px solid rgba(240,216,150,.28);padding:5px 11px;border-radius:30px}
+
+/* thesis horizontal pin — redesigned */
+.thesis{background:linear-gradient(rgba(13,27,41,.55),rgba(13,27,41,.55));border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.th-pin{min-height:100svh;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3.5vh,36px);padding:clamp(80px,10vh,100px) 0 clamp(28px,4vh,44px)}
+.th-head{display:flex;justify-content:space-between;align-items:flex-end;gap:34px;flex-wrap:wrap}
+.th-meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right;line-height:2}
+.th-meta b{color:var(--gold)}
+.t-title{font-family:var(--display);font-weight:400;font-style:normal;font-size:clamp(22px,3vw,38px);line-height:1.18;letter-spacing:.01em;margin-top:18px;max-width:24ch}
+.htrack-outer{position:relative;overflow:hidden}
+.htrack{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px calc((100% - min(100%,780px))/2);cursor:grab}
+.htrack::-webkit-scrollbar{display:none}
+.htrack.dragging{cursor:grabbing;scroll-snap-type:none}
+.htrack{-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.htrack .hpanel{flex:0 0 min(100%,780px);scroll-snap-align:center}
+.hpanel .out a{pointer-events:auto}
+.hpanel:hover{border-color:rgba(201,162,75,.55);box-shadow:0 18px 44px -24px rgba(201,162,75,.28)}
+/* sello del doctorado — recompensa al completar las fases */
+.th-seal{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;pointer-events:none;opacity:0;z-index:5}
+.th-seal svg{width:132px;height:132px;filter:drop-shadow(0 0 26px rgba(201,162,75,.45))}
+.th-seal .ts-cap{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-bright);text-align:center;line-height:1.9;text-shadow:0 2px 14px rgba(10,20,31,.9)}
+.hpanel{background:var(--slate);border:1px solid var(--line2);border-radius:24px;padding:clamp(26px,3vw,40px);padding-right:clamp(130px,16vw,200px);min-height:300px;position:relative;overflow:hidden;will-change:transform,opacity;display:flex;flex-direction:column;transition:border-color .3s,box-shadow .35s}
+.hpanel.active{border-color:rgba(201,162,75,.5)}
+.hpanel::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--metal);opacity:.5}
+.hpanel .ph{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.hpanel .yr{font-family:var(--mono);font-size:11px;color:var(--muted2);position:absolute;top:clamp(24px,2.5vw,34px);right:clamp(22px,2.4vw,32px)}
+.hpanel h3{font-family:var(--display);font-weight:400;font-size:clamp(19px,2.2vw,26px);margin:16px 0 12px;letter-spacing:.01em;line-height:1.2}
+.hpanel p{color:var(--muted);font-size:15.5px;line-height:1.6}
+.hpanel p strong{color:var(--bone);font-weight:600}
+.hpanel .out{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--gold-bright);letter-spacing:.03em}
+.hpanel p{margin-bottom:16px}
+.hpanel .pn{position:absolute;top:50%;right:clamp(20px,3vw,44px);transform:translateY(-50%);font-family:var(--display);font-weight:400;font-size:clamp(88px,10vw,140px);line-height:1;color:rgba(236,231,218,.06);pointer-events:none}
+.hpanel p{max-width:54ch}
+.th-foot{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.hdots{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.hdot{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted2);cursor:pointer;background:none;border:0;padding:4px 0;transition:color .3s}
+.hdot .b{width:7px;height:7px;border-radius:50%;background:var(--muted2);transition:.3s var(--e)}
+.hdot:hover{color:var(--muted)}
+.hdot.active{color:var(--bone)}
+.hdot.active .b{background:var(--gold);box-shadow:0 0 12px var(--gold);transform:scale(1.25)}
+.hprog{flex:1;min-width:120px;position:relative;height:2px;background:var(--line)}
+.hprog i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--metal)}
+.hhint{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted2);white-space:nowrap}
+@media(max-width:820px){
+  .th-pin{min-height:0;padding:clamp(80px,12vw,120px) 0;gap:28px}
+  .htrack{flex-direction:column;gap:18px;overflow:visible;scroll-snap-type:none;cursor:default;padding:6px 0;transform:none!important;-webkit-mask-image:none;mask-image:none}
+  .htrack .hpanel{flex:none;width:100%;padding-right:clamp(26px,6vw,40px)}
+  .hpanel .pn{display:none}
+  .th-seal{position:static;margin:30px auto 0}
+  .hpanel{width:100%;opacity:1!important;transform:none!important}
+  .th-foot{display:none}
+  .th-meta{text-align:left}
+}
+/* back-to-top */
+.totop{margin-top:50px;display:inline-flex;align-items:center;gap:11px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--line2);border-radius:40px;padding:14px 24px;cursor:pointer;transition:.3s var(--e)}
+.totop:hover{color:var(--gold-bright);border-color:var(--gold);transform:translateY(-2px)}
+.totop span{transition:transform .3s var(--e)}.totop:hover span{transform:translateY(-3px)}
+.totop-float{position:fixed;right:22px;bottom:22px;z-index:140;width:48px;height:48px;border-radius:50%;border:1px solid var(--line2);background:rgba(13,27,41,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--bone);font-size:17px;cursor:pointer;opacity:0;transform:translateY(14px) scale(.9);transition:.4s var(--e);pointer-events:none}
+.totop-float.show{opacity:1;transform:none;pointer-events:auto}
+.totop-float:hover{border-color:var(--gold);color:var(--gold-bright)}
+
+/* formación */
+.edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:64px}
+@media(max-width:840px){.edu-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.edu-grid{grid-template-columns:1fr}}
+.edu{background:rgba(13,27,41,.6);padding:28px;transition:background .35s}
+.edu:hover{background:var(--slate)}
+.edu .y{font-family:var(--mono);font-size:11px;color:var(--muted2)}
+.edu .t{font-weight:600;font-size:15px;margin-top:10px;line-height:1.32}
+.edu .w{color:var(--muted);font-size:13px;margin-top:6px}
+.edu .hon{color:var(--gold-bright);font-family:var(--mono);font-size:10.5px;margin-top:9px;letter-spacing:.05em}
+.certs{display:flex;flex-wrap:wrap;gap:9px;margin-top:30px}
+.cert{font-size:13px;background:rgba(19,39,59,.7);border:1px solid var(--line2);padding:9px 15px;border-radius:10px;transition:.28s var(--e)}
+.cert:hover{transform:translateY(-2px);border-color:var(--gold)}
+.cert.star{border-color:rgba(201,162,75,.5);color:var(--gold-bright)}
+
+/* footer */
+footer{padding:clamp(110px,14vw,200px) 0 56px;position:relative;z-index:2;text-align:center;overflow:hidden}
+footer .eyebrow{justify-content:center}footer .eyebrow::before{display:none}
+footer .foot-h{font-family:var(--display);font-weight:400;font-size:clamp(32px,6.8vw,104px);letter-spacing:.01em;line-height:1.04;margin-top:26px}
+footer .foot-h em{font-style:normal;color:var(--gold)}
+.foot-btn{display:inline-flex;align-items:center;gap:12px;margin-top:46px;font-size:15px;font-weight:600;font-family:var(--ui);padding:18px 32px;border-radius:46px;background:var(--metal);color:#0A141F;transition:transform .35s var(--e),box-shadow .35s}
+.foot-btn:hover{box-shadow:0 18px 50px -16px rgba(201,162,75,.6)}
+.foot-btn .ar{transition:transform .3s var(--e)}.foot-btn:hover .ar{transform:translateX(5px)}
+.foot-links{display:flex;justify-content:center;gap:14px 36px;flex-wrap:wrap;margin-top:62px;font-family:var(--mono);font-size:13px}
+.foot-links a{color:var(--muted);transition:.28s}.foot-links a:hover{color:var(--gold-bright)}
+.foot-base{margin-top:66px;padding-top:26px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.05em}
+.foot-base .fx{display:flex;align-items:center;gap:10px}.foot-base .mk{width:17px;height:17px}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .rvx{opacity:1!important;transform:none!important}
+  #loader,.curtain{display:none!important}
+  .portrait .pvid,.portrait .pimg{transform:none!important}
+  .portrait .tint,.portrait .pgrain{opacity:0!important}
+}
+
+/* selector de idioma */
+.lang{display:flex;align-items:center;gap:2px;padding:3px;border:1px solid rgba(201,162,75,.18);border-radius:40px;background:rgba(19,39,59,.5)}
+.lang button{font-family:var(--ui,Inter,system-ui,sans-serif);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--muted);background:none;border:0;padding:6px 10px;border-radius:40px;cursor:pointer;transition:color .2s,background .2s}
+.lang button:hover{color:var(--bone)}
+.lang button[aria-pressed="true"]{background:var(--metal);color:var(--night)}
+.lang button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
+
+/* proyectos (galería) y taller */
+.psub{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.4vw,30px);margin-top:72px;letter-spacing:.01em}
+.psub em{color:var(--gold);font-style:normal;font-size:.7em;letter-spacing:.06em}
+.psub+.pgrid{margin-top:28px}
+.plead{max-width:62ch;color:var(--muted);font-size:17px;line-height:1.65;margin-top:20px}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:46px}
+@media(max-width:1020px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.pgrid{grid-template-columns:1fr}}
+.pj{background:linear-gradient(160deg,#102030,#0A1522);border:1px solid var(--line2);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,box-shadow .35s}
+.pj:hover{border-color:rgba(201,162,75,.5);box-shadow:0 22px 50px -28px rgba(201,162,75,.35)}
+.pimg{aspect-ratio:1000/434;overflow:hidden;background:#0A1522}
+.pimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.pj:hover .pimg img{transform:scale(1.045)}
+.pbody{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ptags,.tk{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);line-height:1.6}
+.pj h3{font-family:var(--display);font-weight:400;font-size:clamp(21px,2vw,26px);letter-spacing:.01em;line-height:1.15}
+.pj p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.paward{align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-bright);border:1px solid rgba(240,216,150,.32);border-radius:30px;padding:6px 12px}
+.prole{font-size:13px;line-height:1.55;color:var(--muted)}
+.prole b{color:var(--bone);font-weight:600}
+.plink{margin-top:auto;padding-top:6px;align-self:flex-start;font-size:13px;color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(201,162,75,.35);transition:border-color .2s}
+.plink:hover{border-color:var(--gold-bright)}
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:46px}
+@media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+.tlinks{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:18px}
+.tlinks a{font-size:13px;color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(201,162,75,.35)}
+.tlinks a:hover{border-color:var(--gold-bright)}
+.tsoon{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2)}
+
+.plinks{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0 4px}
+.plinks a{font-size:13px;color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(201,162,75,.35);padding-bottom:2px;transition:border-color .2s}
+.plinks a:hover{border-color:var(--gold-bright)}
+a.inl{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(201,162,75,.35)}
+.hpanel .out a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,162,75,.45)}
+.hpanel .out a:hover{color:var(--gold-bright)}
+@media(max-width:560px){.lang button{padding:5px 8px}.nav-right{gap:12px}#menuTxt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+
+/* ---------- Proyectos: índice interactivo ---------- */
+.ixf-bar{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.ixf{font:500 13.5px/1 var(--ui,Inter),system-ui,sans-serif;color:var(--muted);background:transparent;border:1px solid var(--line2);border-radius:999px;padding:10px 16px;cursor:pointer;transition:color .25s,border-color .25s,background-color .25s}
+.ixf:hover{color:var(--bone);border-color:rgba(201,162,75,.45)}
+.ixf[aria-pressed="true"]{color:var(--bone);border-color:var(--gold);background:rgba(201,162,75,.09)}
+.ixf-n{color:var(--gold);font-variant-numeric:tabular-nums;margin-left:4px}
+.ixf:focus-visible,.ix-row:focus-visible,.ix-dots button:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+
+.ix{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:repeat(var(--n),auto) 1fr;column-gap:clamp(32px,5vw,84px);--n:16}
+.ix-it{display:contents}
+.ix-it.off{display:none}
+.ix-row{grid-column:1;position:relative;display:flex;align-items:baseline;justify-content:space-between;gap:18px;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--line2);padding:17px 0 15px;cursor:pointer;color:inherit;font:inherit}
+.ix-row::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:0;background:linear-gradient(90deg,var(--gold-bright),var(--gold));transition:width .55s cubic-bezier(.2,.7,.2,1)}
+.ix-name{font-family:var(--display);font-weight:400;font-size:clamp(19px,1.75vw,26px);line-height:1.18;letter-spacing:.01em;color:rgba(236,231,218,.46);transition:color .3s}
+.ix-ctx{flex-shrink:0;max-width:44%;text-align:right;font-size:12.5px;line-height:1.4;color:var(--muted2);transition:color .3s}
+.ix-row:hover .ix-name{color:var(--bone)}
+.ix-row[aria-expanded="true"] .ix-name{color:var(--gold-bright)}
+.ix-row[aria-expanded="true"] .ix-ctx{color:var(--muted)}
+.ix-row[aria-expanded="true"]::before{width:100%}
+
+.ix-panel{grid-column:2;grid-row:1/-1;align-self:start;position:sticky;top:96px;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s linear .4s}
+.ix-panel.on{opacity:1;visibility:visible;transition:opacity .45s ease}
+.ix-media{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#0A1522;border:1px solid var(--line2);box-shadow:0 40px 80px -50px rgba(0,0,0,.9)}
+.ix-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.045);transition:opacity .6s ease,transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.ix-panel.on .ix-media img.on{opacity:1;transform:none}
+.ix-dots{position:absolute;right:14px;bottom:10px;display:flex;gap:4px;z-index:2}
+.ix-dots button{width:34px;height:22px;padding:0;border:0;background:none;cursor:pointer;position:relative}
+.ix-dots button::after{content:"";position:absolute;left:3px;right:3px;top:9px;height:3px;border-radius:2px;background:rgba(236,231,218,.45);transition:background-color .25s}
+.ix-dots button[aria-current="true"]::after{background:var(--gold-bright)}
+.ix-body{padding:22px 2px 0;gap:12px}
+.ix-body .ix-t{display:none}
+.ix-body .ptags{font-family:inherit;text-transform:none;letter-spacing:.01em;font-size:13px;color:var(--gold)}
+.ix-body p{font-size:16px;line-height:1.66;max-width:62ch}
+.ix-body .prole{font-size:14px}
+.ix-body .plink{margin-top:4px}
+.plinks2{display:flex;flex-wrap:wrap;gap:6px 22px}
+.ix::after{content:"";grid-column:1;align-self:start;border-top:1px solid var(--line2)}
+
+@media (max-width:900px){
+  .ix{display:block}
+  .ix-it{display:block;border-top:1px solid var(--line2)}
+  .ix-it:last-child{border-bottom:1px solid var(--line2)}
+  .ix::after{display:none}
+  .ix-row{border-top:0;padding:16px 34px 14px 0;flex-direction:column;gap:4px}
+  .ix-row::after{content:"";position:absolute;right:6px;top:24px;width:9px;height:9px;border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);transform:rotate(45deg);transition:transform .3s}
+  .ix-row[aria-expanded="true"]::after{transform:rotate(-135deg);top:28px}
+  .ix-ctx{text-align:left;max-width:none}
+  .ix-panel{position:static;display:none;opacity:1;visibility:visible;transition:none;padding-bottom:26px}
+  .ix-panel.on{display:block}
+  .ix-panel.on .ix-media img.on{transform:none}
+}
+
+/* ---------- Taller (fase 1: clases .tw*, Rumbo en cabeza, pareja y nota) ---------- */
+.tws{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,5vw,72px) clamp(28px,4vw,56px);margin-top:48px}
+.tw{display:grid;gap:22px;align-content:start}
+.tw-lead{grid-column:1/-1;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4vw,64px);align-items:center}
+.tw-note{grid-column:1/-1;border-top:1px solid var(--line2);padding-top:22px}
+.tw-img{aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line2);background:#0A1522;box-shadow:0 40px 80px -50px rgba(0,0,0,.9)}
+.tw-img img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:brightness(.86) saturate(.92);transition:filter .5s ease,transform 1.2s var(--e)}
+.tw:hover .tw-img img{filter:none;transform:scale(1.02)}
+.tw-body{display:flex;flex-direction:column;gap:12px}
+.tw-body h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.4vw,34px);letter-spacing:.01em;line-height:1.15}
+.tw-pair .tw-body h3{font-size:clamp(22px,2vw,28px)}
+.tw-body p{color:var(--muted);font-size:16px;line-height:1.66;max-width:60ch}
+.tw-note .tw-body{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,7fr) auto;gap:6px 32px;align-items:baseline}
+.tw-note .tw-body .tk{grid-column:1/-1}
+.tw-note .tw-body h3{font-size:22px}
+.tw-note .tw-body p{font-size:15px}
+.tw-note .tlinks{margin:0;padding:0}
+@media (max-width:900px){
+  .tws{grid-template-columns:1fr}
+  .tw-lead{grid-template-columns:1fr}
+  .tw-note .tw-body{grid-template-columns:1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ix-panel,.ix-panel.on,.ix-media img,.ix-row::before,.ix-name,.tw-img img{transition:none}
+  .ix-media img{transform:none}
+}
+
+/* QA: menú en pantallas bajas y foco del carrusel */
+@media (max-width:820px){
+  #overlay{align-content:start;overflow-y:auto;overscroll-behavior:contain;padding-top:calc(76px + env(safe-area-inset-top));padding-bottom:32px}
+}
+#htrack:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+/* =====================================================================
+   Fase 1 · diseño y estructura (va la última en la cascada)
+   ===================================================================== */
+:root{
+  --mono:"Inter",system-ui,sans-serif;          /* etiquetas en Inter, no en versales de Cinzel */
+  --long:"Marcellus","Cinzel",Georgia,serif;    /* titulares largos, con minúsculas */
+  --muted2:#71869C;                               /* AA sobre night */
+  --s-sec:clamp(76px,9vw,136px);                  /* ritmo: separación entre capítulos */
+  --s-tight:clamp(28px,3vw,48px);                 /* sección que continúa el capítulo anterior */
+}
+
+/* ---------- colisiones de clases y retícula ---------- */
+.bb .corner{display:block;margin:0;gap:0;grid-template-columns:none}
+.hero>.wrap,.th-pin>.wrap{width:100%}
+
+/* ---------- movimiento: lo que queda quieto ---------- */
+.grain{animation:none;will-change:auto}
+.scrollcue .ln::after{animation:none;width:100%;transform:none;opacity:.5}
+.cinema .tc .rec{animation:none}
+.rvx{transform:translateY(16px)}
+.bb{cursor:default}
+.mani .big .w{color:var(--bone);transition:none}
+.mani .big .w.acc{color:var(--gold)}
+
+/* ---------- tipografía: Cinzel grande, Marcellus largo, Inter pequeño ---------- */
+.mani .big,.quote,.box-copy h3,.conv-copy h3,.lyr h3,.hpanel h3,.t-title,.vlbl .vt,.cinema .ctitle,.ix-name,.ix-body .ix-t,.tw-note .tw-body h3{
+  font-family:var(--long);letter-spacing:0}
+.mani .big{font-size:clamp(26px,3.3vw,44px);line-height:1.24;max-width:24ch}
+.quote{font-size:clamp(20px,2.1vw,27px);line-height:1.4}
+.lyr h3{font-size:21px}
+.t-title{font-size:clamp(24px,2.8vw,36px);line-height:1.22}
+.eyebrow,.hero .tagrow,.tk,.lyr .k,.hpanel .ph,.hpanel .yr,.th-meta,.trow .when,.trow .r,.edu .y,.edu .hon,.vlbl .vs,.vlbl .vn,.tg,
+.bb .hint,.cinema .cap,.cinema .scrubhint,.cinema .tc,.foot-links,.foot-base,.hero-foot .meta,.gh .k,.km,.qmeta,
+.scrollcue,.ptags,.tsoon,.paward,.hdot,.hhint,.th-seal .ts-cap,.ov-side .lab,.ov-side .st,.ov-nav a .on,.hpanel .out{
+  font-family:var(--ui);text-transform:none;letter-spacing:.01em}
+.hero .tagrow{font-size:13px;color:var(--muted)}
+.hero-foot .meta{font-size:13.5px}
+.tk,.ptags,.ix-body .ptags{font-size:13px;color:var(--gold)}
+.lyr .k,.hpanel .ph,.km,.ov-side .lab,.hhint{font-size:13px;font-weight:500;color:var(--muted)}
+.km{color:var(--gold)}
+.trow .when,.edu .y{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:5px}
+.qmeta,.scrollcue,.th-meta,.bb .hint,.hdot{font-size:13px}
+.tg,.trow .r,.paward,.tsoon,.edu .hon,.hpanel .out{font-size:12.5px}
+.ov-side .st{font-size:12.5px}
+.vlbl .vs{font-size:12.5px}
+.cinema .cap,.cinema .scrubhint,.cinema .tc{font-size:12.5px}
+.hpanel .yr{font-size:12.5px;color:var(--muted)}
+/* solo dos piezas siguen en versalitas: el botón de menú y el estado de la caja negra */
+.menu-btn,.bb .corner{font-family:var(--ui);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;font-weight:500}
+.bb .corner{font-size:10.5px}
+#heroH1{font-size:clamp(42px,8.2vw,128px)}
+@media(max-width:600px){#heroH1{font-size:clamp(40px,11vw,60px);line-height:1.04}}
+
+/* ---------- cabeceras de sección: número + nombre, sin raya; oro solo donde se mira ---------- */
+.eyebrow{gap:10px;font-size:13px;font-weight:500;color:var(--muted)}
+.eyebrow::before{display:none}
+.eyebrow .n{color:var(--gold);font-variant-numeric:tabular-nums;font-weight:600}
+h2.sec{margin-top:16px}
+h2.sec em{background:none;-webkit-text-fill-color:currentColor;color:inherit;font-weight:400}
+#proyectos h2.sec em{background:var(--metal);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+/* las secciones que continúan un capítulo llevan un titular menor */
+#taller h2.sec,#formacion h2.sec{font-size:clamp(26px,3.2vw,42px)}
+/* numeración decorativa que sobraba (la sección ya está numerada) */
+.lyr .no,.vlbl .vn,.gh .k,.hpanel .pn{display:none}
+.lyr{grid-template-columns:1fr;padding:24px 0}
+
+/* ---------- ritmo vertical ---------- */
+section{padding:var(--s-sec) 0}
+#taller,#formacion{padding-top:var(--s-tight)}
+.hero{padding-top:120px;padding-bottom:64px}
+.th-pin{min-height:0;padding:var(--s-sec) 0;gap:clamp(22px,3vh,34px)}
+footer{padding:calc(var(--s-sec)*1.1) 0 48px}
+.plead{margin-top:16px}
+.cinema{margin-top:44px}
+.perfil-grid{margin-top:52px}
+.conv{margin-top:48px;gap:56px}
+.venn{max-width:440px}
+.metrics{margin-top:56px}
+.metric{padding:28px 26px}
+.skills{margin-top:56px}
+.tline{margin-top:44px}
+.trow{padding:26px 0}
+.edu-grid{margin-top:40px}
+.box-wrap{margin-top:56px}
+@media(max-width:600px){
+  .venn-stage{display:none}             /* en móvil, el Venn se lee como lista */
+  .vlbl.top{margin-top:0}
+  .metric{padding:22px 18px}
+  .metric .v{font-size:30px}
+  .lyr{padding:20px 0}
+}
+
+/* ---------- retrato ---------- */
+.cinema .poster{z-index:0}
+.cinema video{z-index:1;opacity:0;transition:opacity .4s}
+.cinema video.ready{opacity:1}
+.cinema .grade,.cinema .edge{z-index:2}
+.cinema .tc{background:none;border:0;border-radius:0;padding:0;flex-direction:row;gap:8px;color:var(--bone)}
+.cinema.still .scrubhint,.cinema.still .pbar{display:none}
+@media(max-width:600px){
+  .cinema{aspect-ratio:4/5}
+  .cinema video,.cinema .poster{object-position:58% 30%}
+  .cinema .tc,.cinema .scrubhint,.cinema .cap{display:none}
+  .cinema .ctitle{left:20px;right:20px;bottom:20px;font-size:18px}
+}
+
+/* ---------- cabecera y menú ---------- */
+.nav.solid::before{background:rgba(10,20,31,.9);-webkit-mask:none;mask:none;border-bottom:1px solid var(--line)}
+.ov-nav a{font-size:clamp(24px,3.3vw,44px);line-height:1.2}
+.ov-nav a .on{font-size:13px;color:var(--muted2);min-width:2ch}
+@media(max-height:720px){.ov-nav a{font-size:clamp(20px,4.2vh,34px)}}
+
+/* ---------- índice de proyectos ---------- */
+.ix-name{color:rgba(236,231,218,.62);font-size:clamp(20px,1.8vw,26px)}
+@media (min-width:901px){
+  .ix-name{transition:color .3s,transform .5s var(--e)}
+  .ix-row:hover .ix-name,.ix-row[aria-expanded="true"] .ix-name{transform:translateX(10px)}
+  .ix-body .ix-t{display:block;order:-1;font-size:clamp(24px,2.2vw,32px);font-weight:400;line-height:1.15}
+  .ix-panel.on .ix-media img.on{animation:ixIn .9s var(--e) both}
+}
+@keyframes ixIn{from{clip-path:inset(100% 0 0 0);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+@media (prefers-reduced-motion:reduce){.ix-panel.on .ix-media img.on{animation:none}.ix-name{transform:none!important}}
+
+/* ---------- pie ---------- */
+.foot-mail{display:inline-block;margin-top:36px;font-family:var(--long);font-size:clamp(20px,2.6vw,34px);color:var(--bone);
+  background:linear-gradient(var(--gold),var(--gold)) 0 100%/0 1px no-repeat;padding-bottom:4px;transition:background-size .6s var(--e),color .3s;overflow-wrap:anywhere}
+.foot-mail:hover,.foot-mail:focus-visible{background-size:100% 1px;color:var(--gold-bright)}
+.foot-links{margin-top:40px;font-size:15px}
+.foot-base{font-size:12.5px;color:var(--muted)}
+@media(max-width:600px){
+  .totop-float{width:40px;height:40px;right:14px;bottom:14px;font-size:15px}
+}
+
+/* ---------- ajustes tras la primera revisión ---------- */
+.box-copy .km{font-family:var(--ui);text-transform:none;letter-spacing:.01em;font-size:13px;font-weight:500}
+.vcenter .vtxt{font-family:var(--long);font-size:14px;line-height:1.3}
+#doctorado{padding:0}
+/* la tesis empieza alineada con el resto de la retícula, no centrada */
+@media(min-width:821px){
+  .htrack{padding:6px 0;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .htrack .hpanel{scroll-snap-align:start}
+}
+
+/* =====================================================================
+   Fase 2 · accesibilidad y UX (va la última en la cascada)
+   ===================================================================== */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- saltar al contenido + destino de anclas ---------- */
+.skip{position:fixed;left:16px;top:14px;z-index:400;transform:translateY(-200%);padding:12px 18px;border-radius:10px;background:var(--gold-bright);color:#0A141F;
+  font:600 14px/1.2 var(--ui);text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.8);transition:transform .2s var(--e)}
+.skip:focus{transform:none}
+.skip:focus-visible{outline:2px solid var(--bone);outline-offset:3px}
+main{display:block}
+main:focus,[tabindex="-1"]:focus{outline:none}
+html{scroll-padding-top:88px}
+
+/* ---------- foco visible y coherente: un solo anillo oro claro ---------- */
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:4px}
+.ixf:focus-visible,.switch a:focus-visible,.lang button:focus-visible,.foot-btn:focus-visible,.ov-side .st:focus-visible{border-radius:999px}
+.totop-float:focus-visible{border-radius:50%}
+.ix-dots button:focus-visible{outline-offset:-4px;border-radius:6px}
+.bb:focus-visible{outline-offset:4px;border-radius:20px}
+/* el carrusel de la tesis lleva máscara de degradado, que recorta su propio contorno: el anillo va en el contenedor */
+.htrack:focus-visible{outline:none}
+.htrack-outer .wrap:has(>.htrack:focus-visible){outline:2px solid var(--gold-bright);outline-offset:2px;border-radius:12px}
+
+/* ---------- menú Índice: cerrado no se ve, no se tabula y no se anuncia ---------- */
+#overlay{visibility:hidden;transition:visibility 0s linear .6s}
+#overlay.open{visibility:visible;transition:none}
+.menu-open header.nav.hide{transform:none}
+.ov-pages{display:none}
+.totop-float{visibility:hidden}
+.totop-float.show{visibility:visible}
+
+/* ---------- índice de proyectos: el nombre es un h3 con el botón dentro ---------- */
+.ix-h{grid-column:1;margin:0;font:inherit;letter-spacing:normal}
+
+/* ---------- contraste AA (medido sobre el fondo real) ---------- */
+.brand .sub{color:#A4823F}                       /* era gold-deep, 3,12:1 → 5,16:1 */
+
+/* ---------- móvil: cabecera más baja y zonas táctiles de 44 px ---------- */
+@media(max-width:560px){
+  .nav .switch{display:none}                    /* Carlos / Newsletter / Wattprint pasan al menú */
+  .nav .wrap{height:60px}
+  .nav-right{gap:6px}
+  .menu-btn{min-width:44px;min-height:44px;justify-content:center;padding:0}
+  .lang{padding:0}
+  .lang button{min-width:44px;min-height:44px;padding:0 8px}
+  html{scroll-padding-top:72px}
+  .hero{padding-top:92px}
+  .ov-pages{display:flex;flex-wrap:wrap;gap:4px 22px;padding:0 var(--gut);margin-top:26px}
+  .ov-pages a{display:inline-flex;align-items:center;min-height:44px;font-family:"Marcellus",var(--display);font-size:17px;color:var(--muted)}
+  .ov-pages a[aria-current="page"]{color:var(--gold-bright)}
+  .ov-side{margin-top:18px}
+  .ov-side a.ci{display:flex;align-items:center;min-height:44px;margin:0}
+  .totop-float{width:44px;height:44px}
+}
+@media(max-width:900px),(pointer:coarse){
+  .ixf{min-height:44px}
+  .ix-dots{right:8px;bottom:4px;gap:0}
+  .ix-dots button{width:44px;height:44px}
+  .ix-dots button::after{top:20px;left:8px;right:8px}
+  .foot-links a{display:inline-flex;align-items:center;min-height:44px}
+  /* enlaces de texto: zona táctil de 44 px sin mover el subrayado */
+  .plink,.plinks a,.tlinks a,a.inl{position:relative}
+  .plink::before,.plinks a::before,.tlinks a::before,a.inl::before{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}
+}
+
+/* ---------- movimiento reducido: nada en bucle ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-iteration-count:1!important}
+  #overlay,.skip,.totop-float{transition:none}
+}
+/* =====================================================================
+   Fase 3 · contenido (va la última en la cascada)
+   ===================================================================== */
+
+/* ---------- hero: botones (Ver proyectos / Descargar CV / LinkedIn) ---------- */
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin-top:40px}
+.hbtn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;
+  border:1px solid rgba(201,162,75,.5);background:transparent;color:var(--bone);font:600 15px/1.2 var(--ui);text-decoration:none;
+  transition:color .25s,border-color .25s,box-shadow .35s var(--e)}
+.hbtn:hover{border-color:var(--gold-bright);color:var(--gold-bright)}
+.hbtn-main{background:var(--metal);border-color:transparent;color:#0A141F}
+.hbtn-main:hover{color:#0A141F;box-shadow:0 18px 50px -16px rgba(201,162,75,.6)}
+.hbtn-txt{border-color:transparent;padding:0 14px;color:var(--muted)}
+.hbtn:focus-visible{border-radius:999px}
+.hero .scrollcue{margin-top:44px}
+@media(max-width:560px){
+  .hero-cta{margin-top:32px}
+  .hbtn-main,.hbtn:not(.hbtn-txt){flex:1 1 100%}
+}
+
+/* ---------- menú y pie: enlace al CV ---------- */
+.ov-side a.ci-cv{color:var(--gold-bright)}
+.ov-side a.ci-cv:hover{color:var(--bone)}
+.foot-cv{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font:500 15px/1.3 var(--ui);color:var(--gold-bright);
+  text-decoration:none;border-bottom:1px solid rgba(201,162,75,.35);transition:border-color .2s}
+.foot-cv:hover{border-color:var(--gold-bright)}
+
+/* ---------- LiVRe como caso de estudio ---------- */
+.ix-body .pcase-reto{color:var(--bone)}
+.pcase-k{display:block;font:500 13px/1.4 var(--ui);color:var(--gold);margin-bottom:4px}
+.pcase{margin:2px 0 4px;border-top:1px solid var(--line2);max-width:70ch}
+.pcase>div{display:grid;grid-template-columns:minmax(0,9.5em) minmax(0,1fr);gap:2px 20px;padding:9px 0;border-bottom:1px solid var(--line2)}
+.pcase dt{font:500 13px/1.55 var(--ui);color:var(--gold);padding-top:1px}
+.pcase dd{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+@media(max-width:560px){
+  .pcase>div{grid-template-columns:1fr}
+  .pcase dd{font-size:15px}
+}
+
+/* ---------- Qué aporto: sin la tarjeta de evaluación, las cuatro áreas en dos columnas ---------- */
+.skills{display:block}
+.skills>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,5vw,72px)}
+.skills .sg:nth-child(2){border-top:0;padding-top:0}
+@media(max-width:820px){
+  .skills>div{grid-template-columns:1fr}
+  .skills .sg:nth-child(2){border-top:1px solid var(--line);padding-top:24px}
+}
+/* en escritorio el panel fijo tiene que caber en pantalla: imagen más apaisada y menos aire */
+@media(min-width:901px){
+  .ix-panel:has(.pcase) .ix-media{aspect-ratio:21/9}
+  .ix-panel:has(.pcase) .ix-body{gap:10px;padding-top:18px}
+}
+/* contacto: la segunda línea del titular es larga; a menor tamaño se lee de un vistazo */
+footer .foot-h em{font-size:.62em;line-height:1.15;display:inline-block;margin-top:.25em}
+
+/* fase 4: el selector de idioma del portfolio son enlaces (/ y /en) */
+.lang a{font-family:var(--ui,Inter,system-ui,sans-serif);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:40px;transition:color .2s,background .2s;display:inline-flex;align-items:center;justify-content:center}
+.lang a:hover{color:var(--bone)}
+.lang a[aria-current="page"]{background:var(--metal);color:var(--night);cursor:default}
+.lang a:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px;border-radius:999px}
+@media(max-width:560px){.lang a{min-width:44px;min-height:44px;padding:0 8px}}
+
+/* ---------- fase 4 · rendimiento ---------- */
+/* fuentes de reserva con métricas ajustadas (las @font-face van en línea en <head>, ver selfhost.py):
+   mientras llega la fuente, el texto ocupa casi lo mismo y el hero no salta */
+:root{
+  --display:"Cinzel","Cinzel Fallback",Georgia,serif;
+  --ui:"Inter","Inter Fallback",system-ui,sans-serif;
+  --mono:"Inter","Inter Fallback",system-ui,sans-serif;
+  --long:"Marcellus","Marcellus Fallback","Cinzel","Cinzel Fallback",Georgia,serif;
+}
+/* en móvil el acordeón empieza cerrado: hasta que projects.js lo prepara, ningún panel se pinta (ni descarga su imagen) */
+@media (max-width:900px){html.js .ix:not(.ix-ready) .ix-panel{display:none}}
+@media(max-width:820px){.pcard{position:relative;top:auto!important;margin-bottom:18px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="ncmetal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7D5F26"/><stop offset=".38" stop-color="#F0D896"/><stop offset=".7" stop-color="#C9A24B"/><stop offset="1" stop-color="#7D5F26"/></linearGradient>
+    <radialGradient id="nccore" cx=".5" cy=".42" r=".65">
+      <stop offset="0" stop-color="#EAF4FF"/><stop offset=".45" stop-color="#7FB4E8"/><stop offset="1" stop-color="#2E5E96"/></radialGradient>
+  </defs>
+  <symbol id="ncmark" viewBox="0 0 120 120">
+  <circle cx="60" cy="60" r="18" fill="#5B8FC6" opacity=".24"/>
+  <circle cx="60" cy="60" r="18.5" fill="none" stroke="url(#ncmetal)" stroke-width=".8" opacity=".35"/>
+  <circle cx="60" cy="60" r="22" fill="none" stroke="url(#ncmetal)" stroke-width="1.4" stroke-dasharray="2.5 5"/>
+  <circle cx="60" cy="60" r="10" fill="url(#nccore)"/>
+  <g fill="none" stroke="url(#ncmetal)" stroke-width="1.2" opacity=".55">
+    <path d="M60 25 Q55.5 31.5 60 37.5"/>
+    <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(60 60 60)"/>
+    <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(120 60 60)"/>
+    <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(180 60 60)"/>
+    <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(240 60 60)"/>
+    <path d="M60 25 Q55.5 31.5 60 37.5" transform="rotate(300 60 60)"/>
+  </g>
+  <g fill="none" stroke="url(#ncmetal)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5"/>
+    <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(60 60 60)"/>
+    <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(120 60 60)"/>
+    <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(180 60 60)"/>
+    <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(240 60 60)"/>
+    <path d="M27.1 41 Q45.5 34.9 60 22 C62.5 17.5 57.5 13 61 6.5" transform="rotate(300 60 60)"/>
+  </g>
+  <circle cx="60" cy="22" r="3" fill="#F0D896"/><circle cx="92.9" cy="41" r="3" fill="#C9A24B"/><circle cx="92.9" cy="79" r="3" fill="#F0D896"/><circle cx="60" cy="98" r="3" fill="#C9A24B"/><circle cx="27.1" cy="79" r="3" fill="#F0D896"/><circle cx="27.1" cy="41" r="3" fill="#C9A24B"/>
+</symbol></svg>
+
+<canvas id="field"></canvas>
+<div class="atmo"></div><div class="grain"></div><div class="vig"></div>
+<div id="prog"></div>
+
+<div class="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div id="loader" aria-hidden="true">
+  <svg class="mk"><use href="#ncmark"/></svg>
+</div>
+
+<!-- minimal header -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" data-c><svg class="mk"><use href="#ncmark"/></svg><span><span class="wm"><span class="neo">NEO</span>CORTECH</span><span class="sub" data-i18n="brand_sub">AI governance</span></span></a>
+    <nav class="switch" aria-label="Ecosystem pages" data-i18n-attr="aria-label:a_nav">
+      <a class="on" href="/en" aria-current="page" data-c><span class="dot"></span>Carlos</a>
+      <a href="/newsletter" data-c><span class="dot"></span>Newsletter</a>
+      <a class="wp" href="/wattprint" data-c><span class="dot"></span>Wattprint</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language"><a href="/" hreflang="es" lang="es">ES</a><a href="/en" hreflang="en" lang="en" aria-current="page">EN</a></div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="overlay"><span id="menuTxt" data-i18n="menu">Index</span><span class="bars"><i></i><i></i></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- full-screen overlay menu -->
+<div id="overlay" role="dialog" aria-label="Navigation menu" data-i18n-attr="aria-label:a_menu" data-lenis-prevent inert>
+  <nav class="ov-nav" id="ovNav">
+    <a href="#proyectos" data-c><span class="on">01</span><span data-i18n="ovm_proyectos">Projects</span></a>
+    <a href="#taller" data-c><span class="on">02</span><span data-i18n="ovm_taller">Side projects</span></a>
+    <a href="#perfil" data-c><span class="on">03</span><span data-i18n="ovm_perfil">Profile</span></a>
+    <a href="#aporto" data-c><span class="on">04</span><span data-i18n="ovm_aporto">What I bring</span></a>
+    <a href="#trayectoria" data-c><span class="on">05</span><span data-i18n="ovm_trayectoria">Career</span></a>
+    <a href="#formacion" data-c><span class="on">06</span><span data-i18n="ovm_formacion">Education</span></a>
+    <a href="#manifiesto" data-c><span class="on">07</span><span data-i18n="ovm_manifiesto">AI governance</span></a>
+    <a href="#doctorado" data-c><span class="on">08</span><span data-i18n="ovm_doctorado">Research</span></a>
+    <a href="#contacto" data-c><span class="on">09</span><span data-i18n="ovm_contacto">Contact</span></a>
+  </nav>
+  <nav class="ov-pages" aria-label="Ecosystem pages" data-i18n-attr="aria-label:a_ovpages">
+    <a href="/en" aria-current="page" data-c>Carlos</a><a href="/newsletter" data-c>Newsletter</a><a href="/wattprint" data-c>Wattprint</a>
+  </nav>
+  <div class="ov-side">
+    <div class="lab" data-i18n="ov_direct">Direct</div>
+    <a class="ci" href="mailto:carlosgallegogalan@gmail.com" data-c>carlosgallegogalan@gmail.com</a>
+    <a class="ci ci-cv" href="/assets/cv/CV_Carlos_Gallego_Galan_EN.pdf" download data-i18n-attr="href:cv_href" data-c><span data-i18n="cv">Download CV (PDF)</span></a>
+    <a class="ci" href="https://www.linkedin.com/in/carlosgallegogalan" target="_blank" rel="noopener" data-c>in/ carlosgallegogalan</a>
+    <a class="ci" href="https://github.com/KairlosGG" target="_blank" rel="noopener" data-c>github/ KairlosGG</a>
+    <a class="ci" href="https://www.eonesia.com" target="_blank" rel="noopener" data-c>eonesia.com</a>
+    <div class="st"><span class="dot"></span> <span data-i18n="open">Available · Product Designer · Technical PM</span></div>
+  </div>
+</div>
+
+<a id="top"></a>
+<main id="main" tabindex="-1">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="wrap">
+    <div class="tagrow rvx"><span class="pill"><span class="dot"></span> <span data-i18n="open">Available · Product Designer · Technical PM</span></span><span data-i18n="tag_eon">Co-founder · EONESIA</span><span data-i18n="tag_iso">ISO/IEC 42001 Lead Implementer · exam passed</span></div>
+    <h1 id="heroH1">
+      <span class="line-mask"><span class="l1" data-i18n="h1a">I make products</span></span>
+      <span class="line-mask"><span class="l2"><span class="it" data-i18n="h1b">that work.</span></span></span>
+    </h1>
+    <div class="hero-foot">
+      <p class="intro rvx" data-i18n="intro">Since 2015 I have been turning ideas into things people use: an app with 500 users in 24 hours, virtual reality experiences for clients and, now, AI agents. The new layer: <strong>making that AI explainable and auditable.</strong></p>
+      <div class="meta rvx" data-i18n="hero_meta"><div><b>Product Designer · Technical PM</b></div><div>Córdoba · Spain</div><div>Digital product, XR and AI</div></div>
+    </div>
+    <div class="hero-cta"><a class="hbtn hbtn-main" href="#proyectos" data-i18n="cta_proy">See projects</a><a class="hbtn" href="/assets/cv/CV_Carlos_Gallego_Galan_EN.pdf" download data-i18n-attr="href:cv_href" data-c><span data-i18n="cv">Download CV (PDF)</span></a><a class="hbtn hbtn-txt" href="https://www.linkedin.com/in/carlosgallegogalan" target="_blank" rel="noopener" data-c>LinkedIn ↗</a></div>
+    <div class="scrollcue rvx"><span class="ln"></span> <span data-i18n="cue">Scroll to see projects ↓</span></div>
+  </div>
+</section>
+
+
+
+<!-- PROYECTOS (índice interactivo) -->
+<section id="proyectos">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_proyectos"><span class="n">01</span> Projects</span>
+    <h2 class="sec rvx" data-i18n="h_proy">Projects I have <em>designed or led.</em></h2>
+    <p class="plead rvx" data-i18n="proy_lead">What I have created, directed or designed since 2015, at EONESIA and beyond. Pick one to see what it was and what I did.</p>
+    <div class="ixf-bar rvx" role="group" aria-label="Filter projects" data-i18n-attr="aria-label:a_ixf"><button type="button" class="ixf" data-f="all" aria-pressed="true"><span data-i18n="ixf_all">All</span> <span class="ixf-n">16</span></button><button type="button" class="ixf" data-f="vr" aria-pressed="false"><span data-i18n="ixf_vr">Virtual reality</span> <span class="ixf-n">7</span></button><button type="button" class="ixf" data-f="w3d" aria-pressed="false"><span data-i18n="ixf_w3d">Web360 and 3D</span> <span class="ixf-n">7</span></button><button type="button" class="ixf" data-f="game" aria-pressed="false"><span data-i18n="ixf_game">Games</span> <span class="ixf-n">4</span></button><button type="button" class="ixf" data-f="mob" aria-pressed="false"><span data-i18n="ixf_mob">Mobile and AR</span> <span class="ixf-n">3</span></button></div>
+    <p id="ixLive" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+    <ul class="ix rvx" id="ix"><li class="ix-it" data-cats="vr"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj6-b" aria-expanded="true" aria-controls="ix-pj6"><span class="ix-name" data-i18n="ixn_pj6">LiVRe</span><span class="ix-ctx" data-i18n="ixc_pj6">Fundación Magtel</span></button></h3><div class="ix-panel on" id="ix-pj6" role="region" aria-labelledby="ix-pj6-b"><div class="ix-media"><img src="/assets/projects/livre-1200.webp" srcset="/assets/projects/livre-800.webp 800w, /assets/projects/livre-1200.webp 1200w, /assets/projects/livre.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="VR headset with the LiVRe logo" data-i18n-attr="alt:a_ixi_livre" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj6"><div class="ptags">VR · Inclusive training</div><p class="ix-t" aria-hidden="true">LiVRe</p><p class="pcase-reto"><span class="pcase-k">Challenge</span>Help people with intellectual disabilities practise everyday tasks in virtual reality and gain independence, at their own pace and without fear of getting it wrong.</p><dl class="pcase"><div><dt>Where</dt><dd>9 care centres for people with disabilities across Córdoba, Seville and Málaga provinces. Client: Fundación Magtel (Futuro Singular programme).</dd></div><div><dt>How we tested it</dt><dd>Around 20 people with very different profiles tried both controllers and hand tracking, in alternating order.</dd></div><div><dt>What we changed</dt><dd>Hand tracking by default, with controllers as an alternative for people with less mobility; more colour and contrast so objects are easy to tell apart; visual and audio feedback on every action, so people always know when they have got it right.</dd></div><div><dt>Design safeguards</dt><dd>No artificial movement, so nobody feels dizzy; one instruction at a time; mistakes carry no penalty and can be retried.</dd></div><div><dt>Outcome</dt><dd>A project worth over €100,000; each person’s progress was tracked on a data platform.</dd></div></dl><div class="prole"><b>My role:</b> project direction and user testing in care centres.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-realidad-virtual-inclusiva-livre/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="vr w3d"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj16-b" aria-expanded="false" aria-controls="ix-pj16"><span class="ix-name" data-i18n="ixn_pj16">Cerco Industrial · Phase III</span><span class="ix-ctx" data-i18n="ixc_pj16">With a partner</span></button></h3><div class="ix-panel" id="ix-pj16" role="region" aria-labelledby="ix-pj16-b"><div class="ix-media"><img data-src="/assets/projects/cerco-render-1200.webp" data-srcset="/assets/projects/cerco-render-800.webp 800w, /assets/projects/cerco-render-1200.webp 1200w, /assets/projects/cerco-render.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="3D recreation of a mine headframe and a chimney at the Cerco Industrial" data-i18n-attr="alt:a_ixi_cerco-render" loading="lazy" decoding="async" width="1600" height="900" class="on"/><img data-src="/assets/projects/cerco-tour-1200.webp" data-srcset="/assets/projects/cerco-tour-800.webp 800w, /assets/projects/cerco-tour-1200.webp 1200w, /assets/projects/cerco-tour.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Virtual tour: aerial view of the Cerco Industrial with the buildings marked on the map" data-i18n-attr="alt:a_ixi_cerco-tour" loading="lazy" decoding="async" width="1600" height="900" aria-hidden="true"/><img data-src="/assets/projects/cerco-modelo-1200.webp" data-srcset="/assets/projects/cerco-modelo-800.webp 800w, /assets/projects/cerco-modelo-1200.webp 1200w, /assets/projects/cerco-modelo.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="3D model of the power station turbine hall, inside the virtual tour" data-i18n-attr="alt:a_ixi_cerco-modelo" loading="lazy" decoding="async" width="1600" height="900" aria-hidden="true"/><div class="ix-dots" role="group" aria-label="Images of Cerco Industrial · Phase III" data-i18n-attr="aria-label:a_ixdots_pj16"><button type="button" aria-label="Image 1 of 3" data-i18n-attr="aria-label:a_ixdot_1_3" aria-current=true></button><button type="button" aria-label="Image 2 of 3" data-i18n-attr="aria-label:a_ixdot_2_3"></button><button type="button" aria-label="Image 3 of 3" data-i18n-attr="aria-label:a_ixdot_3_3"></button></div></div><div class="pbody ix-body" data-i18n="pj16"><div class="ptags">Web360 · Virtual reality · Industrial heritage</div><p class="ix-t" aria-hidden="true">Cerco Industrial · Phase III</p><p>Virtual tour of the Cerco Industrial in Peñarroya-Pueblonuevo, Spain. 3D models of the historic buildings built from around 13,900 aerial and ground photographs, 360º panoramas with a card for each building and narration in Spanish and English, and a virtual reality station at the viewpoint with six headsets. Outside EONESIA, funded through the EU LEADER programme.</p><div class="prole"><b>My role:</b> designed and directed part of the project, together with a partner.</div><div class="plinks2"><a class="plink" href="https://www.cercoindustrialtourvirtual.com/fase3/index.htm" target="_blank" rel="noopener" data-c>Enter the tour ↗</a><a class="plink" href="https://www.cercoindustrialvirtual.com/faseiii" target="_blank" rel="noopener" data-c>See the project ↗</a></div></div></div></li><li class="ix-it" data-cats="vr game"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj1-b" aria-expanded="false" aria-controls="ix-pj1"><span class="ix-name" data-i18n="ixn_pj1">SOL 672</span><span class="ix-ctx" data-i18n="ixc_pj1">Educational VR game</span></button></h3><div class="ix-panel" id="ix-pj1" role="region" aria-labelledby="ix-pj1-b"><div class="ix-media"><img data-src="/assets/projects/sol672-1200.webp" data-srcset="/assets/projects/sol672-800.webp 800w, /assets/projects/sol672-1200.webp 1200w, /assets/projects/sol672.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="SOL 672 title screen: a green sprout on the surface of Mars" data-i18n-attr="alt:a_ixi_sol672" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj1"><div class="ptags">VR · Educational game · STEM</div><p class="ix-t" aria-hidden="true">SOL 672</p><p>The player is an astronaut stranded on Mars who has to restore power, produce oxygen and keep the station running using science and logic.</p><div class="paward">★ Finalist · Indie Games Málaga Awards 2024</div><div class="prole"><b>My role:</b> product creation and direction, UX/UI design, game design, narrative.</div><a class="plink" href="https://www.eonesia.com/portfolios/sol672-experiencia-ciencia-vr/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="w3d"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj7-b" aria-expanded="false" aria-controls="ix-pj7"><span class="ix-name" data-i18n="ixn_pj7">In-Habit · CongreSkills</span><span class="ix-ctx" data-i18n="ixc_pj7">Inclusive training</span></button></h3><div class="ix-panel" id="ix-pj7" role="region" aria-labelledby="ix-pj7-b"><div class="ix-media"><img data-src="/assets/projects/inhabit-1200.webp" data-srcset="/assets/projects/inhabit-800.webp 800w, /assets/projects/inhabit-1200.webp 1200w, /assets/projects/inhabit.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="In-Habit virtual auditorium with wooden seats and a screen" data-i18n-attr="alt:a_ixi_inhabit" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj7"><div class="ptags">Web360 · Training platform</div><p class="ix-t" aria-hidden="true">In-Habit · CongreSkills</p><p>Immersive platform that trains people with Down syndrome for five event-industry jobs through practical simulations.</p><div class="prole"><b>My role:</b> 3D avatar menu to choose the right outfit for each job, UI design, support on UX and logic.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-in-habit-formacion-inclusiva/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="vr game"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj3-b" aria-expanded="false" aria-controls="ix-pj3"><span class="ix-name" data-i18n="ixn_pj3">Cronos Adventure</span><span class="ix-ctx" data-i18n="ixc_pj3">Multiplayer VR</span></button></h3><div class="ix-panel" id="ix-pj3" role="region" aria-labelledby="ix-pj3-b"><div class="ix-media"><img data-src="/assets/projects/cronos-1200.webp" data-srcset="/assets/projects/cronos-800.webp 800w, /assets/projects/cronos-1200.webp 1200w, /assets/projects/cronos.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Cronos Adventure title screen: a glowing portal in front of a character" data-i18n-attr="alt:a_ixi_cronos" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj3"><div class="ptags">VR · Multiplayer · Education and health</div><p class="ix-t" aria-hidden="true">Cronos Adventure</p><p>A multiplayer boat journey through historical periods, designed for children in hospital oncology units.</p><div class="prole"><b>My role:</b> product direction and UX/UI design.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-cronos-adventure-historia-vr/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="vr w3d"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj9-b" aria-expanded="false" aria-controls="ix-pj9"><span class="ix-name" data-i18n="ixn_pj9">Metropolitan</span><span class="ix-ctx" data-i18n="ixc_pj9">Metrovacesa</span></button></h3><div class="ix-panel" id="ix-pj9" role="region" aria-labelledby="ix-pj9-b"><div class="ix-media"><img data-src="/assets/projects/metropolitan-1200.webp" data-srcset="/assets/projects/metropolitan-800.webp 800w, /assets/projects/metropolitan-1200.webp 1200w, /assets/projects/metropolitan.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Rendering of the Metropolitan residential buildings" data-i18n-attr="alt:a_ixi_metropolitan" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj9"><div class="ptags">VR · 360º tour · Client: Metrovacesa</div><p class="ix-t" aria-hidden="true">Metropolitan</p><p>Prospective buyers walk through homes and the community before they are built and give feedback on the services planned for the development.</p><div class="prole"><b>My role:</b> product creation and direction, UX/UI design, narrative.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-inmobiliario-metropolitan/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="w3d"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj10-b" aria-expanded="false" aria-controls="ix-pj10"><span class="ix-name" data-i18n="ixn_pj10">COEC virtual tour</span><span class="ix-ctx" data-i18n="ixc_pj10">Córdoba College of Nursing</span></button></h3><div class="ix-panel" id="ix-pj10" role="region" aria-labelledby="ix-pj10-b"><div class="ix-media"><img data-src="/assets/projects/coec-1200.webp" data-srcset="/assets/projects/coec-800.webp 800w, /assets/projects/coec-1200.webp 1200w, /assets/projects/coec.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Virtual tour: entrance to the Córdoba College of Nursing building" data-i18n-attr="alt:a_ixi_coec" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj10"><div class="ptags">Web360 · Virtual tour · Client: Córdoba College of Nursing</div><p class="ix-t" aria-hidden="true">COEC virtual tour</p><p>A browser-based walkthrough of the College's facilities, so students, professionals and the public can see every space before they visit.</p><div class="prole"><b>My role:</b> UX/UI product design.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-centro-coec/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="vr game"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj2-b" aria-expanded="false" aria-controls="ix-pj2"><span class="ix-name" data-i18n="ixn_pj2">BioVoyager VR</span><span class="ix-ctx" data-i18n="ixc_pj2">Educational VR game</span></button></h3><div class="ix-panel" id="ix-pj2" role="region" aria-labelledby="ix-pj2-b"><div class="ix-media"><img data-src="/assets/projects/biovoyager-1200.webp" data-srcset="/assets/projects/biovoyager-800.webp 800w, /assets/projects/biovoyager-1200.webp 1200w, /assets/projects/biovoyager.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="BioVoyager VR logo with the exploration capsule" data-i18n-attr="alt:a_ixi_biovoyager" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj2"><div class="ptags">VR · Educational game · Biology</div><p class="ix-t" aria-hidden="true">BioVoyager VR</p><p>A microscopic journey through the human body inside an exploration capsule, visiting organs, tissues and vital systems at cellular scale.</p><div class="prole"><b>My role:</b> product creation and direction, UX/UI design, game design, narrative.</div><a class="plink" href="https://www.eonesia.com/portfolios/bioyager-vr/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="game"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj4-b" aria-expanded="false" aria-controls="ix-pj4"><span class="ix-name" data-i18n="ixn_pj4">Superinspector</span><span class="ix-ctx" data-i18n="ixc_pj4">Serious game</span></button></h3><div class="ix-panel" id="ix-pj4" role="region" aria-labelledby="ix-pj4-b"><div class="ix-media"><img data-src="/assets/projects/superinspector-1200.webp" data-srcset="/assets/projects/superinspector-800.webp 800w, /assets/projects/superinspector-1200.webp 1200w, /assets/projects/superinspector.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Superinspector title screen with the inspector character" data-i18n-attr="alt:a_ixi_superinspector" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj4"><div class="ptags">PC · First-person serious game (demo)</div><p class="ix-t" aria-hidden="true">Superinspector</p><p>The player is a food inspector who scans supermarket products, reads nutrition labels and faces ethical dilemmas whose outcomes change the game.</p><div class="prole"><b>My role:</b> product creation and direction, UX/UI design, game design, narrative.</div><a class="plink" href="https://www.eonesia.com/portfolios/superinspector/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats="vr w3d mob"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj5-b" aria-expanded="false" aria-controls="ix-pj5"><span class="ix-name" data-i18n="ixn_pj5">Olympia XR</span><span class="ix-ctx" data-i18n="ixc_pj5">With Complutense University</span></button></h3><div class="ix-panel" id="ix-pj5" role="region" aria-labelledby="ix-pj5-b"><div class="ix-media"><img data-src="/assets/projects/olympia-1200.webp" data-srcset="/assets/projects/olympia-800.webp 800w, /assets/projects/olympia-1200.webp 1200w, /assets/projects/olympia.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Two fans in football shirts facing a floodlit stadium" data-i18n-attr="alt:a_ixi_olympia" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj5"><div class="ptags">VR · AR · Web3D · Social XR</div><p class="ix-t" aria-hidden="true">Olympia XR</p><p>Cross-platform social XR experience for football communities, published on SideQuest, developed with the Complutense University of Madrid.</p><div class="prole"><b>My role:</b> product design, business model and game design; project execution.</div></div></div></li><li class="ix-it" data-cats="w3d"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj8-b" aria-expanded="false" aria-controls="ix-pj8"><span class="ix-name" data-i18n="ixn_pj8">José Cuervo 360º</span><span class="ix-ctx" data-i18n="ixc_pj8">Próximo Spain</span></button></h3><div class="ix-panel" id="ix-pj8" role="region" aria-labelledby="ix-pj8-b"><div class="ix-media"><img data-src="/assets/projects/josecuervo-1200.webp" data-srcset="/assets/projects/josecuervo-800.webp 800w, /assets/projects/josecuervo-1200.webp 1200w, /assets/projects/josecuervo.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="3D rendering of the José Cuervo Express train beside a station with agave plants" data-i18n-attr="alt:a_ixi_josecuervo" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj8"><div class="ptags">Web360 · Corporate training · Client: Próximo Spain</div><p class="ix-t" aria-hidden="true">José Cuervo 360º</p><p>Browser-based 360º tour of the brand's headquarters for bartenders, with the brand's history and gamified cocktail training.</p><div class="prole"><b>My role:</b> client project lead.</div><a class="plink" href="https://www.eonesia.com/portfolios/experiencias-tour-virtual-corporativo-cuervo/" target="_blank" rel="noopener" data-c>View project ↗</a></div></div></li><li class="ix-it" data-cats=""><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj11-b" aria-expanded="false" aria-controls="ix-pj11"><span class="ix-name" data-i18n="ixn_pj11">Christmas in 360º</span><span class="ix-ctx" data-i18n="ixc_pj11">Juegaterapia</span></button></h3><div class="ix-panel" id="ix-pj11" role="region" aria-labelledby="ix-pj11-b"><div class="ix-media"><img data-src="/assets/projects/juegaterapia-1200.webp" data-srcset="/assets/projects/juegaterapia-800.webp 800w, /assets/projects/juegaterapia-1200.webp 1200w, /assets/projects/juegaterapia.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Frame from the Christmas video: children playing in the snow with snowmen" data-i18n-attr="alt:a_ixi_juegaterapia" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj11"><div class="ptags">360º video · Generative AI · Client: Juegaterapia</div><p class="ix-t" aria-hidden="true">Christmas in 360º</p><p>A Christmas video for Juegaterapia's 360º immersive room in Madrid.</p><div class="prole"><b>My role:</b> created the video with ComfyUI, After Effects, Premiere and ElevenLabs.</div></div></div></li><li class="ix-it" data-cats="mob"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj12-b" aria-expanded="false" aria-controls="ix-pj12"><span class="ix-name" data-i18n="ixn_pj12">Augmented reality invitation</span><span class="ix-ctx" data-i18n="ixc_pj12">Conference</span></button></h3><div class="ix-panel" id="ix-pj12" role="region" aria-labelledby="ix-pj12-b"><div class="ix-media"><img data-src="/assets/projects/invitacion-ar.webp" data-srcset="/assets/projects/invitacion-ar-800.webp 800w, /assets/projects/invitacion-ar.webp 1017w" sizes="(min-width: 901px) 44vw, 92vw" alt="Phone showing the invitation as a floating 3D card at a conference" data-i18n-attr="alt:a_ixi_invitacion-ar" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj12"><div class="ptags">Augmented reality · Mobile · Events</div><p class="ix-t" aria-hidden="true">Augmented reality invitation</p><p>A conference invitation that opens on the phone as a floating 3D card where guests answer questions.</p><div class="prole"><b>My role:</b> 3D modelling and animation in Blender, and building the experience in Onirix.</div></div></div></li><li class="ix-it" data-cats="w3d"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj13-b" aria-expanded="false" aria-controls="ix-pj13"><span class="ix-name" data-i18n="ixn_pj13">Spanish Army logistics base, 3D model</span><span class="ix-ctx" data-i18n="ixc_pj13">Spanish Army</span></button></h3><div class="ix-panel" id="ix-pj13" role="region" aria-labelledby="ix-pj13-b"><div class="ix-media"><img data-src="/assets/projects/ejercito-1200.webp" data-srcset="/assets/projects/ejercito-800.webp 800w, /assets/projects/ejercito-1200.webp 1200w, /assets/projects/ejercito.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Aerial view of the 3D model of the logistics base" data-i18n-attr="alt:a_ixi_ejercito" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj13"><div class="ptags">3D · Events · Client: Spanish Army</div><p class="ix-t" aria-hidden="true">Spanish Army logistics base, 3D model</p><p>A 3D model of the future Spanish Army Logistics Base (BLET) in Córdoba, for the Army to present at its events. It was EONESIA’s first client.</p><div class="prole"><b>My role:</b> UX/UI design.</div></div></div></li><li class="ix-it" data-cats=""><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj14-b" aria-expanded="false" aria-controls="ix-pj14"><span class="ix-name" data-i18n="ixn_pj14">Air quality in Carboneras</span><span class="ix-ctx" data-i18n="ixc_pj14">SGS · 2021</span></button></h3><div class="ix-panel" id="ix-pj14" role="region" aria-labelledby="ix-pj14-b"><div class="ix-media"><img data-src="/assets/projects/carboneras.webp" data-srcset="/assets/projects/carboneras-800.webp 800w, /assets/projects/carboneras.webp 1017w" sizes="(min-width: 901px) 44vw, 92vw" alt="Aerial view of Carboneras with colour-coded measurement points" data-i18n-attr="alt:a_ixi_carboneras" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj14"><div class="ptags">Geospatial data · Environment · SGS · 2021</div><p class="ix-t" aria-hidden="true">Air quality in Carboneras</p><p>Hourly data from SGS sensors on a colour-coded map showing where levels approach or exceed EU and Spanish limits, so the client can act before breaching them. One of the two new business lines I launched at SGS.</p><div class="prole"><b>My role:</b> product design, data processing in Excel and R, and visualisation.</div></div></div></li><li class="ix-it" data-cats="mob"><h3 class="ix-h"><button type="button" class="ix-row" id="ix-pj15-b" aria-expanded="false" aria-controls="ix-pj15"><span class="ix-name" data-i18n="ixn_pj15">Empollo App</span><span class="ix-ctx" data-i18n="ixc_pj15">Own project · 2015</span></button></h3><div class="ix-panel" id="ix-pj15" role="region" aria-labelledby="ix-pj15-b"><div class="ix-media"><img data-src="/assets/projects/empollo-1200.webp" data-srcset="/assets/projects/empollo-800.webp 800w, /assets/projects/empollo-1200.webp 1200w, /assets/projects/empollo.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Empollo App logo: a chick with a graduation cap and glasses" data-i18n-attr="alt:a_ixi_empollo" loading="lazy" decoding="async" width="1600" height="900" class="on"/></div><div class="pbody ix-body" data-i18n="pj15"><div class="ptags">Mobile app · EdTech · Own project · 2015</div><p class="ix-t" aria-hidden="true">Empollo App</p><p>An app for university students that turns studying into a Trivial Pursuit-style quiz game. It started in Córdoba with the aim of reaching other universities, and it got more than 500 active users in its first 24 hours.</p><div class="paward">★ Winner · Startup Weekend Córdoba 2015</div><div class="prole"><b>My role:</b> co-founder and CEO.</div></div></div></li></ul>
+  </div>
+</section>
+
+
+
+<!-- TALLER (lo que construyo por mi cuenta) -->
+<section id="taller">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_taller"><span class="n">02</span> Side projects</span>
+    <h2 class="sec rvx" data-i18n="h_taller">What I build <em>on my own.</em></h2>
+    <p class="plead rvx" data-i18n="taller_lead">My own products, designed and built by directing AI agents. Each one solves a specific problem and you can try it.</p>
+    <div class="tws"><article class="tw tw-lead rvx"><div class="tw-img"><img src="/assets/projects/rumbo-1200.webp" srcset="/assets/projects/rumbo-800.webp 800w, /assets/projects/rumbo-1200.webp 1200w, /assets/projects/rumbo.webp 1600w" sizes="(min-width: 901px) 50vw, 92vw" alt="Rumbo: a lead record with the agent’s email, close probability and explained fit score" data-i18n-attr="alt:a_tk1" loading="lazy" decoding="async" width="1600" height="900"/></div><div class="tw-body" data-i18n="tk1"><div class="tk">Agentic AI · CRM</div><h3>Rumbo</h3><p>Five agents prepare each sales opportunity: they research the account, score fit with rules that can be explained, recommend a product and draft the first email. No email goes out without human approval, and every action is logged.</p><div class="tlinks"><a href="https://rumbo-crm-omega.vercel.app" target="_blank" rel="noopener" data-c>Try the demo ↗</a><a href="https://github.com/KairlosGG/rumbo-crm" target="_blank" rel="noopener" data-c>See the code ↗</a></div></div></article><article class="tw tw-pair rvx"><div class="tw-img"><img src="/assets/projects/colibri-1200.webp" srcset="/assets/projects/colibri-800.webp 800w, /assets/projects/colibri-1200.webp 1200w, /assets/projects/colibri.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Colibrí: the valley with the four interview stages" data-i18n-attr="alt:a_tk2" loading="lazy" decoding="async" width="1600" height="900"/></div><div class="tw-body" data-i18n="tk2"><div class="tk">Conversational AI</div><h3>Colibrí</h3><p>A guided interview in stages, with a character who accompanies the user and a results dashboard. Demo version of a real pilot, with no client data. In Spanish.</p><div class="tlinks"><a href="https://colibri-entrevista.vercel.app" target="_blank" rel="noopener" data-c>Try the demo ↗</a><a href="https://github.com/KairlosGG/colibri-entrevista" target="_blank" rel="noopener" data-c>See the code ↗</a></div></div></article><article class="tw tw-pair rvx"><div class="tw-img"><img src="/assets/projects/wattprint-1200.webp" srcset="/assets/projects/wattprint-800.webp 800w, /assets/projects/wattprint-1200.webp 1200w, /assets/projects/wattprint.webp 1600w" sizes="(min-width: 901px) 44vw, 92vw" alt="Wattprint: the footprint of an AI task and a map of where to run it" data-i18n-attr="alt:a_tk3" loading="lazy" decoding="async" width="1600" height="900"/></div><div class="tw-body" data-i18n="tk3"><div class="tk">Sustainability · Web tool</div><h3>Wattprint</h3><p>Calculates in a minute the carbon, energy and water used by AI training and inference, with the SCI methodology (ISO/IEC 21031) and data from Ember and Uptime Institute.</p><div class="tlinks"><a href="/wattprint" data-c>Try Wattprint →</a><a href="https://github.com/KairlosGG/wattprint" target="_blank" rel="noopener" data-c>See the code ↗</a></div></div></article><article class="tw tw-note rvx"><div class="tw-body" data-i18n="tk4"><div class="tk">Learning · In progress</div><h3>Forja 42001</h3><p>A study platform and exam simulator I built to prepare for the ISO/IEC 42001 Lead Implementer. I want to turn it into a product with original content.</p><div class="tlinks"><span class="tsoon">Not published</span></div></div></article></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- PERFIL + cinematic portrait -->
+<section id="perfil">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_perfil"><span class="n">03</span> Who I am</span>
+    <h2 class="sec rvx" data-i18n="h_perfil">From engineering <em>to digital product.</em></h2>
+    <figure class="cinema" id="cinema">
+      <img class="poster" src="/assets/cine-poster.webp" alt="Carlos Gallego Galán" width="1280" height="720" loading="lazy" decoding="async"/><video id="cinevid" muted playsinline preload="none" aria-hidden="true" tabindex="-1"><source src="/assets/carlos_portrait.webm" type="video/webm"/><source src="/assets/carlos_portrait.mp4" type="video/mp4"/></video>
+      <div class="grade"></div><div class="edge"></div>
+      <div class="scrubhint" id="scrubhint" data-i18n="cine_hint">Keep scrolling ↓</div>
+      <div class="cap" data-i18n="cine_cap"><span>Carlos Gallego Galán</span> · Córdoba · governable agentic AI</div>
+      <div class="pbar"><i id="cinebar"></i></div>
+    </figure>
+    <div class="perfil-grid">
+      <aside class="sticky">
+        <div class="quote rvx" data-i18n="quote">“I design human oversight and decision logging into the first prototype.”</div>
+      </aside>
+      <div class="perfil-copy">
+        <div class="lyr rvx"><div class="no">01</div><div data-i18n="lyr1"><div class="k">2012—2020 · the calculation</div><h3>Engineering &amp; critical infrastructure</h3><p>Bachelor's in Civil Engineering and MSc in Environmental Hydraulics (Highest Distinction) at the University of Córdoba. Supervised a high-voltage line of national interest, with 30+ professionals on site.</p></div></div>
+        <div class="lyr rvx"><div class="no">02</div><div data-i18n="lyr2"><div class="k">2018 · the evidence</div><h3>Data science</h3><p>Researcher at the University of Córdoba on a European project on the impact of climate change on ecohydrological variables: data processing, predictive modelling and visualisation.</p></div></div>
+        <div class="lyr rvx"><div class="no">03</div><div data-i18n="lyr3"><div class="k">2021—today · the product</div><h3>Digital product, XR and AI</h3><p>From SGS to co-founding EONESIA: client projects from presales to delivery, up to four in parallel.</p></div></div>
+        <div class="lyr rvx"><div class="no">04</div><div data-i18n="lyr4"><div class="k">now · trust</div><h3>Governance &amp; research</h3><p>Google Generative AI Leader and collaboration with the HUMAINS research group at the University of Córdoba.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- APORTO + Venn -->
+<section id="aporto">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_aporto"><span class="n">04</span> What I bring</span>
+    <h2 class="sec rvx" data-i18n="h_aporto">From problem <em>to product.</em></h2>
+    <div class="conv">
+      <div class="venn rvx" id="venn">
+        <div class="venn-stage">
+          <svg viewBox="0 0 540 502" aria-label="Intersection of designing, building and making it auditable" data-i18n-attr="aria-label:a_venn">
+            <circle class="vc" id="vc1" cx="270" cy="178" r="132"/>
+            <circle class="vc" id="vc2" cx="192" cy="320" r="132"/>
+            <circle class="vc" id="vc3" cx="348" cy="320" r="132"/>
+          </svg>
+          <div class="vcenter" id="vcenter"><div class="vd"></div></div>
+        </div>
+        <div class="vlbl top"><div class="vn">01</div><div class="vt" data-i18n="v1t">I design</div><div class="vs" data-i18n="v1s">discovery · UX/UI · game design</div></div>
+        <div class="vlbl bl"><div class="vn">02</div><div class="vt" data-i18n="v2t">I build</div><div class="vs" data-i18n="v2s">XR · web · AI agents</div></div>
+        <div class="vlbl br"><div class="vn">03</div><div class="vt" data-i18n="v3t">I make it auditable</div><div class="vs">ISO/IEC 42001 · AI Act</div></div>
+      </div>
+      <div class="conv-copy">
+        <h3 class="rvx" data-i18n="conv_h">How I work</h3>
+        <p class="rvx" data-i18n="conv1"><span class="hl">Design:</span> I talk to the client and the users, define what needs building and design it in Figma before a line of code is written. That is how I worked in virtual reality, in Web360 and on the SGS products.</p>
+        <p class="rvx" data-i18n="conv2"><span class="hl">Build:</span> I coordinate development, 3D and design teams, and I build my own products by directing AI agents. <a class="inl" href="#taller">Rumbo</a>, my agentic CRM, is public with its source code.</p>
+        <p class="rvx" data-i18n="conv3"><span class="hl">Standards:</span> the new layer. I design governance into the system with ISO/IEC 42001 and the EU AI Act: human oversight and traceability from the start.</p>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric rvx"><div class="v">4</div><div class="l" data-i18n="m1">years leading digital products for clients, from presales to delivery</div></div>
+      <div class="metric rvx"><div class="v"><span class="u">+</span>89<span class="u">%</span></div><div class="l" data-i18n="m2">estimated daily operating profit · feasibility study (SGS)</div></div>
+      <div class="metric rvx"><div class="v"><span class="u">−</span>50<span class="u">%</span></div><div class="l" data-i18n="m3">proposal preparation time, from 2.07 h to under 1 h · Lean Management (SGS)</div></div>
+      <div class="metric rvx"><div class="v">16<span class="u">km</span></div><div class="l" data-i18n="m4">of high-voltage line of national interest supervised (Red Eléctrica)</div></div>
+      <div class="metric rvx"><div class="v">100<span class="u">K€+</span></div><div class="l" data-i18n="m5">virtual reality project led · LiVRe, independent living for people with intellectual disabilities</div></div>
+      <div class="metric rvx"><div class="v">500<span class="u">+</span></div><div class="l" data-i18n="m6">active users within 24 h · Empollo App MVP</div></div>
+    </div>
+    <div class="skills">
+      <div>
+        <div class="sg rvx" data-i18n="sk1"><div class="gh"><span class="k">/01</span><b>Product &amp; delivery</b></div><div class="tags"><span class="tg2">Discovery</span><span class="tg2">Requirements definition</span><span class="tg2">PoC and MVP</span><span class="tg2">Roadmapping and prioritisation</span><span class="tg2">Scope, schedule and profitability</span><span class="tg2">Agile and Kanban</span><span class="tg2">Stakeholder management</span></div></div>
+        <div class="sg rvx" data-i18n="sk2"><div class="gh"><span class="k">/02</span><b>Applied AI</b></div><div class="tags"><span class="tg2">Generative AI</span><span class="tg2">Agents</span><span class="tg2">Automation with n8n</span><span class="tg2">Machine learning for business</span><span class="tg2">AI use cases</span></div></div>
+        <div class="sg rvx" data-i18n="sk3"><div class="gh"><span class="k">/03</span><b>AI governance</b></div><div class="tags"><span class="tg2">ISO/IEC 42001</span><span class="tg2">EU AI Act</span><span class="tg2">Risk management</span><span class="tg2">Human oversight</span></div></div>
+        <div class="sg rvx" data-i18n="sk4"><div class="gh"><span class="k">/04</span><b>Design &amp; business</b></div><div class="tags"><span class="tg2">UX/UI product design (Figma)</span><span class="tg2">Design Thinking</span><span class="tg2">Presales</span><span class="tg2">Lean Six Sigma</span><span class="tg2">KPIs and ROI</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- TRAYECTORIA -->
+<section id="trayectoria">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_trayectoria"><span class="n">05</span> Career</span>
+    <h2 class="sec rvx" data-i18n="h_tray">Career</h2>
+    <div class="tline">
+      <div class="trow rvx"><div class="when" data-i18n="t1w">May 2022 — present</div><div data-i18n="t1"><div class="what">Co-founder · Product and Innovation Lead <span class="co">— EONESIA</span></div><div class="desc">Studio building digital and immersive experiences for clients (XR, Web360, web, serious games). Led projects from presales to delivery, UX/UI product design and product lead for a B2B CRM with machine learning.</div><div class="res"><span class="r">Spanish Army</span><span class="r">Metrovacesa</span><span class="r">Odilo</span><span class="r">Próximo Spain (José Cuervo)</span><span class="r">Fundación Sebastián Almagro</span></div></div></div>
+      <div class="trow rvx"><div class="when">2021</div><div data-i18n="t2"><div class="what">Business Development and Sustainability Consultant <span class="co">— SGS Spain</span></div><div class="desc">Proposed a new port services line with portable weighbridges; the feasibility study estimated +89% daily operating profit. Geospatial digital product for environmental monitoring that secured the continuity of key contracts.</div><div class="res"><span class="r">+89% estimated · feasibility study</span><span class="r">proposals from 2.07 h to under 1 h</span></div></div></div>
+      <div class="trow rvx"><div class="when">2019 — 2020</div><div data-i18n="t3"><div class="what">Site Supervisor <span class="co">— Red Eléctrica de España (via SGS)</span></div><div class="desc">Supervised 16 km of high-voltage transmission line designated of National Interest: technical, contractual, financial, schedule, quality, health and safety, and field risk control.</div><div class="res"><span class="r">critical infrastructure</span><span class="r">30+ professionals on site</span></div></div></div>
+      <div class="trow rvx"><div class="when">2018</div><div data-i18n="t4"><div class="what">Data Science Researcher <span class="co">— University of Córdoba</span></div><div class="desc">European project on the impact of climate change on ecohydrological variables: data processing, predictive modelling and visualisation.</div><div class="res"><span class="r">European project</span><span class="r">predictive modelling</span></div></div></div>
+      <div class="trow rvx"><div class="when">2015 — 2016</div><div data-i18n="t5"><div class="what">Co-founder and CEO <span class="co">— Empollo App</span></div><div class="desc">Gamified EdTech MVP with 500+ active users within 24 h.</div><div class="res"><span class="r">Winner · Startup Weekend Córdoba 2015</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_formacion"><span class="n">06</span> Education</span>
+    <h2 class="sec rvx" data-i18n="h_form">Education and certifications</h2>
+    <div class="edu-grid">
+      <div class="edu rvx" data-i18n="ed1"><div class="y">2026</div><div class="t">AI Expert Programme (150 h, 6 ECTS)</div><div class="w">BIG School</div></div>
+      <div class="edu rvx" data-i18n="ed2"><div class="y">2023</div><div class="t">MSc in Metaverse, VR and AR</div><div class="w">Complutense University of Madrid</div><div class="hon">Highest Distinction</div></div>
+      <div class="edu rvx" data-i18n="ed3"><div class="y">2022</div><div class="t">Business 360º programme</div><div class="w">ThePower Business School</div></div>
+      <div class="edu rvx" data-i18n="ed4"><div class="y">2022</div><div class="t">UX/UI Product Design Bootcamp</div></div>
+      <div class="edu rvx" data-i18n="ed5"><div class="y">2018</div><div class="t">MSc in Environmental Hydraulics</div><div class="w">University of Córdoba</div><div class="hon">Highest Distinction</div></div>
+      <div class="edu rvx" data-i18n="ed6"><div class="y">2016</div><div class="t">Bachelor's Degree in Civil Engineering</div><div class="w">University of Córdoba</div></div>
+    </div>
+    <div class="certs rvx" data-i18n="certs"><span class="cert star">ISO/IEC 42001 Lead Implementer · PECB · exam passed, Aug 2026</span><span class="cert">Generative AI Leader · Google · 2026</span><span class="cert">AI Agent Builder Associate (AB-620) · Microsoft · in progress</span><span class="cert">Lean Six Sigma Green Belt · ISO 18404 · SGS</span><span class="cert">Design Thinking Specialisation · Actitud Creativa (SGS)</span><span class="cert">English B2 · certification in progress</span></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- MANIFESTO + BLACK BOX -->
+<section id="manifiesto" class="mani">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_manifiesto"><span class="n">07</span> The new layer · AI governance</span>
+    <h2 class="big" id="maniBig" data-i18n="mani"><span class="w">Agents</span> <span class="w">already</span> <span class="w">decide</span> <span class="w">on</span> <span class="w">their</span> <span class="w">own.</span> <span class="w">Their</span> <span class="w">logs</span> <span class="w">record</span> <span class="w">what</span> <span class="w">they</span> <span class="w">did,</span> <span class="w">but</span> <span class="w">not</span> <span class="w acc">why.</span> <span class="w">I</span> <span class="w">work</span> <span class="w">in</span> <span class="w acc">that</span> <span class="w acc">gap.</span></h2>
+    <div class="box-wrap">
+      <div class="bb" id="bb" role="img" aria-label="Interactive diagram: the black box of an agentic system which, when opened, reveals its decision flow — perception, reasoning, policy and action" data-i18n-attr="aria-label:a_bb">
+        <canvas id="bbc"></canvas>
+        <span class="corner tl" data-i18n="bb_tl">AGENTIC SYSTEM</span><span class="corner tr" id="bbState">OPAQUE</span>
+        <span class="hint" id="bbHint" data-i18n="bb_hint">Hover or press and hold to see the flow</span>
+      </div>
+      <div class="box-copy">
+        <div class="km rvx" data-i18n="km">The core of my work</div>
+        <h3 class="rvx" data-i18n="tagline">I design AI systems that can be audited.</h3>
+        <p class="rvx" data-i18n="box1">This box is an agentic system as a committee sees it today: <strong>a request goes in, a decision comes out, and in between, fog.</strong> Hence the question mark.</p>
+        <p class="rvx" data-i18n="box2">Open it: hover or press and hold. The opaque part reveals its flow — perception, reasoning, applied policy, action — and stops being a black box. <strong>With ISO/IEC 42001 as the framework, that traceability is designed into the system, not bolted on.</strong></p>
+        <p class="rvx" data-i18n="posit">74% of companies plan to deploy agentic AI within the next two years, but only 21% have a mature governance model for autonomous agents (<a class="inl" href="https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html" target="_blank" rel="noopener">Deloitte, <i>State of AI in the Enterprise</i>, 2026 ↗</a>).</p>
+        <div class="tags rvx" data-i18n="box_tags"><span class="tg">Traceability</span><span class="tg">Applied policy</span><span class="tg">Logged reasoning</span><span class="tg">Compliant by design</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIGACIÓN -->
+<section id="doctorado" class="thesis">
+  <div class="th-pin" id="thPin">
+    <div class="wrap th-head">
+      <div><span class="eyebrow rvx" data-i18n="eb_doctorado"><span class="n">08</span> Research · exploratory</span><h2 class="t-title rvx" data-i18n="th_title">AI that designs AI: agentic AutoML and how to evaluate it.</h2></div>
+      <div class="th-meta rvx" data-i18n="th_meta"><div><b>Framework</b> · University of Córdoba — HUMAINS group</div><div><b>Status</b> · exploratory line, no settled proposal</div><div><b>Focus</b> · agentic AutoML · evaluation · auditability</div></div>
+    </div>
+    <div class="htrack-outer"><div class="wrap"><div class="htrack" id="htrack" data-lenis-prevent tabindex="0" aria-label="Research line — swipe horizontally" data-i18n-attr="aria-label:a_track">
+      <article class="hpanel" data-i18n="hp0"><span class="ph">Point 00</span><span class="yr">Context</span><h3>Where I am</h3><p>I collaborate with the <strong>HUMAINS</strong> research group at the University of Córdoba with a view to a possible PhD. The line is not settled yet: these are the topics I am studying.</p><div class="out">→ proposal to be defined</div><span class="pn">00</span></article>
+      <article class="hpanel" data-i18n="hp1"><span class="ph">Point 01</span><span class="yr">Topic</span><h3>Agentic AutoML systems</h3><p>LLM-based agents that design, run and evaluate machine learning pipelines, and <strong>how those agents are themselves evaluated</strong>.</p><div class="out">→ <a href="https://www.youtube.com/watch?v=Xc4CfihBCrg" target="_blank" rel="noopener">talk by Joaquin Vanschoren · AutoML Summer School 2026</a></div><span class="pn">01</span></article>
+      <article class="hpanel" data-i18n="hp2"><span class="ph">Point 02</span><span class="yr">Topic</span><h3>LLMs for optimisation in code spaces</h3><p>From metaheuristic design to AutoML: <strong>language models that generate and improve code</strong> as a form of search.</p><div class="out">→ <a href="https://www.youtube.com/watch?v=gBlLYa-rMuo" target="_blank" rel="noopener">talk by Niki van Stein · AutoML Summer School 2026</a></div><span class="pn">02</span></article>
+      <article class="hpanel" data-i18n="hp3"><span class="ph">Point 03</span><span class="yr">Question</span><h3>How it connects to my work</h3><p>When an agent designs another model, how is each decision recorded so a person can review it? It is <strong>the same governance question</strong>, one level down.</p><div class="out">→ decision traceability</div><span class="pn">03</span></article>
+      <article class="hpanel" data-i18n="hp4"><span class="ph">Point 04</span><span class="yr">Now</span><h3>What I am studying</h3><p>The AutoML MOOC, the <strong>“From AutoML to AgenticML”</strong> tutorial from AutoML 2026 and the AutoML Summer School 2026 talks.</p><div class="out">→ <a href="https://www.youtube.com/@automl_conf" target="_blank" rel="noopener">full list of talks</a></div><span class="pn">04</span></article>
+    </div></div>
+    <div class="th-seal" id="thSeal" aria-hidden="true">
+      <svg viewBox="0 0 140 140" aria-hidden="true">
+        <defs><linearGradient id="sgm" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7D5F26"/><stop offset=".38" stop-color="#F0D896"/><stop offset=".7" stop-color="#C9A24B"/><stop offset="1" stop-color="#7D5F26"/></linearGradient></defs>
+        <circle class="ts-ring" cx="70" cy="70" r="64" fill="none" stroke="url(#sgm)" stroke-width="1.6" stroke-dasharray="3 6"/>
+        <circle cx="70" cy="70" r="54" fill="rgba(19,39,59,.88)" stroke="url(#sgm)" stroke-width="2"/>
+        <g stroke="url(#sgm)" stroke-width="2" stroke-linecap="round" fill="none">
+          <path d="M28 86 q10 18 28 24"/>
+          <path d="M112 86 q-10 18 -28 24"/>
+          <path d="M31 92 l7 -2 M36 99 l7 -3 M43 105 l6 -4 M51 109 l5 -5"/>
+          <path d="M109 92 l-7 -2 M104 99 l-7 -3 M97 105 l-6 -4 M89 109 l-5 -5"/>
+        </g>
+        <text x="70" y="63" text-anchor="middle" font-family="Cinzel,serif" font-size="22" fill="#F0D896" letter-spacing="2">UCO</text>
+        <text x="70" y="82" text-anchor="middle" font-family="Cinzel,serif" font-size="9" fill="#7E92A6" letter-spacing="2.2">HUMAINS</text>
+        <circle cx="70" cy="96" r="3.5" fill="#5B8FC6"/>
+      </svg>
+      <div class="ts-cap" data-i18n="seal">Exploratory line<br/>no settled proposal</div>
+    </div>
+    </div>
+    <div class="wrap th-foot">
+      <div class="hdots" id="hdots">
+        <button class="hdot active" data-i="0"><span class="b"></span><span data-i18n="hd0">00 · Context</span></button>
+        <button class="hdot" data-i="1"><span class="b"></span><span data-i18n="hd1">01 · Agentic AutoML</span></button>
+        <button class="hdot" data-i="2"><span class="b"></span><span data-i18n="hd2">02 · LLMs and code</span></button>
+        <button class="hdot" data-i="3"><span class="b"></span><span data-i18n="hd3">03 · My question</span></button>
+        <button class="hdot" data-i="4"><span class="b"></span><span data-i18n="hd4">04 · Now</span></button>
+      </div>
+      <div class="hprog" id="hprogWrap"><i id="hprog"></i></div>
+      <span class="hhint" data-i18n="hhint">↔ swipe or tap a point</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- CONTACTO -->
+<footer id="contacto">
+  <div class="wrap">
+    <span class="eyebrow rvx" data-i18n="eb_contacto"><span class="n">09</span> Contact</span>
+    <h2 class="rvx foot-h" data-i18n="foot_h">Let’s talk.<br/><em>I’m looking for a product design or product management role.</em></h2>
+    <a class="foot-btn rvx" href="mailto:carlosgallegogalan@gmail.com" data-c data-lab="email"><span data-i18n="write">Email me</span> <span class="ar">→</span></a>
+    <div><a class="foot-mail rvx" href="mailto:carlosgallegogalan@gmail.com">carlosgallegogalan@gmail.com</a></div>
+    <div><a class="foot-cv rvx" href="/assets/cv/CV_Carlos_Gallego_Galan_EN.pdf" download data-i18n-attr="href:cv_href" data-c><span data-i18n="cv">Download CV (PDF)</span></a></div>
+    <div class="foot-links rvx">
+      <a href="https://www.linkedin.com/in/carlosgallegogalan" target="_blank" rel="noopener" data-c>in/ carlosgallegogalan</a>
+      <a href="https://github.com/KairlosGG" target="_blank" rel="noopener" data-c>github/ KairlosGG</a>
+      <a href="https://www.eonesia.com" target="_blank" rel="noopener" data-c>eonesia.com</a>
+    </div>
+    <div class="foot-base">
+      <span class="fx"><svg class="mk"><use href="#ncmark"/></svg> <span data-i18n="foot_city">Córdoba, Spain</span></span>
+      <span data-i18n="foot_base">Portfolio · 2026</span>
+    </div>
+  </div>
+</footer>
+<button class="totop-float" id="toTopFloat" aria-label="Back to top" data-i18n-attr="aria-label:a_totop">↑</button>
+
+
+<script>(function(){
+document.querySelectorAll('.lang a[hreflang]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    if(a.getAttribute('aria-current')==='page'){e.preventDefault();return;}
+    if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)return;
+    e.preventDefault();
+    var cur=[].slice.call(document.querySelectorAll('main section[id],section[id],footer[id]')).filter(function(x){return x.getBoundingClientRect().top<innerHeight*.4;}).pop();
+    var url=a.getAttribute('href')+(cur&&scrollY>40?'#'+cur.id:'');
+    var ps=document.querySelectorAll('.curtain i');
+    var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(window.gsap&&ps.length&&!rm){gsap.set(ps,{yPercent:100});gsap.to(ps,{yPercent:0,duration:.42,ease:'expo.in',stagger:.02,onComplete:function(){location.href=url;}});}
+    else location.href=url;
+  });
+});
+})();</script>
+
+</body>
+</html>
