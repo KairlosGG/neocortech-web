@@ -48,7 +48,7 @@ hero = re.sub(r'<p class="intro rvx" data-i18n="intro">.*?</p>',
 hero = re.sub(r'\n<div class="marquee".*?</div></div>\n', '\n', hero, flags=re.S)  # fase 1: sin marquesina
 assert 'marquee' not in hero
 # la pista ya no anuncia la caja negra (ahora está más abajo)
-hero = rep(hero, '<span data-i18n="cue">Desliza — abre el sistema</span>', '<span data-i18n="cue">Desliza para ver los proyectos ↓</span>')
+hero = rep(hero, '<span data-i18n="cue">Desliza — abre el sistema</span>', '<span data-i18n="cue">Desliza</span>')
 
 # --- perfil pasa a ser 01
 perfil = rep(perfil, '<span class="eyebrow rvx" data-i18n="e02"><span class="n">02</span> Quién soy</span>',

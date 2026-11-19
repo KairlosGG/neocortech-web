@@ -251,7 +251,7 @@ window.NC_EN["eb_doctorado"]="<span class=\"n\">08</span> Research · explorator
 window.NC_EN["ovm_doctorado"]="Research";
 window.NC_EN["eb_contacto"]="<span class=\"n\">09</span> Contact";
 window.NC_EN["ovm_contacto"]="Contact";
-window.NC_EN["cue"]="Scroll to see projects ↓";
+window.NC_EN["cue"]="Scroll";
 window.NC_EN["cta_proy"]="See projects";
 window.NC_EN["cv"]="Download CV (PDF)";
 window.NC_EN["cv_href"]="/assets/cv/CV_Carlos_Gallego_Galan_EN.pdf";

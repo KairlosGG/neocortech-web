@@ -52,7 +52,7 @@ EN.update(en_keys())
 # fase 1: orden, numeración y menú
 from secciones import en_keys as sec_keys
 EN.update(sec_keys())
-EN['cue'] = 'Scroll to see projects ↓'
+EN['cue'] = 'Scroll'
 # fase 3: contenido (CV, botones del hero)
 EN['cta_proy'] = 'See projects'
 EN['cv'] = 'Download CV (PDF)'
