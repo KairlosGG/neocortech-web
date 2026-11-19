@@ -1,0 +1,143 @@
+
+/* =====================================================================
+   Fase 1 · diseño y estructura (va la última en la cascada)
+   ===================================================================== */
+:root{
+  --mono:"Inter",system-ui,sans-serif;          /* etiquetas en Inter, no en versales de Cinzel */
+  --long:"Marcellus","Cinzel",Georgia,serif;    /* titulares largos, con minúsculas */
+  --muted2:#71869C;                               /* AA sobre night */
+  --s-sec:clamp(76px,9vw,136px);                  /* ritmo: separación entre capítulos */
+  --s-tight:clamp(28px,3vw,48px);                 /* sección que continúa el capítulo anterior */
+}
+
+/* ---------- colisiones de clases y retícula ---------- */
+.bb .corner{display:block;margin:0;gap:0;grid-template-columns:none}
+.hero>.wrap,.th-pin>.wrap{width:100%}
+
+/* ---------- movimiento: lo que queda quieto ---------- */
+.grain{animation:none;will-change:auto}
+.scrollcue .ln::after{animation:none;width:100%;transform:none;opacity:.5}
+.cinema .tc .rec{animation:none}
+.rvx{transform:translateY(16px)}
+.bb{cursor:default}
+.mani .big .w{color:var(--bone);transition:none}
+.mani .big .w.acc{color:var(--gold)}
+
+/* ---------- tipografía: Cinzel grande, Marcellus largo, Inter pequeño ---------- */
+.mani .big,.quote,.box-copy h3,.conv-copy h3,.lyr h4,.hpanel h4,.t-title,.vlbl .vt,.cinema .ctitle,.ix-name,.ix-body .ix-t,.tw-note .tw-body h3{
+  font-family:var(--long);letter-spacing:0}
+.mani .big{font-size:clamp(26px,3.3vw,44px);line-height:1.24;max-width:24ch}
+.quote{font-size:clamp(20px,2.1vw,27px);line-height:1.4}
+.lyr h4{font-size:21px}
+.t-title{font-size:clamp(24px,2.8vw,36px);line-height:1.22}
+.eyebrow,.hero .tagrow,.tk,.lyr .k,.hpanel .ph,.hpanel .yr,.th-meta,.trow .when,.trow .r,.edu .y,.edu .hon,.vlbl .vs,.vlbl .vn,.tg,
+.bb .hint,.cinema .cap,.cinema .scrubhint,.cinema .tc,.foot-links,.foot-base,.hero-foot .meta,.gh .k,.km,.qmeta,
+.scrollcue,.ptags,.tsoon,.paward,.hdot,.hhint,.th-seal .ts-cap,.ov-side .lab,.ov-side .st,.ov-nav a .on,.hpanel .out{
+  font-family:var(--ui);text-transform:none;letter-spacing:.01em}
+.hero .tagrow{font-size:13px;color:var(--muted)}
+.hero-foot .meta{font-size:13.5px}
+.tk,.ptags,.ix-body .ptags{font-size:13px;color:var(--gold)}
+.lyr .k,.hpanel .ph,.km,.ov-side .lab,.hhint{font-size:13px;font-weight:500;color:var(--muted)}
+.km{color:var(--gold)}
+.trow .when,.edu .y{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:5px}
+.qmeta,.scrollcue,.th-meta,.bb .hint,.hdot{font-size:13px}
+.tg,.trow .r,.paward,.tsoon,.edu .hon,.hpanel .out{font-size:12.5px}
+.ov-side .st{font-size:12.5px}
+.vlbl .vs{font-size:12.5px}
+.cinema .cap,.cinema .scrubhint,.cinema .tc{font-size:12.5px}
+.hpanel .yr{font-size:12.5px;color:var(--muted)}
+/* solo dos piezas siguen en versalitas: el botón de menú y el estado de la caja negra */
+.menu-btn,.bb .corner{font-family:var(--ui);text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;font-weight:500}
+.bb .corner{font-size:10.5px}
+#heroH1{font-size:clamp(42px,8.2vw,128px)}
+@media(max-width:600px){#heroH1{font-size:clamp(40px,11vw,60px);line-height:1.04}}
+
+/* ---------- cabeceras de sección: número + nombre, sin raya; oro solo donde se mira ---------- */
+.eyebrow{gap:10px;font-size:13px;font-weight:500;color:var(--muted)}
+.eyebrow::before{display:none}
+.eyebrow .n{color:var(--gold);font-variant-numeric:tabular-nums;font-weight:600}
+h2.sec{margin-top:16px}
+h2.sec em{background:none;-webkit-text-fill-color:currentColor;color:inherit;font-weight:400}
+#proyectos h2.sec em{background:var(--metal);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+/* las secciones que continúan un capítulo llevan un titular menor */
+#taller h2.sec,#formacion h2.sec{font-size:clamp(26px,3.2vw,42px)}
+/* numeración decorativa que sobraba (la sección ya está numerada) */
+.lyr .no,.vlbl .vn,.gh .k,.hpanel .pn{display:none}
+.lyr{grid-template-columns:1fr;padding:24px 0}
+
+/* ---------- ritmo vertical ---------- */
+section{padding:var(--s-sec) 0}
+#taller,#formacion{padding-top:var(--s-tight)}
+.hero{padding-top:120px;padding-bottom:64px}
+.th-pin{min-height:0;padding:var(--s-sec) 0;gap:clamp(22px,3vh,34px)}
+footer{padding:calc(var(--s-sec)*1.1) 0 48px}
+.plead{margin-top:16px}
+.cinema{margin-top:44px}
+.perfil-grid{margin-top:52px}
+.conv{margin-top:48px;gap:56px}
+.venn{max-width:440px}
+.metrics{margin-top:56px}
+.metric{padding:28px 26px}
+.skills{margin-top:56px}
+.tline{margin-top:44px}
+.trow{padding:26px 0}
+.edu-grid{margin-top:40px}
+.box-wrap{margin-top:56px}
+@media(max-width:600px){
+  .venn-stage{display:none}             /* en móvil, el Venn se lee como lista */
+  .vlbl.top{margin-top:0}
+  .metric{padding:22px 18px}
+  .metric .v{font-size:30px}
+  .lyr{padding:20px 0}
+}
+
+/* ---------- retrato ---------- */
+.cinema .poster{z-index:0}
+.cinema video{z-index:1;opacity:0;transition:opacity .4s}
+.cinema video.ready{opacity:1}
+.cinema .grade,.cinema .edge{z-index:2}
+.cinema .tc{background:none;border:0;border-radius:0;padding:0;flex-direction:row;gap:8px;color:var(--bone)}
+.cinema.still .scrubhint,.cinema.still .pbar{display:none}
+@media(max-width:600px){
+  .cinema{aspect-ratio:4/5}
+  .cinema video,.cinema .poster{object-position:58% 30%}
+  .cinema .tc,.cinema .scrubhint,.cinema .cap{display:none}
+  .cinema .ctitle{left:20px;right:20px;bottom:20px;font-size:18px}
+}
+
+/* ---------- cabecera y menú ---------- */
+.nav.solid::before{background:rgba(10,20,31,.9);-webkit-mask:none;mask:none;border-bottom:1px solid var(--line)}
+.ov-nav a{font-size:clamp(24px,3.3vw,44px);line-height:1.2}
+.ov-nav a .on{font-size:13px;color:var(--muted2);min-width:2ch}
+@media(max-height:720px){.ov-nav a{font-size:clamp(20px,4.2vh,34px)}}
+
+/* ---------- índice de proyectos ---------- */
+.ix-name{color:rgba(236,231,218,.62);font-size:clamp(20px,1.8vw,26px)}
+@media (min-width:901px){
+  .ix-name{transition:color .3s,transform .5s var(--e)}
+  .ix-row:hover .ix-name,.ix-row[aria-expanded="true"] .ix-name{transform:translateX(10px)}
+  .ix-body .ix-t{display:block;order:-1;font-size:clamp(24px,2.2vw,32px);font-weight:400;line-height:1.15}
+  .ix-panel.on .ix-media img.on{animation:ixIn .9s var(--e) both}
+}
+@keyframes ixIn{from{clip-path:inset(100% 0 0 0);transform:scale(1.06)}to{clip-path:inset(0 0 0 0);transform:none}}
+@media (prefers-reduced-motion:reduce){.ix-panel.on .ix-media img.on{animation:none}.ix-name{transform:none!important}}
+
+/* ---------- pie ---------- */
+.foot-mail{display:inline-block;margin-top:36px;font-family:var(--long);font-size:clamp(20px,2.6vw,34px);color:var(--bone);
+  background:linear-gradient(var(--gold),var(--gold)) 0 100%/0 1px no-repeat;padding-bottom:4px;transition:background-size .6s var(--e),color .3s;overflow-wrap:anywhere}
+.foot-mail:hover,.foot-mail:focus-visible{background-size:100% 1px;color:var(--gold-bright)}
+.foot-links{margin-top:40px;font-size:15px}
+.foot-base{font-size:12.5px;color:var(--muted)}
+@media(max-width:600px){
+  .totop-float{width:40px;height:40px;right:14px;bottom:14px;font-size:15px}
+}
+
+/* ---------- ajustes tras la primera revisión ---------- */
+.box-copy .km{font-family:var(--ui);text-transform:none;letter-spacing:.01em;font-size:13px;font-weight:500}
+.vcenter .vtxt{font-family:var(--long);font-size:14px;line-height:1.3}
+#doctorado{padding:0}
+/* la tesis empieza alineada con el resto de la retícula, no centrada */
+@media(min-width:821px){
+  .htrack{padding:6px 0;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .htrack .hpanel{scroll-snap-align:start}
+}

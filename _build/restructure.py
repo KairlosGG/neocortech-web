@@ -26,17 +26,12 @@ inv = cut(s, '<!-- INVESTIGACIÓN -->', '</section>\n')
 form = cut(s, '<!-- FORMACIÓN -->', '</section>\n')
 foot = cut(s, '<!-- CONTACTO -->', '</footer>\n')
 
-# --- menú
+# --- menú: orden y numeración desde secciones.py
+import sys
+sys.path.insert(0, B)
+from secciones import ORDEN, menu_html, eyebrow_inner
 nav_old = overlay[overlay.index('<nav class="ov-nav" id="ovNav">'):overlay.index('</nav>') + 6]
-overlay = overlay.replace(nav_old, '''<nav class="ov-nav" id="ovNav">
-    <a href="#perfil" data-c><span class="on">01</span><span data-i18n="ov1">Perfil</span></a>
-    <a href="#proyectos" data-c><span class="on">02</span><span data-i18n="ov2"><em>Proyectos</em></span></a>
-    <a href="#taller" data-c><span class="on">03</span><span data-i18n="ov3">Taller</span></a>
-    <a href="#aporto" data-c><span class="on">04</span><span data-i18n="ov4">Qué <em>aporto</em></span></a>
-    <a href="#manifiesto" data-c><span class="on">05</span><span data-i18n="ov5">La capa <em>nueva</em></span></a>
-    <a href="#doctorado" data-c><span class="on">06</span><span data-i18n="ov6">Investigación</span></a>
-    <a href="#contacto" data-c><span class="on">07</span><span data-i18n="ov7">Contacto</span></a>
-  </nav>''')
+overlay = overlay.replace(nav_old, menu_html())
 
 # --- héroe: enfoque maker (opción A)
 hero = rep(hero, '''      <span class="line-mask"><span class="l1" data-i18n="h1a">Construyo IA</span></span>
@@ -46,9 +41,11 @@ hero = rep(hero, '''      <span class="line-mask"><span class="l1" data-i18n="h1
 '''      <span class="line-mask"><span class="l1" data-i18n="h1a">Hago productos</span></span>
       <span class="line-mask"><span class="l2"><span class="it" data-i18n="h1b">que funcionan.</span></span></span>''')
 hero = re.sub(r'<p class="intro rvx" data-i18n="intro">.*?</p>',
-              '<p class="intro rvx" data-i18n="intro">Desde 2015 convierto ideas en cosas que se usan: una app con 500 usuarios en 24 horas, una obra de 16 km de alta tensión, experiencias de realidad virtual para clientes y, ahora, agentes de IA. La capa nueva: <strong>que esa IA se pueda explicar y auditar.</strong></p>', hero, flags=re.S)
-hero = re.sub(r'<div class="mqt" id="mq" data-i18n="mq">.*?</div></div>',
-              '<div class="mqt" id="mq" data-i18n="mq">\n  <span class="mqi"><i></i>Producto digital</span><span class="mqi"><i></i><b>De la idea a la entrega</b></span><span class="mqi"><i></i>Realidad virtual</span><span class="mqi"><i></i>Web360</span><span class="mqi"><i></i><b>Serious games</b></span><span class="mqi"><i></i>Diseño UX/UI</span><span class="mqi"><i></i>Agentes de IA</span><span class="mqi"><i></i><b>Gobernable por construcción</b></span><span class="mqi"><i></i>Discovery · PoC · MVP</span><span class="mqi"><i></i>ISO/IEC 42001</span>\n</div></div>', hero, flags=re.S)
+              '<p class="intro rvx" data-i18n="intro">Desde 2015 convierto ideas en cosas que se usan: una app con 500 usuarios en 24 horas, experiencias de realidad virtual para clientes y, ahora, agentes de IA. La capa nueva: <strong>que esa IA se pueda explicar y auditar.</strong></p>', hero, flags=re.S)
+hero = re.sub(r'\n<div class="marquee".*?</div></div>\n', '\n', hero, flags=re.S)  # fase 1: sin marquesina
+assert 'marquee' not in hero
+# la pista ya no anuncia la caja negra (ahora está más abajo)
+hero = rep(hero, '<span data-i18n="cue">Desliza — abre el sistema</span>', '<span data-i18n="cue">Desliza para ver los proyectos ↓</span>')
 
 # --- perfil pasa a ser 01
 perfil = rep(perfil, '<span class="eyebrow rvx" data-i18n="e02"><span class="n">02</span> Quién soy</span>',
@@ -58,7 +55,7 @@ perfil = rep(perfil, '<span class="eyebrow rvx" data-i18n="e02"><span class="n">
 aporto = rep(aporto, '<span class="eyebrow rvx" data-i18n="e03"><span class="n">03</span> Qué aporto</span>',
              '<span class="eyebrow rvx" data-i18n="e04a"><span class="n">04</span> Qué aporto</span>')
 aporto = rep(aporto, '<h2 class="sec rvx" data-i18n="h_aporto">Construir IA es la parte fácil.<br/><em>Hacerla gobernable</em> es la mía.</h2>',
-             '<h2 class="sec rvx" data-i18n="h_aporto">Del problema <em>al producto.</em><br/>Y que se pueda auditar.</h2>')
+             '<h2 class="sec rvx" data-i18n="h_aporto">Del problema <em>al producto.</em></h2>')
 aporto = re.sub(r'\s*<p class="posit rvx" data-i18n="posit">.*?</p>', '', aporto, flags=re.S)
 aporto = rep(aporto, 'aria-label="Intersección de construir con IA, implementar gobernanza e investigar"',
              'aria-label="Intersección de diseñar, construir y hacerlo auditable"')
@@ -66,7 +63,7 @@ aporto = re.sub(r'<div class="vlbl top">.*?</div></div>', '<div class="vlbl top"
 aporto = re.sub(r'<div class="vlbl bl">.*?</div></div>', '<div class="vlbl bl"><div class="vn">02</div><div class="vt" data-i18n="v2t">Construyo</div><div class="vs" data-i18n="v2s">XR · web · agentes de IA</div></div>', aporto, count=1, flags=re.S)
 aporto = re.sub(r'<div class="vlbl br">.*?</div></div>', '<div class="vlbl br"><div class="vn">03</div><div class="vt" data-i18n="v3t">Lo hago auditable</div><div class="vs">ISO/IEC 42001 · AI Act</div></div>', aporto, count=1, flags=re.S)
 aporto = re.sub(r'<div class="conv-copy">.*?</div>\n    </div>', '''<div class="conv-copy">
-        <h3 class="rvx" data-i18n="conv_h">Tres oficios, una sola persona</h3>
+        <h3 class="rvx" data-i18n="conv_h">Cómo trabajo</h3>
         <p class="rvx" data-i18n="conv1"><span class="hl">Con el diseño:</span> hablo con el cliente y con los usuarios, defino qué hay que construir y lo diseño en Figma antes de escribir una línea. Así lo hice en realidad virtual, en Web360 y en los productos de SGS.</p>
         <p class="rvx" data-i18n="conv2"><span class="hl">Con las manos:</span> coordino equipos de desarrollo, 3D y diseño, y construyo mis propios productos dirigiendo agentes de IA. <a class="inl" href="#taller">Rumbo</a>, mi CRM agéntico, está publicado con su código.</p>
         <p class="rvx" data-i18n="conv3"><span class="hl">Con el estándar:</span> la capa nueva. Diseño la gobernanza dentro del sistema con la ISO/IEC 42001 y el Reglamento Europeo de IA: supervisión humana y trazabilidad desde el principio.</p>
@@ -77,13 +74,49 @@ aporto = re.sub(r'<div class="conv-copy">.*?</div>\n    </div>', '''<div class="
 mani = rep(mani, '<span class="eyebrow rvx" data-i18n="e01"><span class="n">01</span> La tesis, en una frase</span>',
            '<span class="eyebrow rvx" data-i18n="e05g"><span class="n">05</span> La capa nueva · gobernanza de IA</span>')
 mani = rep(mani, '<div class="tags rvx" data-i18n="box_tags">',
-           '<p class="rvx" data-i18n="posit">El 74 % de las empresas prevé desplegar IA agéntica en los próximos dos años, pero solo el 21 % tiene un modelo de gobernanza maduro para agentes autónomos (Deloitte, <i>State of AI in the Enterprise</i>, 2026).</p>\n        <div class="tags rvx" data-i18n="box_tags">')
+           '<p class="rvx" data-i18n="posit">El 74 % de las empresas prevé desplegar IA agéntica en los próximos dos años, pero solo el 21 % tiene un modelo de gobernanza maduro para agentes autónomos (<a class="inl" href="https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html" target="_blank" rel="noopener">Deloitte, <i>State of AI in the Enterprise</i>, 2026 ↗</a>).</p>\n        <div class="tags rvx" data-i18n="box_tags">')
 
 # --- investigación pasa a 06 y contacto a 07
 inv = rep(inv, '<span class="n">05</span> Investigación · en exploración', '<span class="n">06</span> Investigación · en exploración')
 foot = rep(foot, '<span class="eyebrow rvx" data-i18n="e06">06 · Contacto</span>', '<span class="eyebrow rvx" data-i18n="e07">07 · Contacto</span>')
 
+# --- fase 1: pie (sin reloj ni botón «Volver arriba» duplicado; el email como pieza tipográfica)
+foot = rep(foot, ' <span id="clk2">--:--</span>', '')
+foot = rep(foot, '    <div><button class="totop rvx" id="toTop" data-c><span data-i18n="totop">Volver arriba</span> <span>↑</span></button></div>\n', '')
+foot = rep(foot, '      <a href="mailto:carlosgallegogalan@gmail.com" data-c>✉ carlosgallegogalan@gmail.com</a>\n', '')
+foot = rep(foot, '<span class="ar">→</span></a>\n', '<span class="ar">→</span></a>\n    <div><a class="foot-mail rvx" href="mailto:carlosgallegogalan@gmail.com">carlosgallegogalan@gmail.com</a></div>\n'
+           '    <div><a class="foot-cv rvx" href="/assets/cv/CV_Carlos_Gallego_Galan_ES.pdf" download data-i18n-attr="href:cv_href" data-c><span data-i18n="cv">Descargar CV (PDF)</span></a></div>\n')
+
+# --- fase 1: la línea de Trayectoria se llamaba .tl y chocaba con .bb .corner.tl
+tray = rep(tray, '<div class="tl">', '<div class="tline">')
+
+# --- fase 1: cifras y barras fijas (sin contadores ni barras animadas)
+aporto = re.sub(r'<span data-count="(\d+)">0</span>', r'\1', aporto)
+aporto = re.sub(r'<span class="pct" data-pct="(\d+)">0%</span>', r'<span class="pct">\1 %</span>', aporto)
+aporto = re.sub(r'<div class="fill" data-w="(\d+)"></div>', r'<div class="fill" style="width:\1%"></div>', aporto)
+assert 'data-count' not in aporto and 'data-w=' not in aporto
+
+# --- fase 1: orden nuevo (decisión 2 del plan)
+new = new.replace('\n<div class="rule"></div>\n', '\n')
+cut_new = new.index('<!-- TALLER')
+proy, taller = new[:cut_new], new[cut_new:]
 R = '\n<div class="rule"></div>\n\n'
-out = overlay + '\n' + hero + '\n' + perfil + R + new + R + aporto + R + mani + R + tray + '\n' + inv + '\n' + form + '\n' + foot
+blocks = {'proyectos': proy, 'taller': taller, 'perfil': perfil, 'aporto': aporto, 'trayectoria': tray,
+          'formacion': form, 'manifiesto': mani, 'doctorado': inv, 'contacto': foot}
+EYE = re.compile(r'<span class="eyebrow rvx" data-i18n="[^"]+">(?:<span class="n">[^<]*</span>)?[^<]*</span>')
+body = ''
+prev = None
+for i, (sid, eb, _) in enumerate(ORDEN):
+    blk = blocks[sid]
+    assert len(EYE.findall(blk)) == 1, sid
+    blk = EYE.sub('<span class="eyebrow rvx" data-i18n="eb_%s">%s</span>' % (sid, eyebrow_inner(i, eb[0])), blk)
+    # separadores: no dentro de un capítulo (Proyectos+Taller, Trayectoria+Formación) ni junto a la franja de Investigación
+    if prev and (prev, sid) not in {('proyectos', 'taller'), ('trayectoria', 'formacion'), ('manifiesto', 'doctorado'), ('doctorado', 'contacto')}:
+        body += R
+    else:
+        body += '\n'
+    body += blk
+    prev = sid
+out = overlay + '\n' + hero + body
 open(B + 'index_body.html', 'w', encoding='utf-8').write(out)
 print('ok', len(out))

@@ -461,10 +461,12 @@ document.querySelectorAll('.lang [data-lang]').forEach(function(b){
   b.addEventListener('click',function(){
     var t=b.getAttribute('data-lang');if(t===window.NC_LANG)return;
     try{localStorage.setItem('nc_lang',t);}catch(e){}
-    var url=location.pathname+'?lang='+t;
+    /* fase 2: conservar la sección que se está leyendo */
+    var cur=[].slice.call(document.querySelectorAll('main section[id],section[id],footer[id]')).filter(function(x){return x.getBoundingClientRect().top<innerHeight*.4;}).pop();
+    var url=location.pathname+'?lang='+t+(cur&&scrollY>40?'#'+cur.id:'');
     var ps=document.querySelectorAll('.curtain i');
     var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(window.gsap&&ps.length&&!rm){gsap.set(ps,{yPercent:100});gsap.to(ps,{yPercent:0,duration:.9,ease:'power4.inOut',stagger:.07,onComplete:function(){location.href=url;}});}
+    if(window.gsap&&ps.length&&!rm){gsap.set(ps,{yPercent:100});gsap.to(ps,{yPercent:0,duration:.42,ease:'expo.in',stagger:.02,onComplete:function(){location.href=url;}});}
     else location.href=url;
   });
 });

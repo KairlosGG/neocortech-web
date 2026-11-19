@@ -1,0 +1,72 @@
+
+/* =====================================================================
+   Fase 2 · accesibilidad y UX (va la última en la cascada)
+   ===================================================================== */
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* ---------- saltar al contenido + destino de anclas ---------- */
+.skip{position:fixed;left:16px;top:14px;z-index:400;transform:translateY(-200%);padding:12px 18px;border-radius:10px;background:var(--gold-bright);color:#0A141F;
+  font:600 14px/1.2 var(--ui);text-decoration:none;box-shadow:0 10px 30px -10px rgba(0,0,0,.8);transition:transform .2s var(--e)}
+.skip:focus{transform:none}
+.skip:focus-visible{outline:2px solid var(--bone);outline-offset:3px}
+main{display:block}
+main:focus,[tabindex="-1"]:focus{outline:none}
+html{scroll-padding-top:88px}
+
+/* ---------- foco visible y coherente: un solo anillo oro claro ---------- */
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px;border-radius:4px}
+.ixf:focus-visible,.switch a:focus-visible,.lang button:focus-visible,.foot-btn:focus-visible,.ov-side .st:focus-visible{border-radius:999px}
+.totop-float:focus-visible{border-radius:50%}
+.ix-dots button:focus-visible{outline-offset:-4px;border-radius:6px}
+.bb:focus-visible{outline-offset:4px;border-radius:20px}
+/* el carrusel de la tesis lleva máscara de degradado, que recorta su propio contorno: el anillo va en el contenedor */
+.htrack:focus-visible{outline:none}
+.htrack-outer .wrap:has(>.htrack:focus-visible){outline:2px solid var(--gold-bright);outline-offset:2px;border-radius:12px}
+
+/* ---------- menú Índice: cerrado no se ve, no se tabula y no se anuncia ---------- */
+#overlay{visibility:hidden;transition:visibility 0s linear .6s}
+#overlay.open{visibility:visible;transition:none}
+.menu-open header.nav.hide{transform:none}
+.ov-pages{display:none}
+.totop-float{visibility:hidden}
+.totop-float.show{visibility:visible}
+
+/* ---------- índice de proyectos: el nombre es un h3 con el botón dentro ---------- */
+.ix-h{grid-column:1;margin:0;font:inherit;letter-spacing:normal}
+
+/* ---------- contraste AA (medido sobre el fondo real) ---------- */
+.brand .sub{color:#A4823F}                       /* era gold-deep, 3,12:1 → 5,16:1 */
+
+/* ---------- móvil: cabecera más baja y zonas táctiles de 44 px ---------- */
+@media(max-width:560px){
+  .nav .switch{display:none}                    /* Carlos / Newsletter / Wattprint pasan al menú */
+  .nav .wrap{height:60px}
+  .nav-right{gap:6px}
+  .menu-btn{min-width:44px;min-height:44px;justify-content:center;padding:0}
+  .lang{padding:0}
+  .lang button{min-width:44px;min-height:44px;padding:0 8px}
+  html{scroll-padding-top:72px}
+  .hero{padding-top:92px}
+  .ov-pages{display:flex;flex-wrap:wrap;gap:4px 22px;padding:0 var(--gut);margin-top:26px}
+  .ov-pages a{display:inline-flex;align-items:center;min-height:44px;font-family:"Marcellus",var(--display);font-size:17px;color:var(--muted)}
+  .ov-pages a[aria-current="page"]{color:var(--gold-bright)}
+  .ov-side{margin-top:18px}
+  .ov-side a.ci{display:flex;align-items:center;min-height:44px;margin:0}
+  .totop-float{width:44px;height:44px}
+}
+@media(max-width:900px),(pointer:coarse){
+  .ixf{min-height:44px}
+  .ix-dots{right:8px;bottom:4px;gap:0}
+  .ix-dots button{width:44px;height:44px}
+  .ix-dots button::after{top:20px;left:8px;right:8px}
+  .foot-links a{display:inline-flex;align-items:center;min-height:44px}
+  /* enlaces de texto: zona táctil de 44 px sin mover el subrayado */
+  .plink,.plinks a,.tlinks a,a.inl{position:relative}
+  .plink::before,.plinks a::before,.tlinks a::before,a.inl::before{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}
+}
+
+/* ---------- movimiento reducido: nada en bucle ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-iteration-count:1!important}
+  #overlay,.skip,.totop-float{transition:none}
+}
